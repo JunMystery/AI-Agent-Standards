@@ -17,8 +17,8 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 ### Cho Kỹ sư Mới
 
 1. **Đọc tài liệu:**
-   - [`onboarding/quick-reference.md`](onboarding/quick-reference.md) (1 trang - in ra được)
-   - [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md) (ví dụ chi tiết)
+   - [`onboarding/quick-reference.md`](.ai-agent-standards/onboarding/quick-reference.md) (1 trang - in ra được)
+   - [`onboarding/first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md) (ví dụ chi tiết)
 
 2. **Setup project mới:**
    ```bash
@@ -30,9 +30,9 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
    ```
 
 3. **Thực hiện task đầu tiên:**
-   - Làm theo hướng dẫn [`first-task-walkthrough.md`](onboarding/first-task-walkthrough.md)
-   - Áp dụng Pipeline kiểm soát từ [`quality-control/`](quality-control/)
-   - Ghi lại metrics trong [`metrics/`](metrics/)
+   - Làm theo hướng dẫn [`first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md)
+   - Áp dụng Pipeline kiểm soát từ [`quality-control/`](.ai-agent-standards/quality-control/)
+   - Ghi lại metrics trong [`metrics/`](.ai-agent-standards/metrics/)
 
 ---
 
@@ -49,7 +49,7 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 | **`multi-agent/`** | P2 Roadmap | Placeholder cho Multi-Agent framework |
 | **`reference/`** | Tài liệu tham chiếu | Error tables, Cookbook, Glossary |
 
-**Xem chi tiết:** [`INDEX.md`](INDEX.md)
+**Xem chi tiết:** [`INDEX.md`](.ai-agent-standards/INDEX.md)
 
 ---
 
@@ -75,7 +75,7 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
    (API specs, README updates)
 ```
 
-**Chi tiết:** [`quality-control/`](quality-control/)
+**Chi tiết:** [`quality-control/`](.ai-agent-standards/quality-control/)
 
 ---
 
@@ -86,7 +86,7 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 - ✓ **Xác thực dữ liệu:** Bắt buộc input validation/sanitization
 - ✓ **Tuân thủ kiến trúc:** Không phá vỡ design patterns hiện hành
 
-**Xem thêm:** [`risk-management/security-constraints.md`](risk-management/security-constraints.md)
+**Xem thêm:** [`risk-management/security-constraints.md`](.ai-agent-standards/risk-management/security-constraints.md)
 
 ### Escalation Path
 Khi AI không hợp tác (>2 vòng Self-Fix):
@@ -95,7 +95,7 @@ Khi AI không hợp tác (>2 vòng Self-Fix):
 3. Thay đổi strategy prompt hoặc tự code thủ công
 4. Update prompt library để tránh lặp lại
 
-**Chi tiết:** [`risk-management/escalation-workflow.md`](risk-management/escalation-workflow.md)
+**Chi tiết:** [`risk-management/escalation-workflow.md`](.ai-agent-standards/risk-management/escalation-workflow.md)
 
 ---
 
@@ -108,28 +108,28 @@ Theo dõi hiệu quả AI-Assisted development:
 - **AI Iteration Count** (số vòng lặp Self-Fix)
 - **Technical Debt Ratio**
 
-**Template:** [`metrics/tracking-template.csv`](metrics/tracking-template.csv)
-**Sample Report:** [`metrics/sample-weekly-report.md`](metrics/sample-weekly-report.md)
+**Template:** [`metrics/tracking-template.csv`](.ai-agent-standards/metrics/tracking-template.csv)
+**Metrics Guide:** [`metrics/README.md`](.ai-agent-standards/metrics/README.md)
 
 ---
 
 ## 💡 Key Files to Read First
 
 1. **Bạn là Kỹ sư mới:** 
-   - [`onboarding/quick-reference.md`](onboarding/quick-reference.md) ⭐
-   - [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md)
+   - [`onboarding/quick-reference.md`](.ai-agent-standards/onboarding/quick-reference.md) ⭐
+   - [`onboarding/first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md)
 
 2. **Bạn làm reviewer:**
-   - [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md)
-   - [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md)
+   - [`quality-control/code-review-checklist.md`](.ai-agent-standards/quality-control/code-review-checklist.md)
+   - [`quality-control/audit-ai-code-full.md`](.ai-agent-standards/quality-control/audit-ai-code-full.md)
 
 3. **Bạn là quản lý:**
-   - [`reference/methodology-for-management.md`](reference/methodology-for-management.md)
-   - [`metrics/kpi-definitions.md`](metrics/kpi-definitions.md)
+   - [`reference/README.md`](.ai-agent-standards/reference/README.md)
+   - [`metrics/README.md`](.ai-agent-standards/metrics/README.md)
 
 4. **Bạn cần Prompt mẫu:**
-   - [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md)
-   - [`prompts/sample-use-cases/`](prompts/sample-use-cases/)
+   - [`prompts/PROMPT-TEMPLATE.md`](.ai-agent-standards/prompts/PROMPT-TEMPLATE.md)
+   - [`prompts/sample-use-cases/`](.ai-agent-standards/prompts/sample-use-cases/)
 
 ---
 
@@ -154,7 +154,7 @@ git commit -m "chore: add AI Agent Coding Standards framework"
 ### Một dự án, nhiều phiên bản?
 - Mỗi project copy riêng (không dùng submodule)
 - Update khi có phiên bản mới từ repo gốc
-- Track phiên bản via `CHANGELOG.md`
+- Track phiên bản via [`CHANGELOG.md`](.ai-agent-standards/CHANGELOG.md)
 
 ---
 
@@ -162,12 +162,12 @@ git commit -m "chore: add AI Agent Coding Standards framework"
 
 | Cần gì? | Tìm ở đây |
 |--------|----------|
-| Prompt mẫu | [`prompts/sample-use-cases/`](prompts/sample-use-cases/) |
-| Checklist reviewer | [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) |
-| Lỗi AI thường gặp | [`reference/error-reference-complete.md`](reference/error-reference-complete.md) |
-| Tracking metrics | [`metrics/tracking-template.csv`](metrics/tracking-template.csv) |
-| Training | [`onboarding/`](onboarding/) |
-| Escalation | [`risk-management/escalation-workflow.md`](risk-management/escalation-workflow.md) |
+| Prompt mẫu | [`prompts/sample-use-cases/`](.ai-agent-standards/prompts/sample-use-cases/) |
+| Checklist reviewer | [`quality-control/code-review-checklist.md`](.ai-agent-standards/quality-control/code-review-checklist.md) |
+| Lỗi AI thường gặp | [`reference/error-reference-complete.md`](.ai-agent-standards/reference/error-reference-complete.md) |
+| Tracking metrics | [`metrics/tracking-template.csv`](.ai-agent-standards/metrics/tracking-template.csv) |
+| Training | [`onboarding/`](.ai-agent-standards/onboarding/) |
+| Escalation | [`risk-management/escalation-workflow.md`](.ai-agent-standards/risk-management/escalation-workflow.md) |
 
 ---
 
@@ -192,13 +192,13 @@ Framework này dựa trên "Phương pháp luận AI Agent Coding" - Tài liệu
 
 ## 🔗 Liên kết Toàn bộ
 
-👉 **Chi tiết đầy đủ:** [`INDEX.md`](INDEX.md)
+👉 **Chi tiết đầy đủ:** [`INDEX.md`](.ai-agent-standards/INDEX.md)
 
 ---
 
-**Câu hỏi? Xem:** [`onboarding/`](onboarding/) hoặc gửi feedback cho team lead.
+**Câu hỏi? Xem:** [`onboarding/`](.ai-agent-standards/onboarding/) hoặc gửi feedback cho team lead.
 
-**Muốn extend framework? Cập nhật** [`CHANGELOG.md`](CHANGELOG.md) **và commit.**
+**Muốn extend framework? Cập nhật** [`CHANGELOG.md`](.ai-agent-standards/CHANGELOG.md) **và commit.**
 
 ---
 
