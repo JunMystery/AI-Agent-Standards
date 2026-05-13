@@ -290,7 +290,7 @@ MUST NOT: Create custom crypto functions"
 1. **Document** → Create issue: "AI hallucination: X doesn't exist"
 2. **Fix manually** or **escalate to AI with clear docs**
 3. **Update prompt library** → Improve similar prompts
-4. **Track** → Log in metrics (see `../metrics/`)
+4. **Track** → Log in project issue tracker
 
 ---
 

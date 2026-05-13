@@ -45,7 +45,7 @@ prompts/
 - See [`quality-control/self-check-report-template.md`](../quality-control/self-check-report-template.md) to verify
 
 ### 5. Save Results
-Log: `prompt_id`, `prompt_version`, `ai_iteration_count` in task (see [`metrics/tracking-template.csv`](../metrics/tracking-template.csv))
+Log: `prompt_id`, `prompt_version`, `ai_iteration_count` in your project's task tracker
 
 ---
 

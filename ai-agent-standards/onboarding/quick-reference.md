@@ -187,7 +187,7 @@ Ask AI to fix → Iterate
 - Test coverage %
 - Any issues found
 
-→ Store in: [`../metrics/tracking-template.csv`](../metrics/tracking-template.csv)
+→ Store in your project's task tracker
 
 ---
 

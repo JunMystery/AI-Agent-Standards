@@ -95,11 +95,9 @@ Track versions and updates for the AI Agent Coding Standards framework.
   - `prompts/` — Standard prompt template library
   - `quality-control/` — Quality control pipeline
   - `risk-management/` — Risk management & escalation
-  - `metrics/` — KPI tracking & performance
   - `onboarding/` — Training & onboarding materials
   - `multi-agent/` — Placeholder for P2 roadmap
   - `reference/` — Reference documentation & error tables
-  - `templates/` — Reusable templates for new projects
 
 - **Core Files:**
   - `.cursorrules` — Default Cursor/Windsurf rules

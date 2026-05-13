@@ -10,7 +10,6 @@ TÓM TẮT NỘI DUNG (ABSTRACT)
 
 Tài liệu này trình bày khuôn khổ làm việc (framework) nhằm tích hợp AI Agents vào quy trình phát triển phần mềm một cách an toàn và hiệu quả.  
 Trọng tâm là dịch chuyển từ mô hình lập trình thủ công sang mô hình “Phát triển có kiểm soát với AI” (Controlled AI-Assisted Development), nhấn mạnh vai trò của kỹ sư trong việc định hướng kiến trúc, kiểm soát bảo mật và quản trị rủi ro hệ thống.  
-Phiên bản 2.1 bổ sung các hướng dẫn thực hành chi tiết, quy trình làm việc nhóm, kiểm soát chi phí, chiến lược xử lý ngoại lệ và lộ trình áp dụng mở rộng.
 
 ---
 
@@ -337,7 +336,6 @@ project-root/
 │   │   └── sample-use-cases/      → Ví dụ thực tế
 │   ├── quality-control/           → Review checklists, audit, CI/CD gates
 │   ├── risk-management/           → Security, escalation, failure logs
-│   ├── metrics/                   → KPIs & tracking
 │   ├── reference/                 → Glossary, error reference
 │   └── multi-agent/               → Lộ trình P2
 │
@@ -347,16 +345,7 @@ project-root/
 ```
 Mỗi tệp prompt phải tuân thủ mẫu header YAML (đã nêu ở 2.3) và chứa đầy đủ các phần Context, Task, Constraints, Output Format theo khuôn mẫu 3.2.
 
-### 6.6. Phụ lục E: Kịch bản Mở rộng Multi-Agent
-Hiện tại, khung làm việc này tập trung vào mô hình **Single-Agent** dưới sự giám sát chặt chẽ của kỹ sư. Trong tương lai, nếu triển khai hệ thống nhiều agent phối hợp (ví dụ: một agent code, một agent review, một agent test), cần xây dựng thêm:
-
-- **Lớp Agent Orchestrator:** Điều phối công việc giữa các agent, đảm bảo mỗi agent chỉ hoạt động trong phạm vi được giao.
-- **Quy tắc cô lập dữ liệu:** Tuyệt đối không cho phép agent này truy cập dữ liệu nhạy cảm của agent khác mà không có sự đồng ý của kỹ sư.
-- **Giao thức giao tiếp chuẩn:** Các agent trao đổi qua API được kiểm soát, mọi thông điệp phải được ghi log và có thể audit.
-
-=> Mục này sẽ được phát triển chi tiết trong tài liệu “Multi-Agent Orchestration Framework” (ưu tiên P2).
-
-### 6.7. Phụ lục F: Diễn giải Phương pháp luận trong Quản trị
+### 6.6. Phụ lục F: Diễn giải Phương pháp luận trong Quản trị
 **Ngữ cảnh:** Khi cần báo cáo hoặc phản biện cấp quản lý về sự khác biệt giữa quy trình này và “Vibe Coding”.
 
 **Chiến lược diễn giải:**

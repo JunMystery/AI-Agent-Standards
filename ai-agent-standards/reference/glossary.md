@@ -119,7 +119,6 @@
 **KPI (Key Performance Indicator)**
 - Metrics measuring performance
 - Examples: Defect rate, Cycle time, Coverage
-- Details: [`kpi-definitions.md`](../metrics/kpi-definitions.md)
 
 ---
 
@@ -144,7 +143,6 @@
 
 **Metrics**
 - Data measuring AI effectiveness
-- Tracked in: [`tracking-template.csv`](../metrics/tracking-template.csv)
 
 ---
 

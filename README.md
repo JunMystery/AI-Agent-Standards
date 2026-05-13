@@ -88,9 +88,7 @@ AI-Agent-Coding/
 │   ├── prompts/                 → Prompt templates & 7 sample use cases
 │   ├── quality-control/         → Review checklists, audit (11 sections)
 │   ├── risk-management/         → 12 security constraints (v2.0)
-│   ├── metrics/                 → KPIs & tracking templates
 │   ├── reference/               → Glossary, error reference
-│   ├── templates/               → Project templates
 │   └── multi-agent/             → 4 Agents: Coder, Test, Reviewer, Docs
 │
 │ ── CI/CD AUTOMATION ──
@@ -178,20 +176,6 @@ AI-Agent-Coding/
 7. AUTO-DOCUMENT (API specs, README updates)
 ```
 
----
-
-## 📊 Metrics & KPIs
-
-Track AI-assisted development effectiveness:
-- **Defect Rate** — Regressions after merging AI code
-- **Cycle Time** — Completion time vs. manual coding
-- **Test Coverage** — Unit test coverage for AI-generated code
-- **AI Iteration Count** — Self-Fix loops before passing
-- **Technical Debt Ratio** — AI code debt vs. manual code debt
-
-**Details:** [ai-agent-standards/metrics/](./ai-agent-standards/metrics/)
-
----
 
 ## 📝 Attribution
 

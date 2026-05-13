@@ -203,8 +203,8 @@ git commit -m "feat: add user registration endpoint with rate limiting"
 git push
 ```
 
-**Log Metrics:**
-Add row to [`../metrics/tracking-template.csv`](../metrics/tracking-template.csv):
+**Log Results:**
+Record in your project's task tracker:
 ```
 date,task_name,prompt_id,ai_iterations,test_coverage,time_mins
 2026-05-12,user-registration,PROMPT-001,1,85,35

@@ -111,7 +111,7 @@ A: Look at [`../prompts/sample-use-cases/`](../prompts/sample-use-cases/) for ex
 A: Read [`../quality-control/README.md`](../quality-control/README.md)
 
 **Q: How do I track what I did?**
-A: Use [`../metrics/tracking-template.csv`](../metrics/tracking-template.csv)
+A: Log `date, task, prompt_id, iterations, coverage, time` in your project's task tracker.
 
 ---
 

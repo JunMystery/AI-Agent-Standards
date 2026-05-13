@@ -64,7 +64,6 @@ After installing, you may want to customize:
 
 1. **`.cursorrules`** — Add your project's tech stack, naming conventions, and folder structure
 2. **`CLAUDE.md` / `GEMINI.md`** — Add project-specific rules under a `## Project-Specific Guidelines` section
-3. **`ai-agent-standards/templates/`** — Adjust templates for your team's workflow
 
 ---
 

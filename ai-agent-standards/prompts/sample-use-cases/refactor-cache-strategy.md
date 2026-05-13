@@ -86,4 +86,3 @@ difficulty: Intermediate
 ## 📝 Reference
 
 - Performance Best Practices: [`../../reference/use-case-cookbook.md`](../../reference/use-case-cookbook.md)
-- Metrics: [`../../metrics/kpi-definitions.md`](../../metrics/kpi-definitions.md)
