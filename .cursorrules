@@ -1,0 +1,47 @@
+# AI-Agent-Coding Standards v1.1 — Cursor/Windsurf Rules
+#
+# These rules apply the Karpathy Principles to all AI-assisted coding.
+# For detailed documentation, see: karpathy/principles.md
+# For examples: karpathy/examples.md
+
+## Core Principles (Non-Negotiable)
+
+### 1. Think Before Coding
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+### 2. Simplicity First
+- Minimum code that solves the problem. Nothing speculative.
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No error handling for impossible scenarios.
+- If 200 lines could be 50, rewrite it.
+
+### 3. Surgical Changes
+- Touch only what you must. Clean up only your own mess.
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- Remove only orphans created by YOUR changes.
+
+### 4. Goal-Driven Execution
+- Define verifiable success criteria upfront.
+- Transform tasks into testable goals.
+- Verify success before declaring done.
+
+## Self-Check Report
+
+After completing code, include:
+- Requirements met? [list]
+- Could this be simpler? [yes/no]
+- All changes trace to request? [yes/no]
+- Success criteria verified? [how]
+
+## Verification
+
+When asked "What coding standards are you following?" or "/standards", respond:
+> AI-Agent-Coding Standards v1.1 with Karpathy Principles active.
+> Framework: Controlled AI-Assisted Development
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution

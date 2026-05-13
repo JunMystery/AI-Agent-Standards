@@ -1,237 +1,172 @@
-# AI Agent Coding Standards - Framework Phát triển Có kiểm soát
+# AI Agent Coding Standards
 
-**Phiên bản:** 1.0.0 | **Ngày release:** 2026-05-12 | **Status:** ✓ Active
+A **drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices. Just copy into your project root — agents auto-detect the instruction files.
 
----
-
-## 📋 Tổng quan
-
-Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy trình phát triển phần mềm **một cách an toàn, hiệu quả và kiểm soát được**.
-
-**Triết lý cốt lõi:** AI là công cụ hỗ trợ (tool), không phải hệ thống ra quyết định. Kỹ sư luôn giữ quyền kiểm duyệt (human gate) đối với mọi output.
+> **Core philosophy:** AI is a tool, not a decision-maker. Engineers retain authority over architecture, security, and production decisions.
 
 ---
 
-## 🚀 Quick Start (5 phút)
+## 🚀 Quick Start
 
-### 🎯 **NEW: Karpathy Principles (Core Philosophy)**
+### 1. Install (1 step)
 
-**The 4 Karpathy Principles are the behavioral foundation for all AI-assisted coding:**
+Copy this repo's contents into your project root. See [INSTALL.md](./INSTALL.md) for details.
 
-| Principle | What It Means | Why It Matters |
-|-----------|---|---|
-| **1️⃣ Think Before Coding** | Surface assumptions, present alternatives, ask clarifying Qs | Prevents coding wrong solution |
-| **2️⃣ Simplicity First** | Minimum code, no speculative features | Reduces bugs, faster review |
-| **3️⃣ Surgical Changes** | Touch only what you must, match existing style | Smaller diffs, easier review, lower risk |
-| **4️⃣ Goal-Driven Execution** | Define verifiable success criteria, verify before shipping | No ambiguity, faster iterations |
+### 2. Verify
 
-**Quick Learning (30 minutes):**
-1. [Quick Reference](./ai-agent-standards/onboarding/quick-reference.md) (5 min) — Principles summary
-2. [Karpathy Principles Guide](./ai-agent-standards/onboarding/karpathy-principles-guide.md) (20 min) — Detailed training
-3. [Interactive Worksheet](./ai-agent-standards/onboarding/think-before-coding-worksheet.md) (30 min) — Practice exercises
+Ask your AI agent:
 
-**Use in your work:**
-- **Writing prompts:** Follow [quick-reference.md](./ai-agent-standards/onboarding/quick-reference.md) principles
-- **Reviewing code:** Check all 4 principles using [code-review-checklist.md](./ai-agent-standards/quality-control/code-review-checklist.md)
-- **Iterating:** Apply principles when requesting changes from AI
+> **"What coding standards are you following?"**
 
-**Full documentation:** [Karpathy Framework](./ai-agent-standards/principles/karpathy-framework.md) — Master reference
+Expected response:
+
+> ✅ **AI-Agent-Coding Standards v1.1** with Karpathy Principles active.
 
 ---
 
-### Cho Kỹ sư Mới
+## 🎯 The 4 Karpathy Principles
 
-1. **Đọc tài liệu:**
-   - [🚀 **Karpathy Principles**](./ai-agent-standards/principles/karpathy-framework.md) — Core philosophy (10 min)
-   - [`onboarding/quick-reference.md`](.ai-agent-standards/onboarding/quick-reference.md) (1 trang - in ra được)
-   - [`onboarding/first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md) (ví dụ chi tiết)
+The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876):
 
-2. **Setup project mới:**
-   ```bash
-   # Copy folder này vào project
-   cp -r .ai-agent-standards /path/to/your/project/
-   
-   # Update .cursorrules nếu cần
-   # Edit: .ai-agent-standards/.cursorrules
-   ```
+| # | Principle | Core Rule | Prevents |
+|---|-----------|-----------|----------|
+| 1 | **Think Before Coding** | Surface assumptions, present alternatives, ask when confused | Coding the wrong solution |
+| 2 | **Simplicity First** | Minimum code, no speculative features | Over-engineering, bloat |
+| 3 | **Surgical Changes** | Touch only what you must, match existing style | Scope creep, drive-by refactors |
+| 4 | **Goal-Driven Execution** | Define verifiable success criteria | Ambiguous outcomes, wasted iterations |
 
-3. **Thực hiện task đầu tiên:**
-   - Làm theo hướng dẫn [`first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md)
-   - Áp dụng 4 Karpathy Principles (xem quick-reference.md)
-   - Áp dụng Pipeline kiểm soát từ [`quality-control/`](.ai-agent-standards/quality-control/)
-   - Ghi lại metrics trong [`metrics/`](.ai-agent-standards/metrics/)
+**Learn more:**
+- [karpathy/principles.md](./karpathy/principles.md) — Source of truth (5 min read)
+- [karpathy/examples.md](./karpathy/examples.md) — Anti-patterns & correct approaches (10 min read)
 
 ---
 
-## 📁 Cấu trúc Thư mục & Mục đích
+## 🤖 AI Tool Support Matrix
 
-| Folder | Mục đích | Key Files |
-|--------|---------|-----------|
-| **`principles/`** | 🆕 Karpathy Principles (Core Philosophy) | `karpathy-framework.md`, training materials |
-| **`prompts/`** | Thư viện Prompt mẫu chuẩn | `HEADER-TEMPLATE.yaml`, 5 sample prompts |
-| **`templates/`** | Template reusable cho project mới | `.cursorrules`, task templates |
-| **`quality-control/`** | Pipeline kiểm soát chất lượng | Self-Check, Code Review, Audit checklists |
-| **`risk-management/`** | Quản lý rủi ro & escalation | Failure Log, Security constraints, Mitigation |
-| **`metrics/`** | Tracking KPIs & performance | KPI definitions, CSV tracking, reports |
-| **`onboarding/`** | Training & hướng dẫn (simplified) | Quick-ref, **Karpathy guide**, walkthrough, common mistakes |
-| **`multi-agent/`** | P2 Roadmap | Placeholder cho Multi-Agent framework |
-| **`reference/`** | Tài liệu tham chiếu | **Sync guide**, Error tables, Cookbook, Glossary |
+| Tool | Instruction File | Auto-detected? |
+|------|-----------------|----------------|
+| **Claude Code** | [`CLAUDE.md`](./CLAUDE.md) | ✅ |
+| **Gemini Code Assist / CLI** | [`GEMINI.md`](./GEMINI.md) | ✅ |
+| **GitHub Copilot** | [`COPILOT.md`](./COPILOT.md) | ✅ |
+| **VS Code Copilot** | [`.instructions.md`](./.instructions.md) | ✅ |
+| **Cursor** | [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc) | ✅ |
+| **Windsurf** | [`.cursorrules`](./.cursorrules) | ✅ |
 
-**Xem chi tiết:** [`INDEX.md`](.ai-agent-standards/INDEX.md)
+Each file contains the 4 Karpathy Principles, role definitions, and a **verification prompt** so you can confirm the agent loaded the correct skills.
 
 ---
 
-## 🔄 7 Bước Pipeline Tiêu chuẩn
+## 📁 Repository Structure
 
 ```
-1. PHÂN TÍCH & PHÂN RÃ
+AI-Agent-Coding/
+│
+│ ── AUTO-DISCOVERY FILES (AI agents read these) ──
+├── CLAUDE.md                    → Claude Code
+├── GEMINI.md                    → Gemini Code Assist
+├── COPILOT.md                   → GitHub Copilot
+├── .instructions.md             → VS Code Copilot
+├── .cursor/rules/               → Cursor
+├── .cursorrules                 → Cursor/Windsurf fallback
+│
+│ ── KARPATHY PRINCIPLES (source of truth) ──
+├── karpathy/
+│   ├── principles.md            → The 4 principles
+│   └── examples.md              → Anti-patterns & correct approaches
+│
+│ ── FRAMEWORK DOCUMENTATION ──
+├── ai-agent-standards/
+│   ├── INDEX.md                 → Complete file index
+│   ├── principles/              → Detailed Karpathy framework
+│   ├── onboarding/              → Training & quick reference
+│   ├── prompts/                 → Prompt templates & examples
+│   ├── quality-control/         → Review checklists & audit
+│   ├── risk-management/         → Security, escalation, failure logs
+│   ├── metrics/                 → KPIs & tracking
+│   ├── templates/               → Project templates
+│   └── multi-agent/             → Multi-agent roadmap (P2)
+│
+│ ── ROOT FILES ──
+├── AI Agent Coding.md           → Original methodology document
+├── INSTALL.md                   → Installation guide
+├── README.md                    → This file
+└── .gitignore
+```
+
+---
+
+## 📋 Key Files by Role
+
+### For New Engineers
+| File | Purpose | Time |
+|------|---------|------|
+| [karpathy/principles.md](./karpathy/principles.md) | Core principles | 5 min |
+| [karpathy/examples.md](./karpathy/examples.md) | Learn by example | 10 min |
+| [ai-agent-standards/onboarding/quick-reference.md](./ai-agent-standards/onboarding/quick-reference.md) | Cheat sheet | 5 min |
+| [ai-agent-standards/onboarding/first-task-walkthrough.md](./ai-agent-standards/onboarding/first-task-walkthrough.md) | Guided first task | 15 min |
+
+### For Code Reviewers
+| File | Purpose |
+|------|---------|
+| [ai-agent-standards/quality-control/code-review-checklist.md](./ai-agent-standards/quality-control/code-review-checklist.md) | Review checklist with Karpathy validation |
+| [ai-agent-standards/quality-control/audit-ai-code-full.md](./ai-agent-standards/quality-control/audit-ai-code-full.md) | Full audit checklist |
+
+### For Prompt Engineering
+| File | Purpose |
+|------|---------|
+| [ai-agent-standards/prompts/PROMPT-TEMPLATE.md](./ai-agent-standards/prompts/PROMPT-TEMPLATE.md) | Standard prompt structure |
+| [ai-agent-standards/prompts/sample-use-cases/](./ai-agent-standards/prompts/sample-use-cases/) | Real-world prompt examples |
+
+---
+
+## 🔄 The 7-Step Pipeline
+
+```
+1. ANALYZE & DECOMPOSE
    ✓ Apply Principle #1 (Think Before Coding)
    ↓
-2. THIẾT KẾ DỮ LIỆU ĐỘC LẬP  (Kỹ sư quyết định)
+2. DATA DESIGN (Engineer decides)
    ↓
-3. ÁP ĐẶT NGUYÊN TẮC KIẾN TRÚC
+3. ENFORCE ARCHITECTURE CONSTRAINTS
    ↓
-4. PHÁT TRIỂN BOTTOM-UP  (Core → Services → UI)
+4. BOTTOM-UP DEVELOPMENT (Core → Services → UI)
    ✓ Apply Principle #2 (Simplicity), #3 (Surgical)
    ↓
-5. VẬN HÀNH PIPELINE KIỂM SOÁT ⚙️
+5. QUALITY CONTROL PIPELINE
    - AI Generate → Self-Check → Self-Fix → Output
    ✓ All 4 Principles verified in Self-Check Report
    ↓
-6. HUMAN GATE - CỔNG KIỂM DUYỆT 👤
+6. HUMAN GATE — Engineer Review 👤
    ✓ Apply Principle #4 (Goal-Driven Execution)
    [APPROVE] → Merge + Checkpoint Backup
    [REJECT] → Iterate
    ↓
-7. TỰ ĐỘNG HÓA TÀI LIỆU
-   (API specs, README updates)
+7. AUTO-DOCUMENT (API specs, README updates)
 ```
 
-**Chi tiết:** [`quality-control/`](.ai-agent-standards/quality-control/)
+---
+
+## 📊 Metrics & KPIs
+
+Track AI-assisted development effectiveness:
+- **Defect Rate** — Regressions after merging AI code
+- **Cycle Time** — Completion time vs. manual coding
+- **Test Coverage** — Unit test coverage for AI-generated code
+- **AI Iteration Count** — Self-Fix loops before passing
+- **Technical Debt Ratio** — AI code debt vs. manual code debt
+
+**Details:** [ai-agent-standards/metrics/](./ai-agent-standards/metrics/)
 
 ---
 
-## 📊 Kiểm soát Rủi ro
+## 📝 Attribution
 
-### Non-Negotiable Constraints (Lớp nền)
-- ✓ **Bảo mật Zero-Trust:** Không nhúng API keys, passwords, PII vào prompt
-- ✓ **Xác thực dữ liệu:** Bắt buộc input validation/sanitization
-- ✓ **Tuân thủ kiến trúc:** Không phá vỡ design patterns hiện hành
-
-**Xem thêm:** [`risk-management/security-constraints.md`](.ai-agent-standards/risk-management/security-constraints.md)
-
-### Escalation Path
-Khi AI không hợp tác (>2 vòng Self-Fix):
-1. Ghi nhận AI Failure Log
-2. Kỹ sư phân tích nguyên nhân
-3. Thay đổi strategy prompt hoặc tự code thủ công
-4. Update prompt library để tránh lặp lại
-
-**Chi tiết:** [`risk-management/escalation-workflow.md`](.ai-agent-standards/risk-management/escalation-workflow.md)
+- **Methodology:** JunMystery — [AI Agent Coding.md](./AI%20Agent%20Coding.md)
+- **Karpathy Principles:** Based on [Andrej Karpathy's post](https://x.com/karpathy/status/2015883857489522876), adapted from [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [@forrestchang](https://github.com/forrestchang) (MIT License)
+- **Status:** ✓ Open framework — use & extend freely
 
 ---
 
-## 📈 Metrics & KPIs
+## Full Index
 
-Theo dõi hiệu quả AI-Assisted development:
-- **Defect Rate** (lỗi hồi quy)
-- **Cycle Time** (thời gian hoàn thành)
-- **Test Coverage** (độ bao phủ unit tests)
-- **AI Iteration Count** (số vòng lặp Self-Fix)
-- **Technical Debt Ratio**
-
-**Template:** [`metrics/tracking-template.csv`](.ai-agent-standards/metrics/tracking-template.csv)
-**Metrics Guide:** [`metrics/README.md`](.ai-agent-standards/metrics/README.md)
-
----
-
-## 💡 Key Files to Read First
-
-1. **Bạn là Kỹ sư mới:** 
-   - [`onboarding/quick-reference.md`](.ai-agent-standards/onboarding/quick-reference.md) ⭐
-   - [`onboarding/first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md)
-
-2. **Bạn làm reviewer:**
-   - [`quality-control/code-review-checklist.md`](.ai-agent-standards/quality-control/code-review-checklist.md)
-   - [`quality-control/audit-ai-code-full.md`](.ai-agent-standards/quality-control/audit-ai-code-full.md)
-
-3. **Bạn là quản lý:**
-   - [`reference/README.md`](.ai-agent-standards/reference/README.md)
-   - [`metrics/README.md`](.ai-agent-standards/metrics/README.md)
-
-4. **Bạn cần Prompt mẫu:**
-   - [`prompts/PROMPT-TEMPLATE.md`](.ai-agent-standards/prompts/PROMPT-TEMPLATE.md)
-   - [`prompts/sample-use-cases/`](.ai-agent-standards/prompts/sample-use-cases/)
-
----
-
-## 🛠️ Integration với Project Hiện tại
-
-### Copy vào Project Mới
-```bash
-# 1. Copy folder
-cp -r .ai-agent-standards /your/project/
-
-# 2. Update .cursorrules nếu cần (tech stack specific)
-# Edit: your-project/.ai-agent-standards/.cursorrules
-
-# 3. Commit vào Git
-git add .ai-agent-standards/
-git commit -m "chore: add AI Agent Coding Standards framework"
-
-# 4. Tạo task đầu tiên với label: [AI-Assisted]
-# Áp dụng: quality-control/ pipeline
-```
-
-### Một dự án, nhiều phiên bản?
-- Mỗi project copy riêng (không dùng submodule)
-- Update khi có phiên bản mới từ repo gốc
-- Track phiên bản via [`CHANGELOG.md`](.ai-agent-standards/CHANGELOG.md)
-
----
-
-## 📞 Tham chiếu Nhanh
-
-| Cần gì? | Tìm ở đây |
-|--------|----------|
-| Prompt mẫu | [`prompts/sample-use-cases/`](.ai-agent-standards/prompts/sample-use-cases/) |
-| Checklist reviewer | [`quality-control/code-review-checklist.md`](.ai-agent-standards/quality-control/code-review-checklist.md) |
-| Lỗi AI thường gặp | [`reference/error-reference-complete.md`](.ai-agent-standards/reference/error-reference-complete.md) |
-| Tracking metrics | [`metrics/tracking-template.csv`](.ai-agent-standards/metrics/tracking-template.csv) |
-| Training | [`onboarding/`](.ai-agent-standards/onboarding/) |
-| Escalation | [`risk-management/escalation-workflow.md`](.ai-agent-standards/risk-management/escalation-workflow.md) |
-
----
-
-## ✅ Verification Checklist
-
-Sau khi setup, kiểm tra:
-- [ ] Tất cả 8 subfolder được tạo
-- [ ] `.cursorrules` đã cấu hình cho tech stack của bạn
-- [ ] Đã commit vào Git
-- [ ] Kỹ sư mới đã đọc `onboarding/quick-reference.md`
-- [ ] Reviewer đã xem `quality-control/code-review-checklist.md`
-
----
-
-## 📝 License & Attribution
-
-Framework này dựa trên "Phương pháp luận AI Agent Coding" - Tài liệu Tiêu chuẩn Kỹ thuật.
-- **Tác giả tài liệu gốc:** Nguyễn Hoàng Thanh Tú
-- **Status:** ✓ Open framework cho team sử dụng & extend
-
----
-
-## 🔗 Liên kết Toàn bộ
-
-👉 **Chi tiết đầy đủ:** [`INDEX.md`](.ai-agent-standards/INDEX.md)
-
----
-
-**Câu hỏi? Xem:** [`onboarding/`](.ai-agent-standards/onboarding/) hoặc gửi feedback cho team lead.
-
-**Muốn extend framework? Cập nhật** [`CHANGELOG.md`](.ai-agent-standards/CHANGELOG.md) **và commit.**
-
----
-
-*Phiên bản này được kiểm duyệt & sẵn sàng sử dụng.*
+👉 [ai-agent-standards/INDEX.md](./ai-agent-standards/INDEX.md) — Complete file-by-file reference

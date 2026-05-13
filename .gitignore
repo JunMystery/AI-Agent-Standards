@@ -1,0 +1,40 @@
+# Exclude sensitive files from Git
+
+# API Keys & Credentials
+*.env
+*.env.local
+*.env.*.local
+.env*
+!.env.example
+
+# Secret files
+**/secrets/
+**/private/
+**/*.key
+**/*.pem
+**/*.pfx
+
+# Sensitive data
+*ai-failure-log-actual.md
+*metrics-actual.csv
+*tracking-*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node/Python
+node_modules/
+__pycache__/
+*.pyc
+
+# Temp
+*.tmp
+temp/
+.temp/
