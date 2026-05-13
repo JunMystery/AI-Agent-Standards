@@ -63,6 +63,15 @@ Find prompts by category & use case.
 
 ---
 
+## 📱 Mobile Development
+
+| Prompt | Purpose | Difficulty | Tech Stack |
+|--------|---------|-----------|-----------|
+| [`mobile-development-cookbook.md`](sample-use-cases/mobile-development-cookbook.md) | Safe mobile code generation (Android, iOS, cross-platform) | Intermediate | Kotlin, Swift, Flutter, React Native |
+| (Upcoming) | On-device ML / RAG for mobile | Advanced | - |
+
+---
+
 ## 📦 Architecture & Design
 
 | Prompt | Purpose | Difficulty | Tech Stack |
@@ -130,4 +139,4 @@ Listed in priority order for next releases:
 
 ---
 
-**Last updated:** 2026-05-13 | **Total prompts:** 6
+**Last updated:** 2026-05-13 | **Total prompts:** 7

@@ -2,6 +2,38 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [1.3.0] - 2026-05-13
+
+### Added (P0 — 12 Security Constraints)
+- **`security-constraints.md` v2.0** — Expanded from 6 to 12 non-negotiable constraints:
+  - Constraint 7: Secure Authentication & Authorization
+  - Constraint 8: Secure Cryptography
+  - Constraint 9: No Hallucinated Dependencies (Slopsquatting)
+  - Constraint 10: No Instruction File Poisoning
+  - Constraint 11: Infrastructure-as-Code Security
+  - Constraint 12: AI Agent Access Control & Tool Governance
+- **`scripts/security-audit.sh`** — Local/CI security scan covering all 12 constraints
+
+### Added (P1 — Mobile Development Cookbook)
+- **`prompts/sample-use-cases/mobile-development-cookbook.md`** — General mobile cookbook: Android, iOS, Flutter, React Native (PROMPT-007)
+- **Mobile Development** category in `prompts/indexed-by-category.md`
+
+### Added (Multi-Agent Expansion)
+- **`multi-agent/test-agent.md`** — Test Agent (writes tests independently, no production code changes)
+- **`multi-agent/documentation-agent.md`** — Documentation Agent (API docs, READMEs, changelogs)
+
+### Added (Developer Experience)
+- **`SKILL-REFERENCE.md`** — Quick lookup: which files to @reference per task type
+- **`SKILL-REFERENCE_VI.md`** — Vietnamese version with skill explanations
+
+### Changed
+- **All auto-discovery files** — Added security constraints + SKILL-REFERENCE references to: CLAUDE.md, GEMINI.md, COPILOT.md, .instructions.md, .cursorrules
+- **`ai-code-audit.yml`** — Added `security-scan` job running `scripts/security-audit.sh`
+- **`README.md`** — Updated repo structure, key files, version to 1.3.0
+- **`Development_doc_VI.md`** — Roadmap updated with all completed items
+
+---
+
 ## [1.2.0] - 2026-05-13
 
 ### Added (P0 — Prompt Engineering Cookbook)
@@ -11,12 +43,12 @@ Track versions and updates for the AI Agent Coding Standards framework.
 ### Added (P0 — Systematic Code Audit)
 - **`.github/pull_request_template.md`** — PR audit checklist with Zero-Trust, Simplicity, Two-Pair Eyes sections
 - **`.github/workflows/ai-code-audit.yml`** — Automated SAST quality gate (SonarCloud + dependency scan)
-- **Section 10: RAG Pipeline Audit** in `audit-ai-code-full.md` (retrieval quality, source grounding, fallback)
-- **Section 11: AI Output Safety Audit** in `audit-ai-code-full.md` (hallucination prevention, domain safety)
+- **Section 10: RAG Pipeline Audit** in `audit-ai-code-full.md`
+- **Section 11: AI Output Safety Audit** in `audit-ai-code-full.md`
 
 ### Added (P2 — Multi-Agent Orchestration)
-- **`multi-agent/coder-agent.md`** — Coder Agent system instructions (implementation only, no DB/env changes)
-- **`multi-agent/reviewer-agent.md`** — Reviewer Agent system instructions (audit & optimize, no new features)
+- **`multi-agent/coder-agent.md`** — Coder Agent (implementation only, no DB/env changes)
+- **`multi-agent/reviewer-agent.md`** — Reviewer Agent (audit & optimize, no new features)
 
 ### Changed
 - **`README.md`** — Updated to v1.2.0 with CI/CD, multi-agent, and expanded key files sections
@@ -88,7 +120,7 @@ Track versions and updates for the AI Agent Coding Standards framework.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
-| 1.2.0 | 2026-05-13 | P0 Cookbook + Audit, CI/CD pipeline, Multi-Agent orchestration | ✓ Released |
+| 1.3.0 | 2026-05-13 | 12 Security Constraints, 4-Agent Architecture, Mobile Cookbook, Skill Reference, CI/CD hardening | ✓ Released |
 | 1.1.0 | 2026-05-13 | Karpathy Skills Integration, English conversion, auto-discovery files | ✓ Released |
 | 1.0.0 | 2026-05-12 | Initial release | ✓ Released |
 

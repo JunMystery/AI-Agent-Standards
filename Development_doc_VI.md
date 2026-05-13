@@ -269,10 +269,14 @@ Nhằm đảm bảo kỹ sư mới nhanh chóng làm chủ phương pháp, xây 
 |----------|-------------|-----------|----------|
 | **Prompt Engineering Cookbook** | P0 (Cao) | ✅ Hoàn thành | [`rag-implementation-cookbook.md`](./prompts/sample-use-cases/rag-implementation-cookbook.md) |
 | **Systematic Code Audit Checklist** | P0 | ✅ Hoàn thành | Mở rộng [`audit-ai-code-full.md`](./quality-control/audit-ai-code-full.md) (11 sections) + [PR Template](../.github/pull_request_template.md) + [CI/CD Gate](../.github/workflows/ai-code-audit.yml) |
-| **AI-Native Design Patterns** | P1 (Trung bình) | ⏳ Chờ nghiên cứu | Kiến trúc phần mềm tối ưu khi phát triển cùng AI |
+| **12 Security Constraints** | P0 | ✅ Hoàn thành | Mở rộng [`security-constraints.md`](./risk-management/security-constraints.md) (v2.0, 12 ràng buộc) |
+| **Security Audit Script + CI/CD** | P0 | ✅ Hoàn thành | [`scripts/security-audit.sh`](../scripts/security-audit.sh) + tích hợp vào [`ai-code-audit.yml`](../.github/workflows/ai-code-audit.yml) |
+| **Auto-Discovery Files Update** | P0 | ✅ Hoàn thành | Cập nhật 6 files: CLAUDE.md, GEMINI.md, COPILOT.md, .instructions.md, .cursorrules, .cursor/rules |
+| **Cookbook Mobile Development** | P1 (Trung bình) | ✅ Hoàn thành | [`mobile-development-cookbook.md`](./prompts/sample-use-cases/mobile-development-cookbook.md) (PROMPT-007) |
+| **AI-Native Design Patterns** | P1 | ⏳ Chờ nghiên cứu | Kiến trúc phần mềm tối ưu khi phát triển cùng AI |
 | **Kế hoạch Phục hồi Thảm họa (Disaster Recovery)** | P1 | ⏳ Chờ nghiên cứu | Chiến lược Rollback nâng cao |
 | **Phân tích Hiệu quả Đầu tư (Cost-Benefit Analysis)** | P1 | ⏳ Chờ nghiên cứu | Đánh giá triển khai quy mô team |
-| **Multi-Agent Orchestration Framework** | P2 (Thấp) | ✅ Hoàn thành (v1) | [`coder-agent.md`](./multi-agent/coder-agent.md) + [`reviewer-agent.md`](./multi-agent/reviewer-agent.md) |
+| **Multi-Agent Orchestration Framework** | P2 (Thấp) | ✅ Hoàn thành (v2) | 4 agents: [`coder`](./multi-agent/coder-agent.md) + [`test`](./multi-agent/test-agent.md) + [`reviewer`](./multi-agent/reviewer-agent.md) + [`docs`](./multi-agent/documentation-agent.md) |
 
 ### 6.2. Phụ lục A: Cookbook Tình huống Điển hình
 **Ví dụ 1: Xây dựng API login có rate limiting**

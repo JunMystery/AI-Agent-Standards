@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 1.2.0 | **Release:** 2026-05-13 | **Language:** English | **Status:** ✓ Production Ready
+**Version:** 1.3.0 | **Release:** 2026-05-13 | **Language:** English | **Status:** ✓ Production Ready
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **Karpathy Principles**. Includes CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -22,7 +22,11 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Agent-Coding Standards v1.1** with Karpathy Principles active.
+> ✅ **AI-Agent-Coding Standards v1.3** with Karpathy Principles active.
+
+### 3. Use Skills
+
+See [SKILL-REFERENCE.md](./SKILL-REFERENCE.md) — quick lookup for which files to `@reference` based on your task type.
 
 ---
 
@@ -81,21 +85,27 @@ AI-Agent-Coding/
 │   ├── INDEX.md                 → Complete file index
 │   ├── CHANGELOG.md             → Version history
 │   ├── onboarding/              → Training & quick reference
-│   ├── prompts/                 → Prompt templates & 6 sample use cases
+│   ├── prompts/                 → Prompt templates & 7 sample use cases
 │   ├── quality-control/         → Review checklists, audit (11 sections)
-│   ├── risk-management/         → Security constraints, escalation
+│   ├── risk-management/         → 12 security constraints (v2.0)
 │   ├── metrics/                 → KPIs & tracking templates
 │   ├── reference/               → Glossary, error reference
 │   ├── templates/               → Project templates
-│   └── multi-agent/             → Coder Agent & Reviewer Agent
+│   └── multi-agent/             → 4 Agents: Coder, Test, Reviewer, Docs
 │
 │ ── CI/CD AUTOMATION ──
 ├── .github/
 │   ├── pull_request_template.md → Systematic Audit Checklist for PRs
 │   └── workflows/
-│       └── ai-code-audit.yml    → SAST quality gate (SonarCloud)
+│       └── ai-code-audit.yml    → SAST quality gate (SonarCloud + 12-constraint scan)
+│
+│ ── AUTOMATION SCRIPTS ──
+├── scripts/
+│   └── security-audit.sh        → Local security scan (all 12 constraints)
 │
 │ ── ROOT FILES ──
+├── SKILL-REFERENCE.md           → Quick lookup: which files to @reference
+├── SKILL-REFERENCE_VI.md        → Same, Vietnamese with explanations
 ├── INSTALL.md                   → Installation guide (1 step)
 ├── README.md                    → This file
 └── Development_doc_VI.md        → Original methodology (Vietnamese)
@@ -136,8 +146,10 @@ AI-Agent-Coding/
 ### For Multi-Agent Setup
 | File | Purpose |
 |------|---------|
-| [multi-agent/coder-agent.md](./ai-agent-standards/multi-agent/coder-agent.md) | Coder Agent instructions (implementation only) |
-| [multi-agent/reviewer-agent.md](./ai-agent-standards/multi-agent/reviewer-agent.md) | Reviewer Agent instructions (audit & optimize only) |
+| [multi-agent/coder-agent.md](./ai-agent-standards/multi-agent/coder-agent.md) | Coder Agent — implementation only, no DB/env changes |
+| [multi-agent/test-agent.md](./ai-agent-standards/multi-agent/test-agent.md) | Test Agent — writes tests independently, no production code changes |
+| [multi-agent/reviewer-agent.md](./ai-agent-standards/multi-agent/reviewer-agent.md) | Reviewer Agent — security audit & optimization, no new features |
+| [multi-agent/documentation-agent.md](./ai-agent-standards/multi-agent/documentation-agent.md) | Documentation Agent — API docs, READMEs, changelogs |
 
 ---
 
@@ -183,7 +195,7 @@ Track AI-assisted development effectiveness:
 
 ## 📝 Attribution
 
-- **Methodology:** JunMystery — [AI Agent Coding.md](./AI%20Agent%20Coding.md)
+- **Methodology:** JunMystery — [Development_doc_VI.md](./Development_doc_VI.md)
 - **Karpathy Principles:** Based on [Andrej Karpathy's post](https://x.com/karpathy/status/2015883857489522876), adapted from [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [@forrestchang](https://github.com/forrestchang) (MIT License)
 - **Status:** ✓ Open framework — use & extend freely
 

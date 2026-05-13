@@ -38,3 +38,5 @@ __pycache__/
 *.tmp
 temp/
 .temp/
+
+implementation_plan.md

@@ -1,8 +1,10 @@
-# AI-Agent-Coding Standards v1.1 — Cursor/Windsurf Rules
+# AI-Agent-Coding Standards v1.3 — Cursor/Windsurf Rules
 #
 # These rules apply the Karpathy Principles to all AI-assisted coding.
 # For detailed documentation, see: karpathy/principles.md
 # For examples: karpathy/examples.md
+# For 12 security constraints: ai-agent-standards/risk-management/security-constraints.md
+# For skill reference by task type: SKILL-REFERENCE.md
 
 ## Core Principles (Non-Negotiable)
 
@@ -42,6 +44,6 @@ After completing code, include:
 ## Verification
 
 When asked "What coding standards are you following?" or "/standards", respond:
-> AI-Agent-Coding Standards v1.1 with Karpathy Principles active.
+> AI-Agent-Coding Standards v1.3 with Karpathy Principles active.
 > Framework: Controlled AI-Assisted Development
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution
