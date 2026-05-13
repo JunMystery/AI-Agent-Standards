@@ -2,6 +2,28 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [1.2.0] - 2026-05-13
+
+### Added (P0 — Prompt Engineering Cookbook)
+- **`prompts/sample-use-cases/rag-implementation-cookbook.md`** — RAG pipeline prompt for safe medical data retrieval (PROMPT-006)
+- **RAG / AI Pipeline** category in `prompts/indexed-by-category.md`
+
+### Added (P0 — Systematic Code Audit)
+- **`.github/pull_request_template.md`** — PR audit checklist with Zero-Trust, Simplicity, Two-Pair Eyes sections
+- **`.github/workflows/ai-code-audit.yml`** — Automated SAST quality gate (SonarCloud + dependency scan)
+- **Section 10: RAG Pipeline Audit** in `audit-ai-code-full.md` (retrieval quality, source grounding, fallback)
+- **Section 11: AI Output Safety Audit** in `audit-ai-code-full.md` (hallucination prevention, domain safety)
+
+### Added (P2 — Multi-Agent Orchestration)
+- **`multi-agent/coder-agent.md`** — Coder Agent system instructions (implementation only, no DB/env changes)
+- **`multi-agent/reviewer-agent.md`** — Reviewer Agent system instructions (audit & optimize, no new features)
+
+### Changed
+- **`README.md`** — Updated to v1.2.0 with CI/CD, multi-agent, and expanded key files sections
+- **`Development_doc_VI.md`** — Roadmap updated with P0/P2 completion status and deliverable links
+
+---
+
 ## [1.1.0] - 2026-05-13
 
 ### Added
@@ -66,6 +88,7 @@ Track versions and updates for the AI Agent Coding Standards framework.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
+| 1.2.0 | 2026-05-13 | P0 Cookbook + Audit, CI/CD pipeline, Multi-Agent orchestration | ✓ Released |
 | 1.1.0 | 2026-05-13 | Karpathy Skills Integration, English conversion, auto-discovery files | ✓ Released |
 | 1.0.0 | 2026-05-12 | Initial release | ✓ Released |
 

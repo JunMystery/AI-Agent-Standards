@@ -240,6 +240,50 @@ grep -r "className" src/  # Verify file exists
 
 ---
 
+### 🔟 RAG Pipeline Audit
+
+#### Retrieval Quality
+- [ ] Embedding model specified and version-pinned?
+- [ ] Vector DB query includes similarity threshold?
+- [ ] Chunk size appropriate for domain (not too large/small)?
+- [ ] Top-K results reasonable (not returning entire DB)?
+- [ ] Retrieval latency acceptable (< target SLA)?
+
+#### Source Grounding
+- [ ] Every generated response cites source documents?
+- [ ] Citations include verifiable references (doc name, page)?
+- [ ] No fabricated citations (source documents actually exist)?
+- [ ] Context window not exceeded by retrieved documents?
+
+#### Fallback Handling
+- [ ] Empty retrieval results trigger safe fallback (not LLM generation)?
+- [ ] Fallback message is a constant string (not AI-generated)?
+- [ ] Failed queries logged for analysis?
+- [ ] Low-confidence results flagged or disclaimed?
+
+---
+
+### 1️⃣1️⃣ AI Output Safety Audit
+
+#### Hallucination Prevention
+- [ ] LLM temperature set low (≤ 0.3) for factual domains?
+- [ ] System prompt explicitly forbids fabrication?
+- [ ] Output validated against retrieved sources?
+- [ ] Confidence score calculated and exposed in response?
+
+#### Domain-Specific Safety
+- [ ] Medical/legal/financial disclaimers present where needed?
+- [ ] No diagnosis, treatment, or legal advice generated?
+- [ ] PII redacted from logs and responses?
+- [ ] Content moderation applied to user inputs?
+
+#### Output Boundaries
+- [ ] Response length bounded (max tokens)?
+- [ ] Structured output format enforced (JSON/Pydantic)?
+- [ ] Error responses don't leak internal system details?
+
+---
+
 ## 📊 Severity Scale
 
 | Level | Definition | Action |
@@ -296,6 +340,8 @@ grep -r "className" src/  # Verify file exists
 3. Input validation (sanitized?)
 4. N+1 queries (loop + query?)
 5. Test coverage (>= 80%?)
+6. RAG fallback (empty results handled?)
+7. AI output grounded (sources cited?)
 
 ---
 
@@ -307,4 +353,4 @@ grep -r "className" src/  # Verify file exists
 
 ---
 
-**Audit Checklist Version:** 1.0 | **Last Updated:** 2026-05-12
+**Audit Checklist Version:** 1.1 | **Last Updated:** 2026-05-13

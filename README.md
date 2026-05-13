@@ -1,6 +1,8 @@
 # AI Agent Coding Standards
 
-A **drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices. Just copy into your project root — agents auto-detect the instruction files.
+**Version:** 1.2.0 | **Release:** 2026-05-13 | **Language:** English | **Status:** ✓ Production Ready
+
+A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **Karpathy Principles**. Includes CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
 > **Core philosophy:** AI is a tool, not a decision-maker. Engineers retain authority over architecture, security, and production decisions.
 
@@ -77,20 +79,26 @@ AI-Agent-Coding/
 │ ── FRAMEWORK DOCUMENTATION ──
 ├── ai-agent-standards/
 │   ├── INDEX.md                 → Complete file index
-│   ├── principles/              → Detailed Karpathy framework
+│   ├── CHANGELOG.md             → Version history
 │   ├── onboarding/              → Training & quick reference
-│   ├── prompts/                 → Prompt templates & examples
-│   ├── quality-control/         → Review checklists & audit
-│   ├── risk-management/         → Security, escalation, failure logs
-│   ├── metrics/                 → KPIs & tracking
+│   ├── prompts/                 → Prompt templates & 6 sample use cases
+│   ├── quality-control/         → Review checklists, audit (11 sections)
+│   ├── risk-management/         → Security constraints, escalation
+│   ├── metrics/                 → KPIs & tracking templates
+│   ├── reference/               → Glossary, error reference
 │   ├── templates/               → Project templates
-│   └── multi-agent/             → Multi-agent roadmap (P2)
+│   └── multi-agent/             → Coder Agent & Reviewer Agent
+│
+│ ── CI/CD AUTOMATION ──
+├── .github/
+│   ├── pull_request_template.md → Systematic Audit Checklist for PRs
+│   └── workflows/
+│       └── ai-code-audit.yml    → SAST quality gate (SonarCloud)
 │
 │ ── ROOT FILES ──
-├── AI Agent Coding.md           → Original methodology document
-├── INSTALL.md                   → Installation guide
+├── INSTALL.md                   → Installation guide (1 step)
 ├── README.md                    → This file
-└── .gitignore
+└── Development_doc_VI.md        → Original methodology (Vietnamese)
 ```
 
 ---
@@ -116,6 +124,20 @@ AI-Agent-Coding/
 |------|---------|
 | [ai-agent-standards/prompts/PROMPT-TEMPLATE.md](./ai-agent-standards/prompts/PROMPT-TEMPLATE.md) | Standard prompt structure |
 | [ai-agent-standards/prompts/sample-use-cases/](./ai-agent-standards/prompts/sample-use-cases/) | Real-world prompt examples |
+
+### For Security & Risk
+| File | Purpose |
+|------|---------|
+| [risk-management/security-constraints.md](./ai-agent-standards/risk-management/security-constraints.md) | 6 non-negotiable security rules |
+| [risk-management/escalation-workflow.md](./ai-agent-standards/risk-management/escalation-workflow.md) | When & how to escalate AI failures |
+| [.github/pull_request_template.md](./.github/pull_request_template.md) | PR audit checklist (Zero-Trust, Two-Pair Eyes) |
+| [.github/workflows/ai-code-audit.yml](./.github/workflows/ai-code-audit.yml) | Automated SAST quality gate |
+
+### For Multi-Agent Setup
+| File | Purpose |
+|------|---------|
+| [multi-agent/coder-agent.md](./ai-agent-standards/multi-agent/coder-agent.md) | Coder Agent instructions (implementation only) |
+| [multi-agent/reviewer-agent.md](./ai-agent-standards/multi-agent/reviewer-agent.md) | Reviewer Agent instructions (audit & optimize only) |
 
 ---
 

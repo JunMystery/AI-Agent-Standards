@@ -66,6 +66,18 @@ Ngành công nghiệp phần mềm đang chứng kiến sự phân hóa rõ rệ
 - **Khước từ phương pháp “Vibe Code”:** Không được phép sao chép trực tiếp (copy-paste) mã nguồn do AI sinh ra vào dự án nếu chưa trải qua thẩm định (code review) và hiểu rõ luồng logic.
 - **Định vị giá trị cốt lõi:** Năng lực của kỹ sư hệ thống được định hình bởi khả năng kiểm soát quy trình, chứ không phải tốc độ gõ mã nguồn.
 
+### 1.3. Nền tảng hành vi: 4 Nguyên tắc Karpathy
+Phiên bản 1.1.0 tích hợp 4 nguyên tắc lập trình của Andrej Karpathy làm nền tảng hành vi bắt buộc cho mọi AI Agent:
+
+| # | Nguyên tắc | Mô tả | Ngăn chặn |
+|---|-----------|-------|-----------|
+| 1 | **Think Before Coding** | Nêu rõ giả định, trình bày các phương án, hỏi khi không rõ | Code sai hướng |
+| 2 | **Simplicity First** | Code tối thiểu, không tính năng suy đoán | Over-engineering |
+| 3 | **Surgical Changes** | Chỉ sửa đúng phần cần thiết, giữ style hiện có | Scope creep |
+| 4 | **Goal-Driven Execution** | Định nghĩa tiêu chí thành công có thể kiểm chứng | Kết quả mơ hồ |
+
+Tài liệu nguồn: `karpathy/principles.md` (source of truth) và `karpathy/examples.md` (ví dụ thực tế).
+
 ---
 
 ## PHẦN II: CHUẨN BỊ MÔI TRƯỜNG VÀ CẤU HÌNH
@@ -79,7 +91,20 @@ Ngành công nghiệp phần mềm đang chứng kiến sự phân hóa rõ rệ
 
 ### 2.2. Tiêu chuẩn hóa Ngữ cảnh & Cấu hình (Context Management)
 - **Quản trị Bộ nhớ Ngữ cảnh:** Thay vì đính kèm toàn bộ dự án làm giảm độ chính xác của AI, kỹ sư chỉ cung cấp các tệp tin (files) liên quan trực tiếp đến luồng xử lý, đi kèm định nghĩa cấu trúc (schema/interfaces) và tài liệu API.
-- **Tệp Cấu hình Hệ thống (.cursorrules / System Instructions):** Khởi tạo tệp cấu hình tại thư mục gốc của dự án, bắt buộc đưa vào Git. Nội dung định nghĩa rõ: framework sử dụng, tiêu chuẩn định dạng log, quy tắc định danh (naming convention), cách thức xử lý lỗi đặc thù của dự án.
+- **Tệp Cấu hình Hệ thống (Auto-Discovery):** Framework sử dụng cơ chế **zero-config** — mỗi AI tool tự động nhận diện instruction file tương ứng tại thư mục gốc dự án:
+
+  | Công cụ AI | File tự nhận diện |
+  |------------|-------------------|
+  | Claude Code | `CLAUDE.md` |
+  | Gemini Code Assist / CLI | `GEMINI.md` |
+  | GitHub Copilot | `COPILOT.md` |
+  | VS Code Copilot | `.instructions.md` |
+  | Cursor | `.cursor/rules/*.mdc` + `.cursorrules` |
+  | Windsurf | `.cursorrules` + `.instructions.md` |
+
+  Quy trình sử dụng: (1) Copy repo vào project root → (2) Mở project bằng AI tool → (3) Agent tự nhận diện → (4) Xác minh bằng lệnh `/standards`.
+
+- **Ngôn ngữ tài liệu:** Toàn bộ tài liệu framework trong `ai-agent-standards/` sử dụng **Tiếng Anh 100%** để đảm bảo mọi AI Agent đọc được chính xác. Tài liệu phương pháp luận gốc (Tiếng Việt) được giữ tại `Development_doc_VI.md`.
 
 ### 2.3. Quản trị Thư viện Prompt và Kiểm soát Phiên bản
 Để đảm bảo tính nhất quán và tái sử dụng, mỗi dự án cần duy trì một thư viện prompt chuẩn hóa:
@@ -240,14 +265,14 @@ Nhằm đảm bảo kỹ sư mới nhanh chóng làm chủ phương pháp, xây 
 ## PHẦN VI: LỘ TRÌNH PHÁT TRIỂN & PHỤ LỤC
 
 ### 6.1. Hạng mục Chờ nghiên cứu (Living Document Placeholders)
-| Hạng mục | Mức ưu tiên | Mục tiêu dự kiến |
-|----------|-------------|------------------|
-| **Prompt Engineering Cookbook** | P0 (Cao) | Bộ mẫu prompt chuẩn cho Cache, Security, Image Processing, Transaction… |
-| **Systematic Code Audit Checklist** | P0 | Bảng tham chiếu đầy đủ để audit mã AI (bản nâng cao của Phụ lục B) |
-| **AI-Native Design Patterns** | P1 (Trung bình) | Kiến trúc phần mềm tối ưu khi phát triển cùng AI, đặc biệt trong kiến trúc microservices |
-| **Kế hoạch Phục hồi Thảm họa (Disaster Recovery)** | P1 | Chiến lược Rollback nâng cao và tự động hóa khôi phục từ checkpoint |
-| **Phân tích Hiệu quả Đầu tư (Cost-Benefit Analysis)** | P1 | Đánh giá triển khai quy mô team, bao gồm dữ liệu chi phí và năng suất |
-| **Multi-Agent Orchestration Framework** | P2 (Thấp) | Quy định phối hợp nhiều agent (xem Phụ lục E) |
+| Hạng mục | Mức ưu tiên | Trạng thái | Sản phẩm |
+|----------|-------------|-----------|----------|
+| **Prompt Engineering Cookbook** | P0 (Cao) | ✅ Hoàn thành | [`rag-implementation-cookbook.md`](./prompts/sample-use-cases/rag-implementation-cookbook.md) |
+| **Systematic Code Audit Checklist** | P0 | ✅ Hoàn thành | Mở rộng [`audit-ai-code-full.md`](./quality-control/audit-ai-code-full.md) (11 sections) + [PR Template](../.github/pull_request_template.md) + [CI/CD Gate](../.github/workflows/ai-code-audit.yml) |
+| **AI-Native Design Patterns** | P1 (Trung bình) | ⏳ Chờ nghiên cứu | Kiến trúc phần mềm tối ưu khi phát triển cùng AI |
+| **Kế hoạch Phục hồi Thảm họa (Disaster Recovery)** | P1 | ⏳ Chờ nghiên cứu | Chiến lược Rollback nâng cao |
+| **Phân tích Hiệu quả Đầu tư (Cost-Benefit Analysis)** | P1 | ⏳ Chờ nghiên cứu | Đánh giá triển khai quy mô team |
+| **Multi-Agent Orchestration Framework** | P2 (Thấp) | ✅ Hoàn thành (v1) | [`coder-agent.md`](./multi-agent/coder-agent.md) + [`reviewer-agent.md`](./multi-agent/reviewer-agent.md) |
 
 ### 6.2. Phụ lục A: Cookbook Tình huống Điển hình
 **Ví dụ 1: Xây dựng API login có rate limiting**
@@ -285,17 +310,36 @@ Khi AI hoàn thành bước Self-Check, nó sẽ xuất ra một báo cáo như 
 - **Ghi chú:** Không import thư viện lạ, đã kiểm tra docs. Đề xuất thêm unit test cho edge case 500 request trong 1 phút.
 ```
 
-### 6.5. Phụ lục D: Cấu trúc Thư viện Prompt Mẫu
+### 6.5. Phụ lục D: Cấu trúc Repository & Thư viện Prompt
 ```
 project-root/
-├── prompts/
-│   ├── README.md                  # Hướng dẫn sử dụng
-│   ├── create-api.md
-│   ├── refactor-cache.md
-│   ├── generate-unit-test.md
-│   └── ...
-├── .cursorrules
-└── ...
+│
+│ ── AUTO-DISCOVERY (AI tự nhận diện) ──
+├── CLAUDE.md / GEMINI.md / COPILOT.md
+├── .instructions.md / .cursorrules
+├── .cursor/rules/
+│
+│ ── KARPATHY PRINCIPLES ──
+├── karpathy/
+│   ├── principles.md              → 4 nguyên tắc (source of truth)
+│   └── examples.md                → Anti-patterns & cách đúng
+│
+│ ── FRAMEWORK (100% English) ──
+├── ai-agent-standards/
+│   ├── onboarding/                → Đào tạo, quick reference
+│   ├── prompts/                   → Prompt templates & 5 use cases mẫu
+│   │   ├── PROMPT-TEMPLATE.md     → Khuôn mẫu chuẩn
+│   │   ├── indexed-by-category.md → Tra cứu theo danh mục
+│   │   └── sample-use-cases/      → Ví dụ thực tế
+│   ├── quality-control/           → Review checklists, audit, CI/CD gates
+│   ├── risk-management/           → Security, escalation, failure logs
+│   ├── metrics/                   → KPIs & tracking
+│   ├── reference/                 → Glossary, error reference
+│   └── multi-agent/               → Lộ trình P2
+│
+├── INSTALL.md                     → Hướng dẫn cài đặt (1 bước)
+├── README.md                      → Tài liệu chính (English)
+└── Development_doc_VI.md          → Tài liệu phương pháp luận (Vietnamese)
 ```
 Mỗi tệp prompt phải tuân thủ mẫu header YAML (đã nêu ở 2.3) và chứa đầy đủ các phần Context, Task, Constraints, Output Format theo khuôn mẫu 3.2.
 

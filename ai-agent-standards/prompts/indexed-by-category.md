@@ -54,6 +54,15 @@ Find prompts by category & use case.
 
 ---
 
+## 🧠 RAG / AI Pipeline
+
+| Prompt | Purpose | Difficulty | Tech Stack |
+|--------|---------|-----------|-----------|
+| [`rag-implementation-cookbook.md`](sample-use-cases/rag-implementation-cookbook.md) | Safe RAG pipeline for medical data retrieval | Intermediate | Python, LangChain, ChromaDB |
+| (Upcoming) | Multi-modal RAG (text + images) | Advanced | - |
+
+---
+
 ## 📦 Architecture & Design
 
 | Prompt | Purpose | Difficulty | Tech Stack |
@@ -121,4 +130,4 @@ Listed in priority order for next releases:
 
 ---
 
-**Last updated:** 2026-05-12 | **Total prompts:** 5
+**Last updated:** 2026-05-13 | **Total prompts:** 6
