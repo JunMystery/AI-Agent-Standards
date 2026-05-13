@@ -22,7 +22,7 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Agent-Coding Standards v1.3** with Karpathy Principles active.
+> ✅ **AI-Coding-Standards Standards v1.3** with Karpathy Principles active.
 
 ### 3. Use Skills
 
@@ -65,7 +65,7 @@ Each file contains the 4 Karpathy Principles, role definitions, and a **verifica
 ## 📁 Repository Structure
 
 ```
-AI-Agent-Coding/
+AI-Coding-Standards/
 │
 │ ── AUTO-DISCOVERY FILES (AI agents read these) ──
 ├── CLAUDE.md                    → Claude Code

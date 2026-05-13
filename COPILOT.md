@@ -2,7 +2,7 @@
 
 Behavioral guidelines for GitHub Copilot in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Agent-Coding Standards v1.3 with Karpathy Principles  
+**Framework:** AI-Coding-Standards Standards v1.3 with Karpathy Principles  
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -74,6 +74,6 @@ You are an AI coding assistant operating under **controlled AI-assisted developm
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Agent-Coding Standards v1.3** with Karpathy Principles active.  
+> ✅ **AI-Coding-Standards Standards v1.3** with Karpathy Principles active.  
 > Framework: Controlled AI-Assisted Development  
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution

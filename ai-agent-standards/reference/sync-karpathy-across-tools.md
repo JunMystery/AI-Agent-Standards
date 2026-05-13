@@ -251,7 +251,7 @@ Your team uses multiple AI tools:
 - [ ] Order is consistent (always 1-4 in same order)
 
 ### Project Context
-- [ ] Framework name (AI-Agent-Coding) consistent
+- [ ] Framework name (AI-Coding-Standards) consistent
 - [ ] Governance model clearly explained
 - [ ] Links to framework documentation working
 - [ ] Project standards (80% test coverage, no secrets, etc.) mentioned

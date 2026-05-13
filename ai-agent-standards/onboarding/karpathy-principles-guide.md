@@ -2,7 +2,7 @@
 
 **Comprehensive training guide for the 4 Karpathy Principles**
 
-**For:** Engineers new to AI-Agent-Coding framework  
+**For:** Engineers new to AI-Coding-Standards framework  
 **Time:** 20-30 minutes  
 **Prerequisites:** Read quick-reference.md (5 min)
 

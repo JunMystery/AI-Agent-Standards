@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================================
-# AI-Agent-Coding — Security Audit Script
+# AI-Coding-Standards — Security Audit Script
 # ============================================================================
 # Runs all 12 security constraint checks locally or in CI/CD.
 # Each tool is optional — skips gracefully if not installed.

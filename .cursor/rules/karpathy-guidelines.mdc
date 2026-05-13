@@ -7,7 +7,7 @@ alwaysApply: true
 
 Behavioral guidelines to reduce common LLM coding mistakes. Derived from Andrej Karpathy's observations on LLM coding pitfalls.
 
-**Framework:** AI-Agent-Coding Standards v1.1 with Karpathy Principles
+**Framework:** AI-Coding-Standards Standards v1.1 with Karpathy Principles
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
 ## 1. Think Before Coding
@@ -70,4 +70,4 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
-**Verification:** When asked "What coding standards are you following?" or "/standards", respond: "AI-Agent-Coding Standards v1.1 with Karpathy Principles active."
+**Verification:** When asked "What coding standards are you following?" or "/standards", respond: "AI-Coding-Standards Standards v1.1 with Karpathy Principles active."

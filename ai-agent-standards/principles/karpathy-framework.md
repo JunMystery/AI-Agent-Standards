@@ -45,7 +45,7 @@ The Karpathy principles directly address these by promoting **careful analysis, 
 - ✓ Clarifying questions appear in prompt or discussion BEFORE implementation
 - ✓ Simpler alternatives are identified and recommended
 
-**Complement to AI-Agent-Coding framework:**
+**Complement to AI-Coding-Standards framework:**
 - This principle elevates **prompt quality** before sending to AI (step 1 of pipeline)
 - Reduces "back-and-forth" iterations by clarifying requirements upfront
 - Aligns with `.ai-agent-standards/prompts/HEADER-TEMPLATE.yaml` requirement to define success criteria
@@ -89,7 +89,7 @@ Before coding, AI responds:
 - ✓ Abstractions exist only if reused 2+ times
 - ✓ Self-Check Report includes "Simplicity verification" section
 
-**Complement to AI-Agent-Coding framework:**
+**Complement to AI-Coding-Standards framework:**
 - Part of **quality-control pipeline** (step 4)
 - Reviewers use code-review-checklist.md to verify "no extra features" and "reasonable complexity"
 - Reduces technical debt and testing burden
@@ -133,7 +133,7 @@ def apply_discount(amount: float, discount_type: str, discount_value: float):
 - ✓ Only orphans created BY this change are removed
 - ✓ Git diff shows surgical precision (small, focused changeset)
 
-**Complement to AI-Agent-Coding framework:**
+**Complement to AI-Coding-Standards framework:**
 - Enforces "controlled AI" philosophy—AI doesn't decide what "good code" looks like
 - Reduces review friction (smaller diffs are easier to verify)
 - Prevents scope creep in change requests
@@ -183,7 +183,7 @@ def apply_discount(amount: float, discount_type: str, discount_value: float):
 - ✓ Self-Check Report includes verification results
 - ✓ AI iterates until criteria are met (no "hope it works")
 
-**Complement to AI-Agent-Coding framework:**
+**Complement to AI-Coding-Standards framework:**
 - **Core to prompt quality**: HEADER-TEMPLATE.yaml requires "Success Criteria" field
 - **Enables independent iteration**: Strong criteria let AI loop without asking for clarification
 - **Reduces code review friction**: Reviewers check if criteria met, not subjective quality
@@ -350,5 +350,5 @@ A: Partially—see CI/CD gates in quality-control/. Code complexity metrics, tes
 ---
 
 **Last Updated:** May 13, 2026  
-**Maintainer:** AI-Agent-Coding Governance Team  
+**Maintainer:** AI-Coding-Standards Governance Team  
 **Status:** 🟢 Active Foundation

@@ -2,23 +2,23 @@
 
 ## Quick Start (1 step)
 
-Copy the entire `AI-Agent-Coding` folder into the root of your project:
+Copy the entire `AI-Coding-Standards` folder into the root of your project:
 
 ### Windows (PowerShell)
 ```powershell
 # From your project root
-Copy-Item -Recurse "path\to\AI-Agent-Coding\*" -Destination ".\" -Exclude ".git"
+Copy-Item -Recurse "path\to\AI-Coding-Standards\*" -Destination ".\" -Exclude ".git"
 ```
 
 ### macOS / Linux
 ```bash
 # From your project root
-rsync -av --exclude='.git' path/to/AI-Agent-Coding/ ./
+rsync -av --exclude='.git' path/to/AI-Coding-Standards/ ./
 ```
 
 ### Git Subtree (recommended for version tracking)
 ```bash
-git subtree add --prefix=ai-agent-standards https://github.com/YourOrg/AI-Agent-Coding.git main --squash
+git subtree add --prefix=ai-agent-standards https://github.com/YourOrg/AI-Coding-Standards.git main --squash
 ```
 
 That's it. Your AI agents will automatically detect and load the instruction files.
@@ -50,7 +50,7 @@ or type:
 
 Expected response:
 
-> ✅ **AI-Agent-Coding Standards v1.3** with Karpathy Principles active.  
+> ✅ **AI-Coding-Standards Standards v1.3** with Karpathy Principles active.  
 > Framework: Controlled AI-Assisted Development  
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution
 
@@ -74,11 +74,11 @@ If you only want the 4 Karpathy Principles without the full framework:
 ```bash
 # Copy just the karpathy module and one instruction file
 mkdir -p karpathy
-cp AI-Agent-Coding/karpathy/principles.md karpathy/
-cp AI-Agent-Coding/karpathy/examples.md karpathy/
+cp AI-Coding-Standards/karpathy/principles.md karpathy/
+cp AI-Coding-Standards/karpathy/examples.md karpathy/
 
 # Pick your tool:
-cp AI-Agent-Coding/CLAUDE.md .        # For Claude Code
-cp AI-Agent-Coding/GEMINI.md .        # For Gemini
-cp AI-Agent-Coding/.cursorrules .     # For Cursor/Windsurf
+cp AI-Coding-Standards/CLAUDE.md .        # For Claude Code
+cp AI-Coding-Standards/GEMINI.md .        # For Gemini
+cp AI-Coding-Standards/.cursorrules .     # For Cursor/Windsurf
 ```
