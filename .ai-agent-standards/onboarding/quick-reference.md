@@ -4,6 +4,38 @@
 
 ---
 
+## 🚀 Karpathy Principles (Core Philosophy)
+
+**Apply these 4 principles to EVERY AI task — they prevent 80% of common mistakes.**
+
+### 1️⃣ **Think Before Coding**
+- State assumptions explicitly before coding starts
+- If request is ambiguous, present multiple interpretations
+- Ask questions BEFORE implementing
+- Don't pick one silent answer
+
+### 2️⃣ **Simplicity First**  
+- Minimum code solving the problem
+- No extra features, no speculative abstractions
+- No "flexibility" that wasn't requested
+- If you write 200 lines, could it be 50? Simplify.
+
+### 3️⃣ **Surgical Changes**
+- Touch ONLY what you must
+- Match existing style—don't "improve"
+- Clean up only YOUR OWN mess
+- Every changed line traces to the request
+
+### 4️⃣ **Goal-Driven Execution**
+- Define success criteria upfront (not "make it work")
+- Write tests BEFORE coding
+- Verify success before submitting
+- Iterate until criteria met
+
+💡 **Detailed guide:** See [karpathy-framework.md](../principles/karpathy-framework.md)
+
+---
+
 ## 🎯 7-Step Pipeline
 
 ```

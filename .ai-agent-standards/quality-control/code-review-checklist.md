@@ -4,6 +4,43 @@
 
 ---
 
+## 🎯 Karpathy Principles Validation (Check First!)
+
+**These 4 principles prevent 80% of AI coding mistakes. Validate all before approving.**
+
+### Principle 1: Think Before Coding ✓
+- [ ] Were assumptions stated explicitly in the prompt?
+- [ ] If multiple interpretations existed, were all presented?
+- [ ] Success criteria were defined upfront (not vague)?
+- [ ] No "creative reinterpretation" of the request?
+- [ ] **→ If any fail, request clarification & re-implementation**
+
+### Principle 2: Simplicity First ✓
+- [ ] Code directly solves the problem—no extra features?
+- [ ] No speculative abstractions or "future-proofing"?
+- [ ] No defensive error handling for impossible cases?
+- [ ] Could this be written simpler? (If yes, request changes)
+- [ ] **→ If overly complex, request simplification**
+
+### Principle 3: Surgical Changes ✓
+- [ ] Git diff shows focused, minimal changes?
+- [ ] No unrelated reformatting or refactoring?
+- [ ] Pre-existing issues mentioned but NOT fixed?
+- [ ] Only orphans created BY this change are removed?
+- [ ] Every changed line traces directly to the request?
+- [ ] **→ If scope-creeping, request surgical rework**
+
+### Principle 4: Goal-Driven Execution ✓
+- [ ] Success criteria from prompt are clearly met?
+- [ ] Verification steps were performed?
+- [ ] Self-Check Report documents verification results?
+- [ ] Tests pass? Metrics improved? Observable outcome verified?
+- [ ] **→ If criteria not met, ask AI to iterate**
+
+**⚠️ Decision:** If ANY principle fails → **Request changes**. All 4 must pass.
+
+---
+
 ## 🎯 Quick Checklist (5 phút)
 
 **Check list này đầu tiên:**

@@ -14,9 +14,35 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 
 ## 🚀 Quick Start (5 phút)
 
+### 🎯 **NEW: Karpathy Principles (Core Philosophy)**
+
+**The 4 Karpathy Principles are the behavioral foundation for all AI-assisted coding:**
+
+| Principle | What It Means | Why It Matters |
+|-----------|---|---|
+| **1️⃣ Think Before Coding** | Surface assumptions, present alternatives, ask clarifying Qs | Prevents coding wrong solution |
+| **2️⃣ Simplicity First** | Minimum code, no speculative features | Reduces bugs, faster review |
+| **3️⃣ Surgical Changes** | Touch only what you must, match existing style | Smaller diffs, easier review, lower risk |
+| **4️⃣ Goal-Driven Execution** | Define verifiable success criteria, verify before shipping | No ambiguity, faster iterations |
+
+**Quick Learning (30 minutes):**
+1. [Quick Reference](./ai-agent-standards/onboarding/quick-reference.md) (5 min) — Principles summary
+2. [Karpathy Principles Guide](./ai-agent-standards/onboarding/karpathy-principles-guide.md) (20 min) — Detailed training
+3. [Interactive Worksheet](./ai-agent-standards/onboarding/think-before-coding-worksheet.md) (30 min) — Practice exercises
+
+**Use in your work:**
+- **Writing prompts:** Follow [quick-reference.md](./ai-agent-standards/onboarding/quick-reference.md) principles
+- **Reviewing code:** Check all 4 principles using [code-review-checklist.md](./ai-agent-standards/quality-control/code-review-checklist.md)
+- **Iterating:** Apply principles when requesting changes from AI
+
+**Full documentation:** [Karpathy Framework](./ai-agent-standards/principles/karpathy-framework.md) — Master reference
+
+---
+
 ### Cho Kỹ sư Mới
 
 1. **Đọc tài liệu:**
+   - [🚀 **Karpathy Principles**](./ai-agent-standards/principles/karpathy-framework.md) — Core philosophy (10 min)
    - [`onboarding/quick-reference.md`](.ai-agent-standards/onboarding/quick-reference.md) (1 trang - in ra được)
    - [`onboarding/first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md) (ví dụ chi tiết)
 
@@ -31,6 +57,7 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 
 3. **Thực hiện task đầu tiên:**
    - Làm theo hướng dẫn [`first-task-walkthrough.md`](.ai-agent-standards/onboarding/first-task-walkthrough.md)
+   - Áp dụng 4 Karpathy Principles (xem quick-reference.md)
    - Áp dụng Pipeline kiểm soát từ [`quality-control/`](.ai-agent-standards/quality-control/)
    - Ghi lại metrics trong [`metrics/`](.ai-agent-standards/metrics/)
 
@@ -40,14 +67,15 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 
 | Folder | Mục đích | Key Files |
 |--------|---------|-----------|
+| **`principles/`** | 🆕 Karpathy Principles (Core Philosophy) | `karpathy-framework.md`, training materials |
 | **`prompts/`** | Thư viện Prompt mẫu chuẩn | `HEADER-TEMPLATE.yaml`, 5 sample prompts |
 | **`templates/`** | Template reusable cho project mới | `.cursorrules`, task templates |
 | **`quality-control/`** | Pipeline kiểm soát chất lượng | Self-Check, Code Review, Audit checklists |
 | **`risk-management/`** | Quản lý rủi ro & escalation | Failure Log, Security constraints, Mitigation |
 | **`metrics/`** | Tracking KPIs & performance | KPI definitions, CSV tracking, reports |
-| **`onboarding/`** | Training & hướng dẫn (simplified) | Quick-ref, walkthrough, common mistakes |
+| **`onboarding/`** | Training & hướng dẫn (simplified) | Quick-ref, **Karpathy guide**, walkthrough, common mistakes |
 | **`multi-agent/`** | P2 Roadmap | Placeholder cho Multi-Agent framework |
-| **`reference/`** | Tài liệu tham chiếu | Error tables, Cookbook, Glossary |
+| **`reference/`** | Tài liệu tham chiếu | **Sync guide**, Error tables, Cookbook, Glossary |
 
 **Xem chi tiết:** [`INDEX.md`](.ai-agent-standards/INDEX.md)
 
@@ -57,17 +85,21 @@ Framework này tiêu chuẩn hóa phương pháp tích hợp AI Agents vào quy 
 
 ```
 1. PHÂN TÍCH & PHÂN RÃ
+   ✓ Apply Principle #1 (Think Before Coding)
    ↓
 2. THIẾT KẾ DỮ LIỆU ĐỘC LẬP  (Kỹ sư quyết định)
    ↓
 3. ÁP ĐẶT NGUYÊN TẮC KIẾN TRÚC
    ↓
 4. PHÁT TRIỂN BOTTOM-UP  (Core → Services → UI)
+   ✓ Apply Principle #2 (Simplicity), #3 (Surgical)
    ↓
 5. VẬN HÀNH PIPELINE KIỂM SOÁT ⚙️
    - AI Generate → Self-Check → Self-Fix → Output
+   ✓ All 4 Principles verified in Self-Check Report
    ↓
 6. HUMAN GATE - CỔNG KIỂM DUYỆT 👤
+   ✓ Apply Principle #4 (Goal-Driven Execution)
    [APPROVE] → Merge + Checkpoint Backup
    [REJECT] → Iterate
    ↓

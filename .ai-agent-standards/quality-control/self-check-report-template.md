@@ -2,7 +2,7 @@
 
 **Mẫu báo cáo tự kiểm tra - AI phải fill in trước output**
 
-*Phụ lục C từ tài liệu gốc*
+*Phụ lục C từ tài liệu gốc | Updated with Karpathy Principles*
 
 ---
 
@@ -17,6 +17,47 @@
 - Task: [Brief description of what was built]
 - Date: [YYYY-MM-DD HH:MM]
 - AI Iteration Count: [Number of Self-Fix rounds]
+
+---
+
+## 🎯 Karpathy Principles Verification
+
+### Principle 1: Think Before Coding ✓
+- [ ] Assumptions stated explicitly in prompt or clarified before implementation?
+- [ ] If ambiguous, were multiple interpretations presented?
+- [ ] Success criteria were defined upfront (not vague)?
+- [ ] Clarifying questions asked BEFORE coding started?
+- **Status:** ✓ PASS / ⚠️ PARTIAL / ❌ FAIL
+- **Notes:** [If not all pass, explain]
+
+### Principle 2: Simplicity First ✓
+- [ ] Code directly solves stated problem—no extra features?
+- [ ] No speculative abstractions or "future-proofing"?
+- [ ] No defensive error handling for impossible cases?
+- [ ] Code could NOT reasonably be written simpler?
+- [ ] Total lines: [count] | Necessary? Yes
+- **Status:** ✓ PASS / ⚠️ PARTIAL / ❌ FAIL
+- **Notes:** [If not all pass, explain]
+
+### Principle 3: Surgical Changes ✓
+- [ ] Git diff is minimal and focused?
+- [ ] Every changed line traces directly to the request?
+- [ ] No unrelated refactoring or reformatting?
+- [ ] Pre-existing issues mentioned but not fixed (unless they're orphans from my changes)?
+- [ ] Only orphans created BY these changes are removed?
+- **Status:** ✓ PASS / ⚠️ PARTIAL / ❌ FAIL
+- **Notes:** [If not all pass, explain]
+
+### Principle 4: Goal-Driven Execution ✓
+- [ ] Success criteria from prompt are clearly met?
+- [ ] Verification steps were performed?
+- [ ] Tests passing? [Count] / [Total] ✓
+- [ ] Metrics verified? [If applicable: metric = before/after]
+- [ ] Observable outcome confirmed?
+- **Status:** ✓ PASS / ⚠️ PARTIAL / ❌ FAIL
+- **Notes:** [If not all pass, explain]
+
+**Overall Karpathy Assessment:** ✓ ALL PASS / ⚠️ MINOR ISSUES / ❌ REQUIRES REWORK
 
 ---
 

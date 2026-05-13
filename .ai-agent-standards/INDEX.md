@@ -11,7 +11,10 @@
 | File | Mục đích | Độ ưu tiên |
 |------|---------|-----------|
 | [`README.md`](README.md) | Overview & quick-start | ⭐⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **4 Karpathy Principles (core philosophy)** | ⭐⭐⭐ |
 | [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | Cheat sheet 1 trang (in được) | ⭐⭐⭐ |
+| [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) | **Detailed training (20-30 min)** | ⭐⭐⭐ |
+| [`onboarding/think-before-coding-worksheet.md`](onboarding/think-before-coding-worksheet.md) | **Interactive exercise (30 min)** | ⭐⭐ |
 | [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md) | Hướng dẫn chi tiết task đầu | ⭐⭐⭐ |
 | [`onboarding/common-mistakes.md`](onboarding/common-mistakes.md) | Lỗi phổ biến & cách tránh | ⭐⭐ |
 | [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Khuôn mẫu prompt chuẩn | ⭐⭐ |
@@ -20,7 +23,8 @@
 
 | File | Mục đích | Độ ưu tiên |
 |------|---------|-----------|
-| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | Checklist reviewer bắt buộc | ⭐⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **Reviewer checklist for 4 principles** | ⭐⭐⭐ |
+| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | **Checklist with Karpathy validation** | ⭐⭐⭐ |
 | [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md) | Checklist audit chi tiết | ⭐⭐⭐ |
 | [`quality-control/hallucination-detection.md`](quality-control/hallucination-detection.md) | Cách phát hiện lỗi AI | ⭐⭐ |
 | [`reference/error-reference-complete.md`](reference/error-reference-complete.md) | Bảng lỗi AI thường gặp | ⭐⭐ |
@@ -29,6 +33,8 @@
 
 | File | Mục đích | Độ ưu tiên |
 |------|---------|-----------|
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **Master reference for all principles** | ⭐⭐⭐ |
+| [`reference/sync-karpathy-across-tools.md`](reference/sync-karpathy-across-tools.md) | **Keeping Cursor/Claude/Copilot in sync** | ⭐⭐⭐ |
 | [`quality-control/`](quality-control/) | Toàn bộ Pipeline kiểm soát | ⭐⭐⭐ |
 | [`risk-management/escalation-workflow.md`](risk-management/escalation-workflow.md) | Xử lý khi AI không hợp tác | ⭐⭐⭐ |
 | [`risk-management/security-constraints.md`](risk-management/security-constraints.md) | Non-negotiable constraints | ⭐⭐⭐ |
@@ -39,6 +45,7 @@
 
 | File | Mục đích | Độ ưu tiên |
 |------|---------|-----------|
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **Understand core behavioral principles** | ⭐⭐⭐ |
 | [`reference/methodology-for-management.md`](reference/methodology-for-management.md) | Giải thích phương pháp | ⭐⭐⭐ |
 | [`metrics/kpi-definitions.md`](metrics/kpi-definitions.md) | Metrics & ROI tracking | ⭐⭐⭐ |
 | [`metrics/sample-weekly-report.md`](metrics/sample-weekly-report.md) | Ví dụ báo cáo | ⭐⭐ |
@@ -48,6 +55,21 @@
 
 ## 📁 Theo Thư Mục
 
+### 📂 **NEW: `principles/` - Karpathy Principles (Core Philosophy)**
+
+**The Karpathy Principles are the foundation of all AI-assisted coding in this framework.**
+
+| File | Nội dung |
+|------|---------|
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **MASTER REFERENCE**: 4 Principles with detailed explanation, integration with framework, reviewer checklist |
+| **Quick Learning Path:** | |
+| 1. Read [`quick-reference.md`](../onboarding/quick-reference.md) | 5 min: Overview of 4 principles |
+| 2. Read [`karpathy-principles-guide.md`](../onboarding/karpathy-principles-guide.md) | 20 min: Detailed explanation with examples |
+| 3. Complete [`think-before-coding-worksheet.md`](../onboarding/think-before-coding-worksheet.md) | 30 min: Interactive practice exercises |
+| 4. Apply to your work | Use [`code-review-checklist.md`](../quality-control/code-review-checklist.md) when reviewing |
+
+---
+
 ### 📂 `prompts/` - Thư viện Prompt Mẫu
 Cấu trúc prompt chuẩn hóa & ví dụ cho các use case phổ biến.
 
@@ -56,6 +78,8 @@ Cấu trúc prompt chuẩn hóa & ví dụ cho các use case phổ biến.
 | [`prompts/README.md`](prompts/README.md) | Hướng dẫn sử dụng thư viện |
 | [`prompts/HEADER-TEMPLATE.yaml`](prompts/HEADER-TEMPLATE.yaml) | YAML header chuẩn cho mỗi prompt |
 | [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Khuôn mẫu prompt (Context → Task → Constraints → Output) |
+| **NEW: Claude Integration** | |
+| [`prompts/claude-system-instructions.md`](prompts/claude-system-instructions.md) | **System prompt for Claude with Karpathy principles** |
 | **Use Cases:** |  |
 | [`create-api-with-rate-limiting.md`](prompts/sample-use-cases/create-api-with-rate-limiting.md) | API endpoint + xác thực + rate limiting |
 | [`refactor-cache-strategy.md`](prompts/sample-use-cases/refactor-cache-strategy.md) | Tối ưu cache & performance |
@@ -82,8 +106,9 @@ Cấu trúc prompt chuẩn hóa & ví dụ cho các use case phổ biến.
 | File | Nội dung |
 |------|---------|
 | [`quality-control/README.md`](quality-control/README.md) | Tổng quan Pipeline |
-| [`quality-control/self-check-report-template.md`](quality-control/self-check-report-template.md) | Mẫu báo cáo tự kiểm tra (Phụ lục C) |
-| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | Checklist cho reviewer **[BẮTBUỘC]** |
+| **NEW: Karpathy Integration** | |
+| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | **Checklist with Principle validation [BẮTBUỘC]** |
+| [`quality-control/self-check-report-template.md`](quality-control/self-check-report-template.md) | **Mẫu báo cáo with Principle verification** |
 | [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md) | Checklist audit chi tiết (bản mở rộng Phụ lục B) |
 | [`quality-control/hallucination-detection.md`](quality-control/hallucination-detection.md) | Nhận diện & xử lý hallucination |
 | [`quality-control/ci-cd-gates.md`](quality-control/ci-cd-gates.md) | Quy tắc CI/CD integration |
