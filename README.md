@@ -2,7 +2,7 @@
 
 **Version:** 1.3.0 | **Release:** 2026-05-13 | **Language:** English | **Status:** ✓ Production Ready
 
-A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **Karpathy Principles**. Includes CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
+A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **Karpathy Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
 > **Core philosophy:** AI is a tool, not a decision-maker. Engineers retain authority over architecture, security, and production decisions.
 
@@ -104,7 +104,9 @@ AI-Agent-Coding/
 │ ── ROOT FILES ──
 ├── SKILL-REFERENCE.md           → Quick lookup: which files to @reference
 ├── SKILL-REFERENCE_VI.md        → Same, Vietnamese with explanations
+├── AI-Research-Writing-Skill.md → Controlled RAG research & writing skill
 ├── INSTALL.md                   → Installation guide (1 step)
+├── LICENSE                      → MIT License
 ├── README.md                    → This file
 └── Development_doc_VI.md        → Original methodology (Vietnamese)
 ```
@@ -136,7 +138,7 @@ AI-Agent-Coding/
 ### For Security & Risk
 | File | Purpose |
 |------|---------|
-| [risk-management/security-constraints.md](./ai-agent-standards/risk-management/security-constraints.md) | 6 non-negotiable security rules |
+| [risk-management/security-constraints.md](./ai-agent-standards/risk-management/security-constraints.md) | 12 non-negotiable security rules |
 | [risk-management/escalation-workflow.md](./ai-agent-standards/risk-management/escalation-workflow.md) | When & how to escalate AI failures |
 | [.github/pull_request_template.md](./.github/pull_request_template.md) | PR audit checklist (Zero-Trust, Two-Pair Eyes) |
 | [.github/workflows/ai-code-audit.yml](./.github/workflows/ai-code-audit.yml) | Automated SAST quality gate |
@@ -181,6 +183,7 @@ AI-Agent-Coding/
 
 - **Methodology:** JunMystery — [Development_doc_VI.md](./Development_doc_VI.md)
 - **Karpathy Principles:** Based on [Andrej Karpathy's post](https://x.com/karpathy/status/2015883857489522876), adapted from [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [@forrestchang](https://github.com/forrestchang) (MIT License)
+- **License:** [MIT](./LICENSE)
 - **Status:** ✓ Open framework — use & extend freely
 
 ---
