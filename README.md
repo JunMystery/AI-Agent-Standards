@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 1.3.0 | **Release:** 2026-05-13 | **Language:** English | **Status:** ✓ Production Ready
+**Version:** 1.3.0 | **Release:** 2026-05-13 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **Karpathy Principles**. Includes CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
