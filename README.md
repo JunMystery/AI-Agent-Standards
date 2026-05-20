@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 2.0.0 | **Release:** 2026-05-17 | **Language:** English
+**Version:** 2.1.0 | **Release:** 2026-05-20 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **5 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -10,9 +10,14 @@ A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini
 
 ## 🚀 Quick Start
 
-### 1. Install (1 step)
+### 1. Install
 
-Copy this repo's contents into your project root. See [INSTALL.md](./INSTALL.md) for details.
+```bash
+# From your project root
+python AI-Agent-Standards/scripts/setup.py
+```
+
+This copies AI instruction files to your project root and auto-links all internal paths. See [INSTALL.md](./INSTALL.md) for Git Submodule, manual setup, and other options.
 
 ### 2. Verify
 
@@ -22,7 +27,7 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.1** with 5 Core Principles active.
 
 ### 3. Use Skills
 
@@ -88,7 +93,7 @@ AI-Coding-Standards/
 │   ├── onboarding/              → Training & quick reference
 │   ├── prompts/                 → Prompt templates & 7 sample use cases
 │   ├── quality-control/         → Review checklists, audit (11 sections)
-│   ├── risk-management/         → 12 security constraints (v2.0)
+│   ├── risk-management/         → 12 security constraints (v2.1)
 │   ├── reference/               → Glossary, error reference
 │   ├── engineering-practices/   → Docs, Testing, Release, NFR standards
 │   ├── compliance/              → OWASP, NIST, WCAG A11Y guidelines

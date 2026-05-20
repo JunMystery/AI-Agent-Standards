@@ -242,8 +242,8 @@ When setting up a new project:
 
 ## 🔄 Version Info
 
-- **Framework Version:** 2.0.0
-- **Last Updated:** 2026-05-17
+- **Framework Version:** 2.1.0
+- **Last Updated:** 2026-05-20
 - **Status:** ✓ Production Ready
 
 ---

@@ -2,6 +2,23 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.1.0] - 2026-05-20
+
+### Added
+- **`scripts/setup.py`** — Automated setup script: copies rule files to any project root and auto-rewrites internal links to match the actual folder path. Supports auto-detection of project root and custom path arguments.
+
+### Fixed
+- **Link Architecture** — Reverted all internal paths in root instruction files to bare relative paths (`ai-agent-standards/...`) so they resolve correctly when used directly inside the repo. The `setup.py` script now adds the folder prefix dynamically when copying to external projects.
+- **ASCII Bell characters** — Cleaned up `\x07` control characters in Auto-Discovery paths caused by Python escape sequences.
+- **Principle 5 parity** — Added DRY & Reusability to `.cursorrules` and `.cursor/rules/karpathy-guidelines.mdc`.
+- **Version parity** — Synchronized version to v2.1 across all config, documentation, and multi-agent files.
+
+### Changed
+- **`INSTALL.md`** — Rewritten with automated setup as primary installation method.
+- **`README.md`** — Quick Start now shows `python AI-Agent-Standards/scripts/setup.py`.
+
+---
+
 ## [2.0.0] - 2026-05-17
 
 ### Added (Enterprise Engineering & Compliance)
@@ -140,6 +157,7 @@ Track versions and updates for the AI Agent Coding Standards framework.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
+| 2.1.0 | 2026-05-20 | Automated setup script, link architecture fix, version & principle synchronization | ✓ Released |
 | 2.0.0 | 2026-05-17 | Enterprise Engineering Standards, Industry Compliance, Dynamic Skill Auto-Discovery | ✓ Released |
 | 1.4.0 | 2026-05-13 | 12 Security Constraints, 4-Agent Architecture, Mobile Cookbook, Skill Reference, CI/CD hardening | ✓ Released |
 | 1.1.0 | 2026-05-13 | Karpathy Skills Integration, English conversion, auto-discovery files | ✓ Released |

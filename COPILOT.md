@@ -2,7 +2,7 @@
 
 Behavioral guidelines for GitHub Copilot in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Coding-Standards v2.0 with 5 Core Principles  
+**Framework:** AI-Coding-Standards v2.1 with 5 Core Principles  
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -62,12 +62,12 @@ You are an AI coding assistant operating under **controlled AI-assisted developm
 
 | File | Purpose |
 |------|---------|
-| [PROJECT-STANDARDS.md](./PROJECT-STANDARDS.md) | **Project-specific rules (Always check first if exists)** |
-| [karpathy/principles.md](./karpathy/principles.md) | Source of truth for 5 principles |
-| [karpathy/examples.md](./karpathy/examples.md) | Anti-patterns and correct approaches |
-| [ai-agent-standards/risk-management/security-constraints.md](./ai-agent-standards/risk-management/security-constraints.md) | 12 non-negotiable security constraints |
-| [SKILL-REFERENCE.md](./SKILL-REFERENCE.md) | Quick lookup: which files to reference per task |
-| [ai-agent-standards/](./ai-agent-standards/) | Full framework documentation |
+| [PROJECT-STANDARDS.md](PROJECT-STANDARDS.md) | **Project-specific rules (Always check first if exists)** |
+| [karpathy/principles.md](karpathy/principles.md) | Source of truth for 5 principles |
+| [karpathy/examples.md](karpathy/examples.md) | Anti-patterns and correct approaches |
+| [ai-agent-standards/risk-management/security-constraints.md](ai-agent-standards/risk-management/security-constraints.md) | 12 non-negotiable security constraints |
+| [SKILL-REFERENCE.md](SKILL-REFERENCE.md) | Quick lookup: which files to reference per task |
+| [ai-agent-standards/](ai-agent-standards/) | Full framework documentation |
 
 ---
 
@@ -75,13 +75,13 @@ You are an AI coding assistant operating under **controlled AI-assisted developm
 
 If the user\'s request involves any of the following topics, you MUST autonomously read the corresponding file BEFORE executing the task. Do not guess the rules; read the file.
 
-- **Writing/Updating Tests** -> i-agent-standards/engineering-practices/TESTING_STANDARDS.md
-- **Performance/Database/Caching** -> i-agent-standards/engineering-practices/NON_FUNCTIONAL_REQUIREMENTS.md
-- **Security/Auth/Payments** -> i-agent-standards/risk-management/security-constraints.md
-- **UI/Frontend/Accessibility** -> i-agent-standards/compliance/A11Y_CHECKLIST.md
-- **Versioning/Releasing** -> i-agent-standards/engineering-practices/RELEASE_PROCESS.md
-- **Writing Docs/README/Changelog** -> i-agent-standards/engineering-practices/DOCUMENTATION_STANDARDS.md
-- **OWASP/Compliance Audit** -> i-agent-standards/compliance/COMPLIANCE.md
+- **Writing/Updating Tests** -> ai-agent-standards/engineering-practices/TESTING_STANDARDS.md
+- **Performance/Database/Caching** -> ai-agent-standards/engineering-practices/NON_FUNCTIONAL_REQUIREMENTS.md
+- **Security/Auth/Payments** -> ai-agent-standards/risk-management/security-constraints.md
+- **UI/Frontend/Accessibility** -> ai-agent-standards/compliance/A11Y_CHECKLIST.md
+- **Versioning/Releasing** -> ai-agent-standards/engineering-practices/RELEASE_PROCESS.md
+- **Writing Docs/README/Changelog** -> ai-agent-standards/engineering-practices/DOCUMENTATION_STANDARDS.md
+- **OWASP/Compliance Audit** -> ai-agent-standards/compliance/COMPLIANCE.md
 
 ---
 
@@ -89,6 +89,6 @@ If the user\'s request involves any of the following topics, you MUST autonomous
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Coding-Standards v2.0** with 5 Core Principles active.  
+> ✅ **AI-Coding-Standards v2.1** with 5 Core Principles active.  
 > Framework: Controlled AI-Assisted Development  
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
