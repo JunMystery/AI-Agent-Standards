@@ -1,0 +1,20 @@
+# Local Skills
+
+This directory contains on-demand skill capsules ported from the ECC workflow into this repository. Credit: ECC for the source skill ideas and structure.
+
+Each skill is a standalone Markdown file that should be loaded only when the task matches its trigger.
+
+## Implemented Skills
+
+- `coding-standards`
+- `tdd-workflow`
+- `verification-loop`
+- `security-review`
+- `codebase-onboarding`
+- `context-budget`
+- `documentation-lookup`
+- `browser-qa`
+- `prompt-optimizer`
+- `skill-scout`
+
+These skills are intentionally lightweight and point back to the existing AI-Agent-Standards documents for the full policy surface.

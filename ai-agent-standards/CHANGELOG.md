@@ -2,6 +2,19 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.2.0] - 2026-05-24
+
+### Added
+- **`skills/`** — On-demand skill capsules ported from ECC and wired into the framework docs as task-specific references.
+- **ECC Credit** — Explicit attribution added for the imported skill capsules and their on-demand usage model.
+
+### Changed
+- **Version Bump** — Updated repo versioning to v2.2.0 across the primary docs and instruction surfaces.
+- **`README.md` / `SKILL-REFERENCE.md` / `INDEX.md`** — Updated version strings and skill-loading guidance to reflect on-demand skill capsules.
+
+### Fixed
+- **Version parity** — Synchronized the release metadata and verification prompts with the new v2.2.0 release.
+
 ## [2.1.0] - 2026-05-20
 
 ### Added

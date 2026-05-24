@@ -2,7 +2,7 @@
 
 Behavioral guidelines for GitHub Copilot in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Coding-Standards v2.1 with 5 Core Principles  
+**Framework:** AI-Coding-Standards v2.2.0 with 5 Core Principles  
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -89,6 +89,6 @@ If the user\'s request involves any of the following topics, you MUST autonomous
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Coding-Standards v2.1** with 5 Core Principles active.  
+> ✅ **AI-Coding-Standards v2.2.0** with 5 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability

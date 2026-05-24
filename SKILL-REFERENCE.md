@@ -3,6 +3,7 @@
 **Which files to reference for each type of task.**
 
 Copy the `@file` references into your prompt to activate the relevant skills.
+This repository uses agent-specific Markdown instruction files, not a shared skill layer.
 
 ---
 
@@ -14,11 +15,28 @@ Your AI agent **already loaded** the 5 Core Principles from the root instruction
 
 ---
 
-## 🤖 Dynamic Skill Auto-Discovery (New in v2.1)
+## 🤖 Dynamic Skill Auto-Discovery (New in v2.2.0)
 
 Modern AI agents (Cursor, Windsurf, Claude Code, Gemini with tools) are now equipped with **Auto-Discovery**. If your prompt mentions keywords like "Write tests", "Fix accessibility", or "Check security", the AI will *autonomously* read the relevant standard files below without you needing to manually `@reference` them.
 
 Manual `@reference` is only required if you are using a standard web chatbot (without file-reading tools) or if you want to strictly force the AI to read a specific cookbook.
+
+The root instruction file for each agent should still be the primary entrypoint; these references are task-specific additions, not a shared instruction surface.
+
+## Local Skills Implemented Here
+
+The following on-demand skill capsules are available in [skills/](./skills/):
+
+- [coding-standards](./skills/coding-standards/SKILL.md)
+- [tdd-workflow](./skills/tdd-workflow/SKILL.md)
+- [verification-loop](./skills/verification-loop/SKILL.md)
+- [security-review](./skills/security-review/SKILL.md)
+- [codebase-onboarding](./skills/codebase-onboarding/SKILL.md)
+- [context-budget](./skills/context-budget/SKILL.md)
+- [documentation-lookup](./skills/documentation-lookup/SKILL.md)
+- [browser-qa](./skills/browser-qa/SKILL.md)
+- [prompt-optimizer](./skills/prompt-optimizer/SKILL.md)
+- [skill-scout](./skills/skill-scout/SKILL.md)
 
 ---
 
@@ -184,4 +202,4 @@ At any time, ask your agent:
 > **"What coding standards are you following?"** or type **`/standards`**
 
 Expected:
-> ✅ AI-Coding-Standards v2.1 with 5 Core Principles active.
+> ✅ AI-Coding-Standards v2.2.0 with 5 Core Principles active.

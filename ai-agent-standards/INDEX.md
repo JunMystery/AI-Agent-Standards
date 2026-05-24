@@ -197,6 +197,24 @@
 
 ---
 
+## 🧩 Local Skills
+
+| File | Purpose |
+|------|---------|
+| [`../skills/README.md`](../skills/README.md) | Index of the ECC-derived skills implemented in this repo |
+| [`../skills/coding-standards/SKILL.md`](../skills/coding-standards/SKILL.md) | General coding conventions |
+| [`../skills/tdd-workflow/SKILL.md`](../skills/tdd-workflow/SKILL.md) | Test-first development workflow |
+| [`../skills/verification-loop/SKILL.md`](../skills/verification-loop/SKILL.md) | Build, lint, test, and diff verification |
+| [`../skills/security-review/SKILL.md`](../skills/security-review/SKILL.md) | Security-sensitive review workflow |
+| [`../skills/codebase-onboarding/SKILL.md`](../skills/codebase-onboarding/SKILL.md) | Fast repo reconnaissance and onboarding |
+| [`../skills/context-budget/SKILL.md`](../skills/context-budget/SKILL.md) | Context and token budget audit |
+| [`../skills/documentation-lookup/SKILL.md`](../skills/documentation-lookup/SKILL.md) | Live documentation lookup workflow |
+| [`../skills/browser-qa/SKILL.md`](../skills/browser-qa/SKILL.md) | Browser-based UI verification |
+| [`../skills/prompt-optimizer/SKILL.md`](../skills/prompt-optimizer/SKILL.md) | Prompt improvement workflow |
+| [`../skills/skill-scout/SKILL.md`](../skills/skill-scout/SKILL.md) | Search-first workflow for new skills |
+
+---
+
 ## 🎯 Quick Navigation
 
 ### "I want to..."
@@ -242,8 +260,8 @@ When setting up a new project:
 
 ## 🔄 Version Info
 
-- **Framework Version:** 2.1.0
-- **Last Updated:** 2026-05-20
+- **Framework Version:** 2.2.0
+- **Last Updated:** 2026-05-24
 - **Status:** ✓ Production Ready
 
 ---

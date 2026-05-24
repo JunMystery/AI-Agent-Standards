@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 2.1.0 | **Release:** 2026-05-20 | **Language:** English
+**Version:** 2.2.0 | **Release:** 2026-05-24 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **5 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -27,11 +27,12 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.1** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.2.0** with 5 Core Principles active.
 
 ### 3. Use Skills
 
 See [SKILL-REFERENCE.md](./SKILL-REFERENCE.md) — quick lookup for which files to `@reference` based on your task type.
+The ported ECC skill capsules live in [skills/](./skills/) and should be loaded only when the task matches. They are credited to ECC and kept on-demand to avoid unnecessary context load.
 
 ---
 
@@ -66,6 +67,19 @@ The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpa
 
 Each file contains the 5 Core Principles, role definitions, and a **verification prompt** so you can confirm the agent loaded the correct skills.
 
+## Agent-Specific Install Model
+
+This framework does not use one shared skill layer across all agents. Each agent should load its own Markdown instruction file and only the task-specific references it needs.
+
+- Claude Code → `CLAUDE.md`
+- Gemini → `GEMINI.md`
+- GitHub Copilot → `COPILOT.md`
+- VS Code Copilot → `.instructions.md`
+- Cursor → `.cursor/rules/karpathy-guidelines.mdc`
+- Windsurf → `.cursorrules`
+
+Use `SKILL-REFERENCE.md` only as a lookup guide for task-specific references, not as a shared runtime layer.
+
 ---
 
 ## 📁 Repository Structure
@@ -93,11 +107,24 @@ AI-Coding-Standards/
 │   ├── onboarding/              → Training & quick reference
 │   ├── prompts/                 → Prompt templates & 7 sample use cases
 │   ├── quality-control/         → Review checklists, audit (11 sections)
-│   ├── risk-management/         → 12 security constraints (v2.1)
+│   ├── risk-management/         → 12 security constraints
 │   ├── reference/               → Glossary, error reference
 │   ├── engineering-practices/   → Docs, Testing, Release, NFR standards
 │   ├── compliance/              → OWASP, NIST, WCAG A11Y guidelines
 │   └── multi-agent/             → 4 Agents: Coder, Test, Reviewer, Docs
+│
+│ ── LOCAL SKILLS (ON-DEMAND) ──
+├── skills/
+│   ├── coding-standards/        → General coding conventions
+│   ├── tdd-workflow/            → Test-first development
+│   ├── verification-loop/       → Post-change verification
+│   ├── security-review/         → Security-sensitive review
+│   ├── codebase-onboarding/     → Repo reconnaissance
+│   ├── context-budget/          → Token/context budget audit
+│   ├── documentation-lookup/    → Live docs lookup workflow
+│   ├── browser-qa/              → Browser-based UI verification
+│   ├── prompt-optimizer/        → Prompt improvement workflow
+│   └── skill-scout/             → Search before creating new skills
 │
 │ ── CI/CD AUTOMATION ──
 ├── .github/
