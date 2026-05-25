@@ -15,7 +15,7 @@ Your AI agent **already loaded** the 5 Core Principles from the root instruction
 
 ---
 
-## 🤖 Dynamic Skill Auto-Discovery (New in v2.2.0)
+## 🤖 Dynamic Skill Auto-Discovery (New in v2.3.0)
 
 Modern AI agents (Cursor, Windsurf, Claude Code, Gemini with tools) are now equipped with **Auto-Discovery**. If your prompt mentions keywords like "Write tests", "Fix accessibility", or "Check security", the AI will *autonomously* read the relevant standard files below without you needing to manually `@reference` them.
 
@@ -37,6 +37,16 @@ The following on-demand skill capsules are available in [skills/](./skills/):
 - [browser-qa](./skills/browser-qa/SKILL.md)
 - [prompt-optimizer](./skills/prompt-optimizer/SKILL.md)
 - [skill-scout](./skills/skill-scout/SKILL.md)
+- [accessibility](./skills/accessibility/SKILL.md)
+- [api-design](./skills/api-design/SKILL.md)
+- [architecture-decision-records](./skills/architecture-decision-records/SKILL.md)
+- [database-migrations](./skills/database-migrations/SKILL.md)
+- [error-handling](./skills/error-handling/SKILL.md)
+- [git-workflow](./skills/git-workflow/SKILL.md)
+- [production-audit](./skills/production-audit/SKILL.md)
+- [search-first](./skills/search-first/SKILL.md)
+- [skill-stocktake](./skills/skill-stocktake/SKILL.md)
+- [rules-distill](./skills/rules-distill/SKILL.md)
 
 ---
 
@@ -202,4 +212,4 @@ At any time, ask your agent:
 > **"What coding standards are you following?"** or type **`/standards`**
 
 Expected:
-> ✅ AI-Coding-Standards v2.2.0 with 5 Core Principles active.
+> ✅ AI-Coding-Standards v2.3.0 with 5 Core Principles active.

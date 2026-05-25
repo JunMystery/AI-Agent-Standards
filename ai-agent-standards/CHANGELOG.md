@@ -2,6 +2,16 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.3.0] - 2026-05-25
+
+### Added
+- **General on-demand skills** - Added accessibility, API design, ADRs, database migrations, error handling, Git workflow, production audit, search-first, skill stocktake, and rules distillation skill capsules adapted from ECC.
+- **Agent discovery wiring** - Documented the expanded skill set so supported AI agents can load the new capsules only when relevant.
+- **ECC Credit** - Credited ECC as the source for the expanded general skill-set ideas and on-demand structure.
+
+### Changed
+- **Version Bump** - Updated repo versioning to v2.3.0 across the primary docs, instruction surfaces, skill references, index, install docs, and multi-agent files.
+
 ## [2.2.0] - 2026-05-24
 
 ### Added
@@ -170,6 +180,8 @@ Track versions and updates for the AI Agent Coding Standards framework.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
+| 2.3.0 | 2026-05-25 | Expanded ECC-derived general on-demand skill set, agent discovery wiring, version synchronization | Released |
+| 2.2.0 | 2026-05-24 | On-demand ECC skill capsules, skill-loading docs, release metadata synchronization | Released |
 | 2.1.0 | 2026-05-20 | Automated setup script, link architecture fix, version & principle synchronization | ✓ Released |
 | 2.0.0 | 2026-05-17 | Enterprise Engineering Standards, Industry Compliance, Dynamic Skill Auto-Discovery | ✓ Released |
 | 1.4.0 | 2026-05-13 | 12 Security Constraints, 4-Agent Architecture, Mobile Cookbook, Skill Reference, CI/CD hardening | ✓ Released |

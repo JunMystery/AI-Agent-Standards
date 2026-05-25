@@ -1,4 +1,4 @@
-# AI-Coding-Standards v2.1 — Cursor/Windsurf Rules
+# AI-Coding-Standards v2.3.0 — Cursor/Windsurf Rules
 #
 # These rules apply the Karpathy Principles to all AI-assisted coding.
 # For detailed documentation, see: karpathy/principles.md
@@ -50,6 +50,8 @@ After completing code, include:
 
 If the user\'s request involves any of the following topics, you MUST autonomously read the corresponding file BEFORE executing the task. Do not guess the rules; read the file.
 
+For task-specific workflow capsules, check SKILL-REFERENCE.md and load the matching skills/ SKILL.md only when the task matches its trigger.
+
 - **Writing/Updating Tests** -> ai-agent-standards/engineering-practices/TESTING_STANDARDS.md
 - **Performance/Database/Caching** -> ai-agent-standards/engineering-practices/NON_FUNCTIONAL_REQUIREMENTS.md
 - **Security/Auth/Payments** -> ai-agent-standards/risk-management/security-constraints.md
@@ -63,6 +65,6 @@ If the user\'s request involves any of the following topics, you MUST autonomous
 ## Verification
 
 When asked "What coding standards are you following?" or "/standards", respond:
-> AI-Coding-Standards v2.1 with 5 Core Principles active.
+> AI-Coding-Standards v2.3.0 with 5 Core Principles active.
 > Framework: Controlled AI-Assisted Development
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability

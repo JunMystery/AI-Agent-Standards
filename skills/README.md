@@ -16,5 +16,15 @@ Each skill is a standalone Markdown file that should be loaded only when the tas
 - `browser-qa`
 - `prompt-optimizer`
 - `skill-scout`
+- `accessibility`
+- `api-design`
+- `architecture-decision-records`
+- `database-migrations`
+- `error-handling`
+- `git-workflow`
+- `production-audit`
+- `search-first`
+- `skill-stocktake`
+- `rules-distill`
 
 These skills are intentionally lightweight and point back to the existing AI-Agent-Standards documents for the full policy surface.

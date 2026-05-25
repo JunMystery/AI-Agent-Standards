@@ -34,6 +34,7 @@ RULE_FILES = [
 LINK_TARGETS = [
     "karpathy/",
     "ai-agent-standards/",
+    "skills/",
     "SKILL-REFERENCE.md",
     "SKILL-REFERENCE_VI.md",
 ]

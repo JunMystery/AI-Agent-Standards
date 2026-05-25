@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 2.2.0 | **Release:** 2026-05-24 | **Language:** English
+**Version:** 2.3.0 | **Release:** 2026-05-25 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **5 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -27,7 +27,7 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.2.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
 
 ### 3. Use Skills
 
@@ -124,7 +124,17 @@ AI-Coding-Standards/
 │   ├── documentation-lookup/    → Live docs lookup workflow
 │   ├── browser-qa/              → Browser-based UI verification
 │   ├── prompt-optimizer/        → Prompt improvement workflow
-│   └── skill-scout/             → Search before creating new skills
+│   ├── skill-scout/             → Search before creating new skills
+│   ├── accessibility/           → Accessibility design and audit
+│   ├── api-design/              → API contract design and review
+│   ├── architecture-decision-records/ → ADR capture workflow
+│   ├── database-migrations/     → Safe migration planning
+│   ├── error-handling/          → Failure behavior and recovery
+│   ├── git-workflow/            → Git collaboration workflow
+│   ├── production-audit/        → Production readiness audit
+│   ├── search-first/            → Research before building
+│   ├── skill-stocktake/         → Local skill quality audit
+│   └── rules-distill/           → Promote repeated guidance into standards
 │
 │ ── CI/CD AUTOMATION ──
 ├── .github/

@@ -212,6 +212,16 @@
 | [`../skills/browser-qa/SKILL.md`](../skills/browser-qa/SKILL.md) | Browser-based UI verification |
 | [`../skills/prompt-optimizer/SKILL.md`](../skills/prompt-optimizer/SKILL.md) | Prompt improvement workflow |
 | [`../skills/skill-scout/SKILL.md`](../skills/skill-scout/SKILL.md) | Search-first workflow for new skills |
+| [`../skills/accessibility/SKILL.md`](../skills/accessibility/SKILL.md) | Accessibility design and audit workflow |
+| [`../skills/api-design/SKILL.md`](../skills/api-design/SKILL.md) | API contract design and review |
+| [`../skills/architecture-decision-records/SKILL.md`](../skills/architecture-decision-records/SKILL.md) | Architecture decision record capture |
+| [`../skills/database-migrations/SKILL.md`](../skills/database-migrations/SKILL.md) | Safe database migration planning |
+| [`../skills/error-handling/SKILL.md`](../skills/error-handling/SKILL.md) | General error-handling design and review |
+| [`../skills/git-workflow/SKILL.md`](../skills/git-workflow/SKILL.md) | Git collaboration and release workflow |
+| [`../skills/production-audit/SKILL.md`](../skills/production-audit/SKILL.md) | Production readiness audit workflow |
+| [`../skills/search-first/SKILL.md`](../skills/search-first/SKILL.md) | Research-before-building workflow |
+| [`../skills/skill-stocktake/SKILL.md`](../skills/skill-stocktake/SKILL.md) | Local skill quality audit |
+| [`../skills/rules-distill/SKILL.md`](../skills/rules-distill/SKILL.md) | Promote repeated guidance into standards |
 
 ---
 
@@ -260,8 +270,8 @@ When setting up a new project:
 
 ## 🔄 Version Info
 
-- **Framework Version:** 2.2.0
-- **Last Updated:** 2026-05-24
+- **Framework Version:** 2.3.0
+- **Last Updated:** 2026-05-25
 - **Status:** ✓ Production Ready
 
 ---
