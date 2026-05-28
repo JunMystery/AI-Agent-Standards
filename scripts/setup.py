@@ -194,7 +194,7 @@ def update_gitignore(project_root: str, standards_dir: str = None) -> None:
                 f.write("\n")
             f.write("\n# AI Agent Coding Standards\n")
             for item in to_add:
-                f.write(f"/{item}\n")
+                f.write(f"{item}\n")
                 print(f"     Ignored: {item}")
 
 
