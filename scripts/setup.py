@@ -132,17 +132,22 @@ def copy_and_link(standards_dir: str, project_root: str) -> None:
     print(f"Done: {copied} copied, {skipped} skipped.")
     
     # Auto-update project's .gitignore to ignore standard configuration files
-    update_gitignore(project_root)
+    update_gitignore(project_root, standards_dir)
     
     print()
     print('Verify by asking your AI agent: "What coding standards are you following?"')
 
 
-def update_gitignore(project_root: str) -> None:
+def update_gitignore(project_root: str, standards_dir: str = None) -> None:
     """Add standard configuration files to the project's .gitignore."""
     gitignore_path = os.path.join(project_root, ".gitignore")
+    
+    standards_folder = "AI-Agent-Standards"
+    if standards_dir:
+        standards_folder = os.path.basename(standards_dir)
+
     files_to_ignore = [
-        "AI-Agent-Standards/",
+        f"{standards_folder}/",
         "CLAUDE.md",
         "GEMINI.md",
         "COPILOT.md",
@@ -150,6 +155,7 @@ def update_gitignore(project_root: str) -> None:
         ".cursorrules",
         ".cursor/rules/karpathy-guidelines.mdc",
     ]
+
 
     # Read existing content if .gitignore exists, trying common encodings
     lines = []
