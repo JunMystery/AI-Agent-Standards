@@ -142,6 +142,7 @@ def update_gitignore(project_root: str) -> None:
     """Add standard configuration files to the project's .gitignore."""
     gitignore_path = os.path.join(project_root, ".gitignore")
     files_to_ignore = [
+        "AI-Agent-Standards/",
         "CLAUDE.md",
         "GEMINI.md",
         "COPILOT.md",
