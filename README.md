@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 2.4.0 | **Release:** 2026-05-25 | **Language:** English
+**Version:** 2.4.0 | **Release:** 2026-05-28 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **6 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -239,6 +239,7 @@ AI-Coding-Standards/
 
 - **Methodology:** JunMystery — [Development_doc_VI.md](./Development_doc_VI.md)
 - **Karpathy Principles:** Based on [Andrej Karpathy's post](https://x.com/karpathy/status/2015883857489522876), adapted from [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) by [@forrestchang](https://github.com/forrestchang) (MIT License)
+- **On-Demand Skills:** Ported from [ECC](https://github.com/affaan-m/ecc) by [@affaan-m](https://github.com/affaan-m) (MIT License)
 - **License:** [MIT](./LICENSE)
 - **Status:** ✓ Open framework — use & extend freely
 
