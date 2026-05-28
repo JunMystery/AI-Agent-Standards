@@ -2,7 +2,7 @@
 
 **Self-check report template — AI must fill in before producing output**
 
-*Appendix C from original documentation | Updated with 5 Core Principles*
+*Appendix C from original documentation | Updated with 6 Core Principles*
 
 ---
 
@@ -20,7 +20,7 @@
 
 ---
 
-## 🎯 5 Core Principles Verification
+## 🎯 6 Core Principles Verification
 
 ### Principle 1: Think Before Coding ✓
 - [ ] Assumptions stated explicitly in prompt or clarified before implementation?

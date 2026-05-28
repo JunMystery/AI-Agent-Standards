@@ -10,7 +10,7 @@
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`../karpathy/principles.md`](../karpathy/principles.md) | **5 Core Principles (source of truth)** | ⭐⭐⭐ |
+| [`../karpathy/principles.md`](../karpathy/principles.md) | **6 Core Principles (source of truth)** | ⭐⭐⭐ |
 | [`../karpathy/examples.md`](../karpathy/examples.md) | **Anti-patterns & correct approaches** | ⭐⭐⭐ |
 | [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | 1-page cheat sheet (printable) | ⭐⭐⭐ |
 | [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) | Detailed training (20-30 min) | ⭐⭐⭐ |
@@ -23,7 +23,7 @@
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Reviewer checklist for 5 principles | ⭐⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Reviewer checklist for 6 principles | ⭐⭐⭐ |
 | [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | Checklist with Karpathy validation | ⭐⭐⭐ |
 | [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md) | Detailed audit checklist | ⭐⭐⭐ |
 | [`quality-control/hallucination-detection.md`](quality-control/hallucination-detection.md) | Detecting AI hallucinations | ⭐⭐ |
@@ -270,7 +270,7 @@ When setting up a new project:
 
 ## 🔄 Version Info
 
-- **Framework Version:** 2.3.0
+- **Framework Version:** 2.4.0
 - **Last Updated:** 2026-05-25
 - **Status:** ✓ Production Ready
 

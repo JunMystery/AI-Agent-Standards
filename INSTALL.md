@@ -86,9 +86,9 @@ or type:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
-> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization
 
 If the AI doesn't respond with this format, the instruction file wasn't loaded. Check that the files are in the project root.
 
@@ -113,9 +113,9 @@ The AI will execute the setup script, which copies the rule files and rewrites a
 
 ---
 
-## Minimal Install (5 Core Principles Only)
+## Minimal Install (6 Core Principles Only)
 
-If you only want the 5 Core Principles without the full framework:
+If you only want the 6 Core Principles without the full framework:
 
 ```bash
 # Copy just the karpathy module and one instruction file

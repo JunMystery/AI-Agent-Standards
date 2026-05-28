@@ -22,7 +22,7 @@ AI agent **đã tự động load** 5 Nguyên tắc Karpathy từ file gốc (`C
 
 ---
 
-## 🤖 Nhận diện kỹ năng tự động (Dynamic Auto-Discovery - v2.3.0)
+## 🤖 Nhận diện kỹ năng tự động (Dynamic Auto-Discovery - v2.4.0)
 
 Các AI Agent hiện đại (Cursor, Windsurf, Claude Code, Gemini tích hợp trong IDE) hiện đã được trang bị tính năng **Tự động nhận diện**. Khi yêu cầu của bạn có chứa các từ khóa như "Viết test", "Bảo mật", "Tối ưu hiệu năng", AI sẽ *tự động âm thầm* gọi lệnh đọc các file tiêu chuẩn tương ứng ở bên dưới.
 
@@ -298,8 +298,8 @@ Bất cứ lúc nào, hỏi agent:
 > **"What coding standards are you following?"** hoặc gõ **`/standards`**
 
 Kết quả mong đợi:
-> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
-> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization
 
 Nếu agent không trả về format trên → file instruction chưa được load. Kiểm tra lại file có nằm đúng root project không.

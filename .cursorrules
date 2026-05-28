@@ -1,4 +1,4 @@
-# AI-Coding-Standards v2.3.0 — Cursor/Windsurf Rules
+# AI-Coding-Standards v2.4.0 — Cursor/Windsurf Rules
 #
 # These rules apply the Karpathy Principles to all AI-assisted coding.
 # For detailed documentation, see: karpathy/principles.md
@@ -35,8 +35,14 @@
 - Verify success before declaring done.
 
 ### 5. DRY & Reusability
-- Never duplicate UI or logic. Always use shared systems.
-- Extract logic used 2+ times into pure, reusable functions.
+- Never duplicate UI, logic, configurations, types, or any code. Always use shared systems.
+- Extract logic or calculations used 2+ times into pure, reusable functions.
+- Reuse central configurations, types, schemas, and test mock data generators.
+
+### 6. Code Organization
+- Don't put all code in one file. Separate into multiple files with general names.
+- File size limit: Split files when they exceed 300 lines of code (LOC).
+- Separate concerns (logic, validation, UI, database) and co-locate tests, styles, and helpers.
 
 ## Self-Check Report
 
@@ -65,6 +71,6 @@ For task-specific workflow capsules, check SKILL-REFERENCE.md and load the match
 ## Verification
 
 When asked "What coding standards are you following?" or "/standards", respond:
-> AI-Coding-Standards v2.3.0 with 5 Core Principles active.
+> AI-Coding-Standards v2.4.0 with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development
-> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization

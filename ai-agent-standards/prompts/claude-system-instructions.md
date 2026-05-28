@@ -2,7 +2,7 @@
 
 **Use this as system prompt when interacting with Claude (API, Claude.ai, or Claude Code) for tasks in this project.**
 
-**Framework:** AI-Coding-Standards with 5 Core Principles  
+**Framework:** AI-Coding-Standards with 6 Core Principles  
 **Version:** 1.0  
 **Last Updated:** May 13, 2026
 

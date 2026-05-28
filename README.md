@@ -1,8 +1,8 @@
 # AI Agent Coding Standards
 
-**Version:** 2.3.0 | **Release:** 2026-05-25 | **Language:** English
+**Version:** 2.4.0 | **Release:** 2026-05-25 | **Language:** English
 
-A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **5 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
+A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **6 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
 > **Core philosophy:** AI is a tool, not a decision-maker. Engineers retain authority over architecture, security, and production decisions.
 
@@ -27,7 +27,7 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
 
 ### 3. Use Skills
 
@@ -36,7 +36,7 @@ The ported ECC skill capsules live in [skills/](./skills/) and should be loaded 
 
 ---
 
-## 🎯 The 5 Core Principles
+## 🎯 The 6 Core Principles
 
 The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876):
 
@@ -46,7 +46,8 @@ The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpa
 | 2 | **Simplicity First** | Minimum code, no speculative features | Over-engineering, bloat |
 | 3 | **Surgical Changes** | Touch only what you must, match existing style | Scope creep, drive-by refactors |
 | 4 | **Goal-Driven Execution** | Define verifiable success criteria | Ambiguous outcomes, wasted iterations |
-| 5 | **DRY & Reusability** | Never duplicate UI or logic, use shared systems | Hardcoded styles, duplicated bugs |
+| 5 | **DRY & Reusability** | Never duplicate UI, logic, configs, types, or any code | Hardcoded styles, duplicated types/configs, logic bugs |
+| 6 | **Code Organization** | Don't put all code in one file, separate with general names | Monolithic files (>300 LOC), unorganized files |
 
 **Learn more:**
 - [karpathy/principles.md](./karpathy/principles.md) — Source of truth (5 min read)
@@ -65,7 +66,7 @@ The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpa
 | **Cursor** | [`.cursor/rules/karpathy-guidelines.mdc`](./.cursor/rules/karpathy-guidelines.mdc) | ✅ |
 | **Windsurf** | [`.cursorrules`](./.cursorrules) | ✅ |
 
-Each file contains the 5 Core Principles, role definitions, and a **verification prompt** so you can confirm the agent loaded the correct skills.
+Each file contains the 6 Core Principles, role definitions, and a **verification prompt** so you can confirm the agent loaded the correct skills.
 
 ## Agent-Specific Install Model
 
@@ -97,7 +98,7 @@ AI-Coding-Standards/
 │
 │ ── KARPATHY PRINCIPLES (source of truth) ──
 ├── karpathy/
-│   ├── principles.md            → The 5 principles
+│   ├── principles.md            → The 6 principles
 │   └── examples.md              → Anti-patterns & correct approaches
 │
 │ ── FRAMEWORK DOCUMENTATION ──

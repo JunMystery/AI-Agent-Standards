@@ -388,6 +388,67 @@ import { formatCurrency } from '@/utils/currency';
 const formattedPrice = formatCurrency(cart.total);
 ```
 
+### Example 3: Configuration & Types Duplication
+
+**User Request:** "Create a service to call the shipping API and define the response structure"
+
+**❌ What LLMs Do (Duplicating Types & Env Configuration)**
+
+```typescript
+// Duplicating API types and hardcoding config values locally
+const API_URL = "https://api.shipping-provider.com/v1"; // Hardcoded config
+
+interface ShippingResponse {
+  id: string;
+  trackingNumber: string;
+  status: string;
+  estimatedDelivery: string;
+}
+```
+
+**✅ What Should Happen (Reusability)**
+
+```typescript
+// Importing shared configurations and extending shared type declarations
+import { config } from '@/config'; // Central config
+import { BaseApiResponse } from '@/types/api.types';
+
+// Reusing base types instead of duplicating fields
+interface ShippingResponse extends BaseApiResponse {
+  trackingNumber: string;
+  estimatedDelivery: string;
+}
+```
+
+---
+
+## 6. Code Organization
+
+### Example 1: Avoiding Monolithic Files
+
+**User Request:** "Implement user registration, validation, and email notification"
+
+**❌ What LLMs Do (Monolithic File)**
+Add the validation rules, the database query, and the SMTP setup directly in the user registration endpoint controller in `auth.controller.js`. The file grows to 450 lines of mixed concerns.
+
+**✅ What Should Happen (File Splitting)**
+Separate the logic into dedicated modules/files:
+1. `validators/register.schema.js` (Schema definition for validation)
+2. `services/user.service.js` (Core registration business and DB logic)
+3. `helpers/email.utils.js` (Helper function to send emails)
+4. `auth.controller.js` (Controller coordinates validators, services, helpers, and returns HTTP response)
+
+### Example 2: Suffix Naming & General Files
+
+**User Request:** "Add calculation helper functions for taxes and shipping fees"
+
+**❌ What LLMs Do (Ad-hoc naming)**
+Create a file named `taxCalculate.js` and another named `shippingFee.js` containing single-line helper functions, scattered in random folders.
+
+**✅ What Should Happen (General Files and Suffixes)**
+Group related utilities in a general helper file:
+`src/helpers/finance.helper.js` containing both `calculateTax()` and `calculateShippingFee()`.
+
 ---
 
 ## Anti-Patterns Summary
@@ -398,7 +459,8 @@ const formattedPrice = formatCurrency(cart.total);
 | Simplicity First | Strategy pattern for single discount calculation | One function until complexity is actually needed |
 | Surgical Changes | Reformats quotes, adds type hints while fixing bug | Only change lines that fix the reported issue |
 | Goal-Driven | "I'll review and improve the code" | "Write test for bug X → make it pass → verify no regressions" |
-| DRY & Reusability | Hardcoding inline styles or duplicating logic | Use existing design system components and shared utility functions |
+| DRY & Reusability | Hardcoding inline styles, duplicating logic, types, or config | Use existing design system, shared configs, utilities, and base types |
+| Code Organization | Massive 500+ LOC files with mixed concerns, ad-hoc filenames | Split into dedicated files (<300 LOC), use standard suffix suffixes |
 
 ## Key Insight
 

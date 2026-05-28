@@ -2,7 +2,7 @@
 
 Behavioral guidelines for Gemini (Gemini Code Assist, AI Studio, Gemini CLI) in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Coding-Standards v2.3.0 with 5 Core Principles
+**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -65,10 +65,22 @@ For multi-step tasks, state a brief plan:
 
 ### 5. DRY & Reusability
 
-**Never duplicate UI or logic. Always use shared systems.**
+**Never duplicate UI, logic, configurations, types, or any code. Always use shared systems.**
 
-- **UI/Styling:** Always utilize the project\'s existing design system, shared assets, or global CSS variables. Do not hardcode disjointed styles or create duplicate UI components.
-- **Logic:** Extract any logic used 2+ times into pure, reusable functions within the project\'s established shared directories. Do not repeat the same logic blocks.
+- **UI/Styling & Assets:** Always utilize the project\'s existing design system, shared assets, or global CSS variables. Do not hardcode disjointed styles or create duplicate UI components.
+- **Logic & Functions:** Extract any logic or calculations used 2+ times into pure, reusable functions within the project\'s established shared directories. Do not repeat the same logic blocks.
+- **Configurations & Metadata:** Centralize environment variables, configuration schemas, build scripts, and metadata. Avoid duplicating configurations across environments or services.
+- **Types & Schemas:** Define models, interfaces, and schemas in shared folders. Reuse and extend existing types instead of recreating them.
+- **Tests & Mock Data:** Share test utilities, mock data factories, and assertion helpers. Do not duplicate test setups or mock data structures.
+
+### 6. Code Organization
+
+**Don't put all code in one file. Separate into multiple files with general names.**
+
+- **File Size Limit:** Keep files focused and readable. As a guideline, split files when they exceed **300 lines of code (LOC)**.
+- **Concern Separation:** Separate distinct concerns (e.g. data schema, request handling, business logic, UI, utilities) into separate directories or files.
+- **General & Suffix Naming:** Group similar functions in files with general, purpose-driven names and consistent suffixes (e.g. `auth.service.ts`, `math.helper.ts`, `user.model.ts`).
+- **Co-locate Related Files:** Keep tests, styles, and local helpers close to their main component or module rather than in distant folders.
 ``
 
 ---
@@ -78,7 +90,7 @@ For multi-step tasks, state a brief plan:
 You are an AI coding assistant operating under **controlled AI-assisted development**:
 
 1. **Increase engineer productivity** through intelligent suggestions
-2. **Reduce common LLM mistakes** by following the 5 Core Principles above
+2. **Reduce common LLM mistakes** by following the 6 Core Principles above
 3. **Act as a tool, not a decision-maker** — engineers retain authority over architecture, security, and production decisions
 
 ## Do NOT
@@ -108,12 +120,13 @@ After completing code, include this report:
 - [x] Requirement 1: [description]
 - [x] Success criteria verified: [how?]
 
-### 5 Core Principles Check
+### 6 Core Principles Check
 - Think Before Coding: [assumptions stated? ambiguity addressed?]
 - Simplicity: [could this be simpler? unnecessary abstractions?]
 - Surgical: [all changes trace to request? unrelated changes?]
 - Goal-Driven: [success criteria defined and verified?]
 - Reusability: [used existing design system? extracted shared logic?]
+- Code Organization: [split files? modular design? file size < 300 LOC?]
 ```
 
 ## Key Documentation
@@ -121,7 +134,7 @@ After completing code, include this report:
 | File | Purpose |
 |------|---------|
 | [PROJECT-STANDARDS.md](PROJECT-STANDARDS.md) | **Project-specific rules (Always check first if exists)** |
-| [karpathy/principles.md](karpathy/principles.md) | Source of truth for 5 principles |
+| [karpathy/principles.md](karpathy/principles.md) | Source of truth for 6 principles |
 | [karpathy/examples.md](karpathy/examples.md) | Anti-patterns and correct approaches |
 | [ai-agent-standards/risk-management/security-constraints.md](ai-agent-standards/risk-management/security-constraints.md) | 12 non-negotiable security constraints |
 | [SKILL-REFERENCE.md](SKILL-REFERENCE.md) | Quick lookup: which files to reference per task |
@@ -149,6 +162,6 @@ For task-specific workflow capsules, check [SKILL-REFERENCE.md](SKILL-REFERENCE.
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
-> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization

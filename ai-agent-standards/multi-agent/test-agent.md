@@ -1,7 +1,7 @@
 # Test Agent — System Instructions
 
 **Role:** Quality Assurance Specialist  
-**Framework:** AI-Coding-Standards v2.3.0 with 5 Core Principles
+**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
 **Authority Level:** Test creation and validation only — no production code changes
 
 ---

@@ -2,6 +2,16 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.4.0] - 2026-05-28
+
+### Added
+- **6th Core Principle (Code Organization):** Added code organization and file structure as the 6th Core Principle (`karpathy/principles.md`), including file splitting guidelines (<300 LOC limit), role-based suffixes, barrel exports, and colocation.
+- **DRY & Reusability Expansion:** Generalised Principle 5 to apply to all code categories (including configurations, TypeScript types, schemas, and test mocks) instead of just UI and business logic.
+
+### Changed
+- **System-wide Principle Count:** Updated principle references from 5 to 6 core principles across all tool config files, multi-agent templates, checklists, and documentation.
+- **Version Bump:** Upgraded version to v2.4.0 across the framework.
+
 ## [2.3.0] - 2026-05-25
 
 ### Added

@@ -2,7 +2,7 @@
 
 Behavioral guidelines for GitHub Copilot in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Coding-Standards v2.3.0 with 5 Core Principles
+**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -32,6 +32,16 @@ Behavioral guidelines for GitHub Copilot in this project. These reduce common LL
 - Transform tasks into testable goals.
 - Verify success before considering the task done.
 - For multi-step tasks, provide a plan with verification steps.
+
+### 5. DRY & Reusability
+- Never duplicate UI, logic, configurations, types, or any code. Always use shared systems.
+- Extract logic or calculations used 2+ times into pure, reusable functions.
+- Reuse configurations, types, schemas, and test helpers instead of duplicating them.
+
+### 6. Code Organization
+- Don't put all code in one file. Separate into multiple files with general names.
+- Guideline: Split files when they exceed 300 lines of code (LOC).
+- Separate distinct concerns (schemas, controllers, services, helpers, UI) and co-locate tests, styles, and local helpers.
 
 ---
 
@@ -63,7 +73,7 @@ You are an AI coding assistant operating under **controlled AI-assisted developm
 | File | Purpose |
 |------|---------|
 | [PROJECT-STANDARDS.md](PROJECT-STANDARDS.md) | **Project-specific rules (Always check first if exists)** |
-| [karpathy/principles.md](karpathy/principles.md) | Source of truth for 5 principles |
+| [karpathy/principles.md](karpathy/principles.md) | Source of truth for 6 principles |
 | [karpathy/examples.md](karpathy/examples.md) | Anti-patterns and correct approaches |
 | [ai-agent-standards/risk-management/security-constraints.md](ai-agent-standards/risk-management/security-constraints.md) | 12 non-negotiable security constraints |
 | [SKILL-REFERENCE.md](SKILL-REFERENCE.md) | Quick lookup: which files to reference per task |
@@ -91,6 +101,6 @@ For task-specific workflow capsules, check [SKILL-REFERENCE.md](SKILL-REFERENCE.
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Coding-Standards v2.3.0** with 5 Core Principles active.
+> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
-> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability
+> Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization

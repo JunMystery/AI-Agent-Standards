@@ -64,10 +64,22 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ## 5. DRY & Reusability
 
-**Never duplicate UI or logic. Always use shared systems.**
+**Never duplicate UI, logic, configurations, types, or any code. Always use shared systems.**
 
-- **UI/Styling:** Always utilize the project's existing design system, shared assets, or global CSS variables. Do not hardcode disjointed styles or create duplicate UI components.
-- **Logic:** Extract any logic used 2+ times into pure, reusable functions within the project's established shared directories. Do not repeat the same logic blocks.
+- **UI/Styling & Assets:** Always utilize the project's existing design system, shared assets, or global CSS variables. Do not hardcode disjointed styles or create duplicate UI components.
+- **Logic & Functions:** Extract any logic or calculations used 2+ times into pure, reusable functions within the project's established shared directories. Do not repeat the same logic blocks.
+- **Configurations & Metadata:** Centralize environment variables, configuration schemas, build scripts, and metadata. Avoid duplicating configurations across environments or services.
+- **Types & Schemas:** Define models, interfaces, and schemas in shared folders. Reuse and extend existing types instead of recreating them.
+- **Tests & Mock Data:** Share test utilities, mock data factories, and assertion helpers. Do not duplicate test setups or mock data structures.
+
+## 6. Code Organization
+
+**Don't put all code in one file. Separate into multiple files with general names.**
+
+- **File Size Limit:** Keep files focused and readable. As a guideline, split files when they exceed **300 lines of code (LOC)**.
+- **Concern Separation:** Separate distinct concerns (e.g. data schema, request handling, business logic, UI, utilities) into separate directories or files.
+- **General & Suffix Naming:** Group similar functions in files with general, purpose-driven names and consistent suffixes (e.g. `auth.service.ts`, `math.helper.ts`, `user.model.ts`).
+- **Co-locate Related Files:** Keep tests, styles, and local helpers close to their main component or module rather than in distant folders.
 
 ---
 

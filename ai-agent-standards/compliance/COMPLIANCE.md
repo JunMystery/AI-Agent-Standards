@@ -24,7 +24,7 @@ We map our framework controls directly to the [OWASP Top 10 for Large Language M
 
 The US National Institute of Standards and Technology (NIST) provides a framework to manage AI risks. Our workflow aligns with the four core functions:
 
-- **GOVERN:** We govern AI behavior through the 5 Core Principles and strict Role-Playing Agents (Coder vs. Reviewer).
+- **GOVERN:** We govern AI behavior through the 6 Core Principles and strict Role-Playing Agents (Coder vs. Reviewer).
 - **MAP:** Risks are mapped in the `security-constraints.md` and flagged during the PR checklist.
 - **MEASURE:** We measure AI effectiveness using the `Self-Check Report` and track iterations and defect escape rates.
 - **MANAGE:** We manage risks by enforcing a Human-in-the-Loop (HITL) gate before any code is merged into `main`.
