@@ -17,6 +17,14 @@ import re
 import shutil
 import sys
 
+# Ensure UTF-8 encoding is used for stdout/stderr on Windows to handle emojis correctly
+if sys.platform.startswith("win"):
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8")
+
+
 
 # Files to copy from the standards repo root → project root
 RULE_FILES = [
@@ -122,8 +130,67 @@ def copy_and_link(standards_dir: str, project_root: str) -> None:
 
     print()
     print(f"Done: {copied} copied, {skipped} skipped.")
+    
+    # Auto-update project's .gitignore to ignore standard configuration files
+    update_gitignore(project_root)
+    
     print()
     print('Verify by asking your AI agent: "What coding standards are you following?"')
+
+
+def update_gitignore(project_root: str) -> None:
+    """Add standard configuration files to the project's .gitignore."""
+    gitignore_path = os.path.join(project_root, ".gitignore")
+    files_to_ignore = [
+        "CLAUDE.md",
+        "GEMINI.md",
+        "COPILOT.md",
+        ".instructions.md",
+        ".cursorrules",
+        ".cursor/rules/karpathy-guidelines.mdc",
+    ]
+
+    # Read existing content if .gitignore exists, trying common encodings
+    lines = []
+    detected_encoding = "utf-8"
+    if os.path.exists(gitignore_path):
+        for enc in ["utf-8", "utf-8-sig", "utf-16", "latin-1"]:
+            try:
+                with open(gitignore_path, "r", encoding=enc) as f:
+                    lines = f.readlines()
+                detected_encoding = enc
+                break
+            except (UnicodeDecodeError, LookupError):
+                continue
+
+    # Normalize paths and check existing entries
+    existing_rules = set()
+    for line in lines:
+        stripped = line.strip()
+        if stripped and not stripped.startswith("#"):
+            # Normalize slashes for comparison
+            normalized = stripped.lstrip("/").replace("\\", "/")
+            existing_rules.add(normalized)
+
+    # Filter out files that are already ignored
+    to_add = []
+    for item in files_to_ignore:
+        if item not in existing_rules:
+            to_add.append(item)
+
+    if to_add:
+        print()
+        print("  📝 Updating .gitignore...")
+        with open(gitignore_path, "a", encoding=detected_encoding) as f:
+            # Ensure file ends with a newline before appending
+            if lines and not lines[-1].endswith("\n"):
+                f.write("\n")
+            f.write("\n# AI Agent Coding Standards\n")
+            for item in to_add:
+                f.write(f"/{item}\n")
+                print(f"     Ignored: {item}")
+
+
 
 
 def main():
