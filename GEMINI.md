@@ -148,13 +148,13 @@ If the user\'s request involves any of the following topics, you MUST autonomous
 
 For task-specific workflow capsules, check [SKILL-REFERENCE.md](SKILL-REFERENCE.md) and load the matching [skills/](skills/) `SKILL.md` only when the task matches its trigger.
 
-- **Writing/Updating Tests** -> ai-agent-standards/engineering-practices/TESTING_STANDARDS.md
-- **Performance/Database/Caching** -> ai-agent-standards/engineering-practices/NON_FUNCTIONAL_REQUIREMENTS.md
-- **Security/Auth/Payments** -> ai-agent-standards/risk-management/security-constraints.md
-- **UI/Frontend/Accessibility** -> ai-agent-standards/compliance/A11Y_CHECKLIST.md
-- **Versioning/Releasing** -> ai-agent-standards/engineering-practices/RELEASE_PROCESS.md
-- **Writing Docs/README/Changelog** -> ai-agent-standards/engineering-practices/DOCUMENTATION_STANDARDS.md
-- **OWASP/Compliance Audit** -> ai-agent-standards/compliance/COMPLIANCE.md
+- **Writing/Updating Tests (test, unit test, integration test, mock, coverage, TDD, Jest, Vitest, pytest)** -> ai-agent-standards/engineering-practices/TESTING_STANDARDS.md
+- **Performance/Database/Caching (performance, database, cache, Redis, query, optimization, latency, N+1, slow, scale)** -> ai-agent-standards/engineering-practices/NON_FUNCTIONAL_REQUIREMENTS.md
+- **Security/Auth/Payments (security, auth, login, register, password, encrypt, API key, token, JWT, OAuth, payment, bcrypt)** -> ai-agent-standards/risk-management/security-constraints.md
+- **UI/Frontend/Accessibility (accessibility, a11y, WCAG, ARIA, keyboard navigation, screen reader, UI, css, styling)** -> ai-agent-standards/compliance/A11Y_CHECKLIST.md
+- **Versioning/Releasing (release, deploy, version, SemVer, branch, Git, merge, PR, CI/CD, pipeline)** -> ai-agent-standards/engineering-practices/RELEASE_PROCESS.md
+- **Writing Docs/README/Changelog (docs, document, README, changelog, JSDoc, docstring, Swagger, OpenAPI, API spec)** -> ai-agent-standards/engineering-practices/DOCUMENTATION_STANDARDS.md
+- **OWASP/Compliance Audit (audit, compliance, vulnerability, OWASP, NIST, security scan, SAST)** -> ai-agent-standards/compliance/COMPLIANCE.md
 
 ---
 
