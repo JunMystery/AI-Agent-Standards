@@ -1,7 +1,7 @@
 # Multi-Agent Framework
 
-**Status:** ✅ Implemented (v2.4.0)
-**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
+**Status:** ✅ Implemented (v2.5.0)
+**Framework:** AI-Coding-Standards v2.5.0 with 6 Core Principles
 
 ---
 
@@ -31,7 +31,7 @@ Coder Agent → Test Agent → Reviewer Agent → Human Engineer
 ## How to Use
 
 ### Single-Agent (default)
-No setup needed. Your AI agent loads rules from its own root instruction file (`CLAUDE.md`, `GEMINI.md`, `COPILOT.md`, `.instructions.md`, etc.) automatically.
+No setup needed. Your AI agent loads rules from its own root instruction file (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `COPILOT.md`, `.instructions.md`, etc.) automatically.
 
 There is no shared cross-agent skill layer in this framework; each agent uses its own Markdown instruction surface.
 

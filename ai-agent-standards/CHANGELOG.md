@@ -2,6 +2,20 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.5.0] - 2026-05-30
+
+### Added
+- **OpenAI Codex / Codex VS Code support** - Added `AGENTS.md` as the Codex instruction surface and a `codex-vscode` on-demand skill capsule.
+- **Codex discovery wiring** - Updated setup, install docs, README, and skill indexes so Codex instructions are installed with the rest of the framework.
+- **Agent-specific setup menu** - `scripts/setup.py` now lets users install one agent instruction file, choose all, or press `0` to cancel.
+
+### Fixed
+- **Cross-drive setup on Windows** - `scripts/setup.py` now falls back to absolute Markdown link prefixes when standards and target projects are on different Windows drives.
+
+### Changed
+- **Version Bump** - Updated framework versioning to v2.5.0 across the primary docs, instruction surfaces, skill references, index, install docs, and multi-agent files.
+- **Cleaner default installs** - Setup no longer copies every instruction file unless the user chooses all or passes `--agent all`.
+
 ## [2.4.0] - 2026-05-28
 
 ### Added

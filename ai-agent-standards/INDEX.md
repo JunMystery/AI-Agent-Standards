@@ -182,6 +182,7 @@
 | File | Purpose |
 |------|---------|
 | `PROJECT-STANDARDS.md` | **Project-specific rules (Always check first if exists)** |
+| `AGENTS.md` | OpenAI Codex auto-discovery instructions, including Codex in VS Code |
 | `PROJECT-STANDARDS-EXAMPLE.md` | Templates & examples to copy into your project standards |
 | `CLAUDE.md` | Claude Code auto-discovery instructions |
 | `GEMINI.md` | Gemini Code Assist auto-discovery instructions |
@@ -212,6 +213,7 @@
 | [`../skills/browser-qa/SKILL.md`](../skills/browser-qa/SKILL.md) | Browser-based UI verification |
 | [`../skills/prompt-optimizer/SKILL.md`](../skills/prompt-optimizer/SKILL.md) | Prompt improvement workflow |
 | [`../skills/skill-scout/SKILL.md`](../skills/skill-scout/SKILL.md) | Search-first workflow for new skills |
+| [`../skills/codex-vscode/SKILL.md`](../skills/codex-vscode/SKILL.md) | Codex setup and troubleshooting in VS Code-compatible IDEs |
 | [`../skills/accessibility/SKILL.md`](../skills/accessibility/SKILL.md) | Accessibility design and audit workflow |
 | [`../skills/api-design/SKILL.md`](../skills/api-design/SKILL.md) | API contract design and review |
 | [`../skills/architecture-decision-records/SKILL.md`](../skills/architecture-decision-records/SKILL.md) | Architecture decision record capture |
@@ -250,7 +252,7 @@
 | Sample prompts | 5 |
 | Checklists & templates | 8+ |
 | Reference documents | 7 |
-| AI auto-discovery files | 6 |
+| AI auto-discovery files | 7 |
 | **Total** | **45+** |
 
 ---
@@ -270,8 +272,8 @@ When setting up a new project:
 
 ## 🔄 Version Info
 
-- **Framework Version:** 2.4.0
-- **Last Updated:** 2026-05-25
+- **Framework Version:** 2.5.0
+- **Last Updated:** 2026-05-30
 - **Status:** ✓ Production Ready
 
 ---

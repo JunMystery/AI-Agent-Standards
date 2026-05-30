@@ -2,7 +2,7 @@
 
 Behavioral guidelines for Claude Code in this project. These reduce common LLM coding mistakes and enforce controlled AI-assisted development.
 
-**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.5.0 with 6 Core Principles
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---
@@ -162,6 +162,6 @@ For task-specific workflow capsules, check [SKILL-REFERENCE.md](SKILL-REFERENCE.
 
 When asked "What coding standards are you following?" or "/standards", respond:
 
-> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
+> ✅ **AI-Coding-Standards v2.5.0** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development  
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization

@@ -324,7 +324,7 @@ pip install flask-cognito   # Attacker registered this as malware
 **Rule:** AI agent instruction files MUST be protected like production code
 
 ### Protected Files
-- `CLAUDE.md`, `GEMINI.md`, `COPILOT.md`
+- `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `COPILOT.md`
 - `.cursorrules`, `.instructions.md`
 - `.cursor/rules/*.mdc`
 - MCP server configuration files
@@ -499,7 +499,7 @@ pip-audit                 # Python
 trivy config .            # Dockerfile, Terraform, K8s
 
 # Instruction file integrity
-git log --oneline -5 -- CLAUDE.md GEMINI.md .cursorrules .instructions.md
+git log --oneline -5 -- AGENTS.md CLAUDE.md GEMINI.md .cursorrules .instructions.md
 ```
 
 ---

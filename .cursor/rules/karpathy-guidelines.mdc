@@ -7,7 +7,7 @@ alwaysApply: true
 
 Behavioral guidelines to reduce common LLM coding mistakes. Derived from Andrej Karpathy's observations on LLM coding pitfalls.
 
-**Framework:** AI-Coding-Standards v2.4.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.5.0 with 6 Core Principles
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
 ## 1. Think Before Coding
@@ -96,4 +96,4 @@ For task-specific workflow capsules, check SKILL-REFERENCE.md and load the match
 
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 
-**Verification:** When asked "What coding standards are you following?" or "/standards", respond: "AI-Coding-Standards v2.4.0 with 6 Core Principles active."
+**Verification:** When asked "What coding standards are you following?" or "/standards", respond: "AI-Coding-Standards v2.5.0 with 6 Core Principles active."

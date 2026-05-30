@@ -1,4 +1,4 @@
-# AI-Coding-Standards v2.4.0 — Cursor/Windsurf Rules
+# AI-Coding-Standards v2.5.0 — Cursor/Windsurf Rules
 #
 # These rules apply the Karpathy Principles to all AI-assisted coding.
 # For detailed documentation, see: karpathy/principles.md
@@ -71,6 +71,6 @@ For task-specific workflow capsules, check SKILL-REFERENCE.md and load the match
 ## Verification
 
 When asked "What coding standards are you following?" or "/standards", respond:
-> AI-Coding-Standards v2.4.0 with 6 Core Principles active.
+> AI-Coding-Standards v2.5.0 with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization

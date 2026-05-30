@@ -1,8 +1,8 @@
 # AI Agent Coding Standards
 
-**Version:** 2.4.0 | **Release:** 2026-05-28 | **Language:** English
+**Version:** 2.5.0 | **Release:** 2026-05-30 | **Language:** English
 
-A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **6 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
+A **zero-config, drop-in framework** that makes AI coding agents (Codex, Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **6 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
 > **Core philosophy:** AI is a tool, not a decision-maker. Engineers retain authority over architecture, security, and production decisions.
 
@@ -17,7 +17,7 @@ A **zero-config, drop-in framework** that makes AI coding agents (Claude, Gemini
 python AI-Agent-Standards/scripts/setup.py
 ```
 
-This copies AI instruction files to your project root and auto-links all internal paths. See [INSTALL.md](./INSTALL.md) for Git Submodule, manual setup, and other options.
+This prompts you to choose the AI agent you use, copies only that instruction file, and auto-links all internal paths. Choose all in the prompt if you are not sure. See [INSTALL.md](./INSTALL.md) for Git Submodule, manual setup, and other options.
 
 ### 2. Verify
 
@@ -27,7 +27,7 @@ Ask your AI agent:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.4.0** with 6 Core Principles active.
+> ✅ **AI-Coding-Standards v2.5.0** with 6 Core Principles active.
 
 ### 3. Use Skills
 
@@ -59,6 +59,7 @@ The behavioral foundation for all AI-assisted coding, derived from [Andrej Karpa
 
 | Tool | Instruction File | Auto-detected? |
 |------|-----------------|----------------|
+| **OpenAI Codex / Codex VS Code** | [`AGENTS.md`](./AGENTS.md) | ✅ |
 | **Claude Code** | [`CLAUDE.md`](./CLAUDE.md) | ✅ |
 | **Gemini Code Assist / CLI** | [`GEMINI.md`](./GEMINI.md) | ✅ |
 | **GitHub Copilot** | [`COPILOT.md`](./COPILOT.md) | ✅ |
@@ -72,6 +73,7 @@ Each file contains the 6 Core Principles, role definitions, and a **verification
 
 This framework does not use one shared skill layer across all agents. Each agent should load its own Markdown instruction file and only the task-specific references it needs.
 
+- OpenAI Codex / Codex VS Code → `AGENTS.md`
 - Claude Code → `CLAUDE.md`
 - Gemini → `GEMINI.md`
 - GitHub Copilot → `COPILOT.md`
@@ -89,6 +91,7 @@ Use `SKILL-REFERENCE.md` only as a lookup guide for task-specific references, no
 AI-Coding-Standards/
 │
 │ ── AUTO-DISCOVERY FILES (AI agents read these) ──
+├── AGENTS.md                    → OpenAI Codex / Codex VS Code
 ├── CLAUDE.md                    → Claude Code
 ├── GEMINI.md                    → Gemini Code Assist
 ├── COPILOT.md                   → GitHub Copilot
@@ -126,6 +129,7 @@ AI-Coding-Standards/
 │   ├── browser-qa/              → Browser-based UI verification
 │   ├── prompt-optimizer/        → Prompt improvement workflow
 │   ├── skill-scout/             → Search before creating new skills
+│   ├── codex-vscode/            → Codex setup in VS Code-compatible IDEs
 │   ├── accessibility/           → Accessibility design and audit
 │   ├── api-design/              → API contract design and review
 │   ├── architecture-decision-records/ → ADR capture workflow

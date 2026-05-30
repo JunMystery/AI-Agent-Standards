@@ -2,9 +2,10 @@
 """
 AI Agent Coding Standards — Automated Setup Script
 
-This script copies the required AI instruction files from the standards
-directory to the project root and rewrites internal links so every AI
-tool can auto-discover them.
+This script copies the AI instruction file for the selected agent from the
+standards directory to the project root and rewrites internal links so the
+agent can auto-discover the framework. Choose all if you are unsure which
+agent will be used.
 
 Usage:
     python AI-Agent-Standards/scripts/setup.py            # auto-detect project root
@@ -27,15 +28,50 @@ if sys.platform.startswith("win"):
 
 
 # Files to copy from the standards repo root → project root
-RULE_FILES = [
-    "CLAUDE.md",
-    "GEMINI.md",
-    "COPILOT.md",
-    ".instructions.md",
-    ".cursorrules",
-    ".cursor/rules/karpathy-guidelines.mdc",
-    "PROJECT-STANDARDS.md",
+AGENT_CHOICES = [
+    {
+        "key": "codex",
+        "label": "OpenAI Codex / Codex VS Code",
+        "files": ["AGENTS.md"],
+    },
+    {
+        "key": "claude",
+        "label": "Claude Code",
+        "files": ["CLAUDE.md"],
+    },
+    {
+        "key": "gemini",
+        "label": "Gemini Code Assist / Gemini CLI",
+        "files": ["GEMINI.md"],
+    },
+    {
+        "key": "copilot",
+        "label": "GitHub Copilot Chat",
+        "files": ["COPILOT.md"],
+    },
+    {
+        "key": "vscode-copilot",
+        "label": "VS Code Copilot",
+        "files": [".instructions.md"],
+    },
+    {
+        "key": "cursor",
+        "label": "Cursor",
+        "files": [".cursor/rules/karpathy-guidelines.mdc"],
+    },
+    {
+        "key": "windsurf",
+        "label": "Windsurf / Cursor legacy fallback",
+        "files": [".cursorrules"],
+    },
 ]
+
+PROJECT_STANDARDS_FILE = "PROJECT-STANDARDS.md"
+ALL_CHOICE_FILES = [
+    file_path
+    for choice in AGENT_CHOICES
+    for file_path in choice["files"]
+] + [PROJECT_STANDARDS_FILE]
 
 # Paths that appear in the source files (relative to the standards repo root).
 # setup.py will prepend the computed relative prefix to each of these.
@@ -79,10 +115,51 @@ def add_prefix(content: str, prefix: str) -> str:
     return content
 
 
-def copy_and_link(standards_dir: str, project_root: str) -> None:
+def select_rule_files(agent_key: str = None) -> list[str]:
+    """Return rule files to install, prompting when no agent is provided."""
+    choices_by_key = {choice["key"]: choice for choice in AGENT_CHOICES}
+    if agent_key:
+        normalized = agent_key.lower()
+        if normalized == "all":
+            return ALL_CHOICE_FILES
+        if normalized in choices_by_key:
+            return choices_by_key[normalized]["files"]
+        valid = ", ".join([choice["key"] for choice in AGENT_CHOICES] + ["all"])
+        print(f"Error: Unknown agent '{agent_key}'. Valid choices: {valid}")
+        sys.exit(1)
+
+    print("Choose which AI agent instruction file to install:")
+    print("  0. Cancel")
+    for number, choice in enumerate(AGENT_CHOICES, start=1):
+        files = ", ".join(choice["files"])
+        print(f"  {number}. {choice['label']} ({files})")
+    all_number = len(AGENT_CHOICES) + 1
+    print(f"  {all_number}. Choose all (install every supported instruction file)")
+    print()
+
+    while True:
+        selected = input(f"Select 0-{all_number}: ").strip()
+        if selected == "0":
+            print("Setup cancelled.")
+            sys.exit(0)
+        if selected.isdigit():
+            selected_number = int(selected)
+            if 1 <= selected_number <= len(AGENT_CHOICES):
+                return AGENT_CHOICES[selected_number - 1]["files"]
+            if selected_number == all_number:
+                return ALL_CHOICE_FILES
+        print(f"Please enter a number from 0 to {all_number}.")
+
+
+def copy_and_link(standards_dir: str, project_root: str, rule_files: list[str]) -> None:
     """Copy rule files and rewrite links."""
-    # Compute the relative path from project root → standards directory
-    rel_prefix = os.path.relpath(standards_dir, project_root).replace("\\", "/")
+    # Compute the path from project root to standards directory. On Windows,
+    # os.path.relpath cannot cross drive letters, so fall back to an absolute
+    # path that Markdown-capable agents can still resolve.
+    try:
+        rel_prefix = os.path.relpath(standards_dir, project_root).replace("\\", "/")
+    except ValueError:
+        rel_prefix = os.path.abspath(standards_dir).replace("\\", "/")
 
     print(f"  Standards folder : {standards_dir}")
     print(f"  Project root     : {project_root}")
@@ -92,7 +169,7 @@ def copy_and_link(standards_dir: str, project_root: str) -> None:
     copied = 0
     skipped = 0
 
-    for rel_path in RULE_FILES:
+    for rel_path in rule_files:
         src = os.path.join(standards_dir, rel_path)
         dst = os.path.join(project_root, rel_path)
 
@@ -132,13 +209,13 @@ def copy_and_link(standards_dir: str, project_root: str) -> None:
     print(f"Done: {copied} copied, {skipped} skipped.")
     
     # Auto-update project's .gitignore to ignore standard configuration files
-    update_gitignore(project_root, standards_dir)
+    update_gitignore(project_root, standards_dir, rule_files)
     
     print()
     print('Verify by asking your AI agent: "What coding standards are you following?"')
 
 
-def update_gitignore(project_root: str, standards_dir: str = None) -> None:
+def update_gitignore(project_root: str, standards_dir: str = None, installed_files: list[str] = None) -> None:
     """Add standard configuration files to the project's .gitignore."""
     gitignore_path = os.path.join(project_root, ".gitignore")
     
@@ -146,15 +223,13 @@ def update_gitignore(project_root: str, standards_dir: str = None) -> None:
     if standards_dir:
         standards_folder = os.path.basename(standards_dir)
 
-    files_to_ignore = [
-        f"{standards_folder}/",
-        "CLAUDE.md",
-        "GEMINI.md",
-        "COPILOT.md",
-        ".instructions.md",
-        ".cursorrules",
-        ".cursor/rules/karpathy-guidelines.mdc",
-    ]
+    files_to_ignore = [f"{standards_folder}/"]
+    if installed_files:
+        files_to_ignore.extend(
+            file_path
+            for file_path in installed_files
+            if file_path != PROJECT_STANDARDS_FILE
+        )
 
 
     # Read existing content if .gitignore exists, trying common encodings
@@ -210,6 +285,12 @@ def main():
         default=None,
         help="Path to the project root. Auto-detected if omitted.",
     )
+    parser.add_argument(
+        "--agent",
+        choices=[choice["key"] for choice in AGENT_CHOICES] + ["all"],
+        default=None,
+        help="Install one agent instruction file without prompting. Use 'all' to install every supported file.",
+    )
     args = parser.parse_args()
 
     # Resolve standards directory (parent of scripts/)
@@ -230,7 +311,8 @@ def main():
     print()
     print("🔧 AI Agent Coding Standards — Setup")
     print("=" * 42)
-    copy_and_link(standards_dir, project_root)
+    rule_files = select_rule_files(args.agent)
+    copy_and_link(standards_dir, project_root, rule_files)
 
 
 if __name__ == "__main__":

@@ -133,7 +133,7 @@ fi
 
 # ── 6. Instruction File Integrity (Constraint 10) ──
 header "Instruction File Integrity"
-INSTRUCTION_FILES="CLAUDE.md GEMINI.md COPILOT.md .cursorrules .instructions.md"
+INSTRUCTION_FILES="AGENTS.md CLAUDE.md GEMINI.md COPILOT.md .cursorrules .instructions.md"
 MODIFIED=0
 for f in $INSTRUCTION_FILES; do
     if [ -f "$f" ]; then

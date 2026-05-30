@@ -20,7 +20,7 @@
 
 ## How These Principles Are Used
 
-All AI instruction files in this repository (`CLAUDE.md`, `GEMINI.md`, `COPILOT.md`, `.instructions.md`, `.cursorrules`) reference or inline these principles. This module is the **single source of truth** — edit here, and update the instruction files accordingly.
+All AI instruction files in this repository (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `COPILOT.md`, `.instructions.md`, `.cursorrules`) reference or inline these principles. This module is the **single source of truth** — edit here, and update the instruction files accordingly.
 
 ## Attribution
 
