@@ -123,7 +123,7 @@ def select_rule_files(agent_key: str = None) -> list[str]:
         if normalized == "all":
             return ALL_CHOICE_FILES
         if normalized in choices_by_key:
-            return choices_by_key[normalized]["files"]
+            return choices_by_key[normalized]["files"] + [PROJECT_STANDARDS_FILE]
         valid = ", ".join([choice["key"] for choice in AGENT_CHOICES] + ["all"])
         print(f"Error: Unknown agent '{agent_key}'. Valid choices: {valid}")
         sys.exit(1)
@@ -145,7 +145,7 @@ def select_rule_files(agent_key: str = None) -> list[str]:
         if selected.isdigit():
             selected_number = int(selected)
             if 1 <= selected_number <= len(AGENT_CHOICES):
-                return AGENT_CHOICES[selected_number - 1]["files"]
+                return AGENT_CHOICES[selected_number - 1]["files"] + [PROJECT_STANDARDS_FILE]
             if selected_number == all_number:
                 return ALL_CHOICE_FILES
         print(f"Please enter a number from 0 to {all_number}.")
