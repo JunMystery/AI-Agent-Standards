@@ -33,6 +33,22 @@ Thumbs.db
 node_modules/
 __pycache__/
 *.pyc
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Runtime/tooling
+*.log
+.cache/
 
 # Temp
 *.tmp
