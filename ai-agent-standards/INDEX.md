@@ -1,83 +1,83 @@
-# INDEX — AI Agent Coding Standards
+# INDEX - AI Agent Coding Standards
 
 **Find the file you need in this framework.**
 
 ---
 
-## 🎯 By Role
+##  By Role
 
 ### New Engineers
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`../karpathy/principles.md`](../karpathy/principles.md) | **6 Core Principles (source of truth)** | ⭐⭐⭐ |
-| [`../karpathy/examples.md`](../karpathy/examples.md) | **Anti-patterns & correct approaches** | ⭐⭐⭐ |
-| [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | 1-page cheat sheet (printable) | ⭐⭐⭐ |
-| [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) | Detailed training (20-30 min) | ⭐⭐⭐ |
-| [`onboarding/think-before-coding-worksheet.md`](onboarding/think-before-coding-worksheet.md) | Interactive exercise (30 min) | ⭐⭐ |
-| [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md) | Step-by-step first task guide | ⭐⭐⭐ |
-| [`onboarding/common-mistakes.md`](onboarding/common-mistakes.md) | Common mistakes & how to avoid | ⭐⭐ |
-| [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Standard prompt template | ⭐⭐ |
+| [`../karpathy/principles.md`](../karpathy/principles.md) | **6 Core Principles (source of truth)** | *** |
+| [`../karpathy/examples.md`](../karpathy/examples.md) | **Anti-patterns & correct approaches** | *** |
+| [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | 1-page cheat sheet (printable) | *** |
+| [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) | Detailed training (20-30 min) | *** |
+| [`onboarding/think-before-coding-worksheet.md`](onboarding/think-before-coding-worksheet.md) | Interactive exercise (30 min) | ** |
+| [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md) | Step-by-step first task guide | *** |
+| [`onboarding/common-mistakes.md`](onboarding/common-mistakes.md) | Common mistakes & how to avoid | ** |
+| [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Standard prompt template | ** |
 
 ### Code Reviewer / QA
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Reviewer checklist for 6 principles | ⭐⭐⭐ |
-| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | Checklist with Karpathy validation | ⭐⭐⭐ |
-| [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md) | Detailed audit checklist | ⭐⭐⭐ |
-| [`quality-control/hallucination-detection.md`](quality-control/hallucination-detection.md) | Detecting AI hallucinations | ⭐⭐ |
-| [`reference/error-reference-complete.md`](reference/error-reference-complete.md) | Common AI error table | ⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Reviewer checklist for 6 principles | *** |
+| [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md) | Checklist with Karpathy validation | *** |
+| [`quality-control/audit-ai-code-full.md`](quality-control/audit-ai-code-full.md) | Detailed audit checklist | *** |
+| [`quality-control/hallucination-detection.md`](quality-control/hallucination-detection.md) | Detecting AI hallucinations | ** |
+| [`reference/error-reference-complete.md`](reference/error-reference-complete.md) | Common AI error table | ** |
 
 ### Senior Engineer / Tech Lead
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Master reference for all principles | ⭐⭐⭐ |
-| [`reference/sync-karpathy-across-tools.md`](reference/sync-karpathy-across-tools.md) | Keeping Cursor/Claude/Copilot in sync | ⭐⭐⭐ |
-| [`quality-control/`](quality-control/) | Full quality control pipeline | ⭐⭐⭐ |
-| [`risk-management/escalation-workflow.md`](risk-management/escalation-workflow.md) | Handling uncooperative AI | ⭐⭐⭐ |
-| [`risk-management/security-constraints.md`](risk-management/security-constraints.md) | Non-negotiable constraints | ⭐⭐⭐ |
-| [`prompts/sample-use-cases/`](prompts/sample-use-cases/) | Prompt examples by use case | ⭐⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Master reference for all principles | *** |
+| [`reference/sync-karpathy-across-tools.md`](reference/sync-karpathy-across-tools.md) | Keeping Cursor/Claude/Copilot in sync | *** |
+| [`quality-control/`](quality-control/) | Full quality control pipeline | *** |
+| [`risk-management/escalation-workflow.md`](risk-management/escalation-workflow.md) | Handling uncooperative AI | *** |
+| [`risk-management/security-constraints.md`](risk-management/security-constraints.md) | Non-negotiable constraints | *** |
+| [`prompts/sample-use-cases/`](prompts/sample-use-cases/) | Prompt examples by use case | *** |
 
 ### Manager / Product Owner
 
 | File | Purpose | Priority |
 |------|---------|----------|
-| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Understand core behavioral principles | ⭐⭐⭐ |
-| [`reference/methodology-for-management.md`](reference/methodology-for-management.md) | Methodology explanation | ⭐⭐⭐ |
-| [`risk-management/cost-control-policy.md`](risk-management/cost-control-policy.md) | AI cost control | ⭐⭐ |
+| [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | Understand core behavioral principles | *** |
+| [`reference/methodology-for-management.md`](reference/methodology-for-management.md) | Methodology explanation | *** |
+| [`risk-management/cost-control-policy.md`](risk-management/cost-control-policy.md) | AI cost control | ** |
 
 ---
 
-## 📁 By Directory
+##  By Directory
 
-### 📂 `karpathy/` — Karpathy Principles (Source of Truth)
+###  `karpathy/` - Karpathy Principles (Source of Truth)
 
 > **Location:** `../karpathy/` (at repo root, not inside this folder)
 
 | File | Content |
 |------|---------|
-| [`../karpathy/principles.md`](../karpathy/principles.md) | **SOURCE OF TRUTH**: 4 Principles — Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution |
+| [`../karpathy/principles.md`](../karpathy/principles.md) | **SOURCE OF TRUTH**: 4 Principles - Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution |
 | [`../karpathy/examples.md`](../karpathy/examples.md) | Real-world anti-patterns and correct approaches for each principle |
 
 ---
 
-### 📂 `principles/` — Detailed Framework
+###  `principles/` - Detailed Framework
 
 | File | Content |
 |------|---------|
 | [`principles/karpathy-framework.md`](principles/karpathy-framework.md) | **MASTER REFERENCE**: 4 Principles with detailed explanation, integration with framework, reviewer checklist |
 
 **Quick Learning Path:**
-1. Read [`karpathy/principles.md`](../karpathy/principles.md) — 5 min
-2. Read [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) — 20 min
-3. Complete [`onboarding/think-before-coding-worksheet.md`](onboarding/think-before-coding-worksheet.md) — 30 min
+1. Read [`karpathy/principles.md`](../karpathy/principles.md) - 5 min
+2. Read [`onboarding/karpathy-principles-guide.md`](onboarding/karpathy-principles-guide.md) - 20 min
+3. Complete [`onboarding/think-before-coding-worksheet.md`](onboarding/think-before-coding-worksheet.md) - 30 min
 4. Apply using [`quality-control/code-review-checklist.md`](quality-control/code-review-checklist.md)
 
 ---
 
-### 📂 `engineering-practices/` — Software Engineering Standards
+###  `engineering-practices/` - Software Engineering Standards
 
 | File | Content |
 |------|---------|
@@ -88,7 +88,7 @@
 
 ---
 
-### 📂 `compliance/` — Industry Standards & Accessibility
+###  `compliance/` - Industry Standards & Accessibility
 
 | File | Content |
 |------|---------|
@@ -97,13 +97,13 @@
 
 ---
 
-### 📂 `prompts/` — Prompt Template Library
+###  `prompts/` - Prompt Template Library
 
 | File | Content |
 |------|---------|
 | [`prompts/README.md`](prompts/README.md) | Library usage guide |
 | [`prompts/HEADER-TEMPLATE.yaml`](prompts/HEADER-TEMPLATE.yaml) | Standard YAML header for prompts |
-| [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Prompt template (Context → Task → Constraints → Output) |
+| [`prompts/PROMPT-TEMPLATE.md`](prompts/PROMPT-TEMPLATE.md) | Prompt template (Context -> Task -> Constraints -> Output) |
 | [`prompts/claude-system-instructions.md`](prompts/claude-system-instructions.md) | System prompt for Claude with Karpathy principles |
 | **Use Cases:** | |
 | [`create-api-with-rate-limiting.md`](prompts/sample-use-cases/create-api-with-rate-limiting.md) | API endpoint + auth + rate limiting |
@@ -115,7 +115,7 @@
 
 ---
 
-### 📂 `quality-control/` — Quality Control Pipeline
+###  `quality-control/` - Quality Control Pipeline
 
 | File | Content |
 |------|---------|
@@ -128,7 +128,7 @@
 
 ---
 
-### 📂 `risk-management/` — Risk Management
+###  `risk-management/` - Risk Management
 
 | File | Content |
 |------|---------|
@@ -142,18 +142,18 @@
 
 ---
 
-### 📂 `onboarding/` — Training & Guides
+###  `onboarding/` - Training & Guides
 
 | File | Content |
 |------|---------|
 | [`onboarding/README.md`](onboarding/README.md) | Onboarding program overview |
-| [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | **1-page cheat sheet (printable)** ⭐ |
+| [`onboarding/quick-reference.md`](onboarding/quick-reference.md) | **1-page cheat sheet (printable)** * |
 | [`onboarding/first-task-walkthrough.md`](onboarding/first-task-walkthrough.md) | Detailed first task walkthrough |
 | [`onboarding/common-mistakes.md`](onboarding/common-mistakes.md) | Common mistakes & how to avoid |
 
 ---
 
-### 📂 `multi-agent/` — Multi-Agent Framework (P2 Placeholder)
+###  `multi-agent/` - Multi-Agent Framework (P2 Placeholder)
 
 | File | Content |
 |------|---------|
@@ -163,7 +163,7 @@
 
 ---
 
-### 📂 `reference/` — Reference Documentation
+###  `reference/` - Reference Documentation
 
 | File | Content |
 |------|---------|
@@ -177,13 +177,12 @@
 
 ---
 
-## 🔗 Root Level Files
+##  Root Level Files
 
 | File | Purpose |
 |------|---------|
 | `PROJECT-STANDARDS.md` | **Project-specific rules (Always check first if exists)** |
 | `AGENTS.md` | OpenAI Codex auto-discovery instructions, including Codex in VS Code |
-| `PROJECT-STANDARDS-EXAMPLE.md` | Templates & examples to copy into your project standards |
 | `CLAUDE.md` | Claude Code auto-discovery instructions |
 | `GEMINI.md` | Gemini Code Assist auto-discovery instructions |
 | `COPILOT.md` | GitHub Copilot custom instructions |
@@ -192,13 +191,13 @@
 | `.cursorrules` | Cursor/Windsurf fallback rules |
 | `INSTALL.md` | 1-step installation guide |
 | `README.md` | Main readme & quick-start |
-| `INDEX.md` | **This file** — master index |
+| `INDEX.md` | **This file** - master index |
 | `CHANGELOG.md` | Version history & updates |
 | `.gitignore` | Exclude sensitive files |
 
 ---
 
-## 🧩 Local Skills
+##  Local Skills
 
 | File | Purpose |
 |------|---------|
@@ -227,7 +226,7 @@
 
 ---
 
-## 🎯 Quick Navigation
+##  Quick Navigation
 
 ### "I want to..."
 
@@ -243,7 +242,7 @@
 
 ---
 
-## 📊 File Statistics
+##  File Statistics
 
 | Type | Count |
 |------|-------|
@@ -257,7 +256,7 @@
 
 ---
 
-## ✅ Setup Validation Checklist
+## [OK] Setup Validation Checklist
 
 When setting up a new project:
 - [ ] All directories copied to project root
@@ -270,14 +269,14 @@ When setting up a new project:
 
 ---
 
-## 🔄 Version Info
+##  Version Info
 
-- **Framework Version:** 2.5.0
-- **Last Updated:** 2026-05-30
-- **Status:** ✓ Production Ready
+- **Framework Version:** 2.6.0
+- **Last Updated:** 2026-06-05
+- **Status:** [OK] Production Ready
 
 ---
 
 **Looking for something? Use Ctrl+F or browse the tables above.**
 
-**New here? Start with [`karpathy/principles.md`](../karpathy/principles.md) 👉**
+**New here? Start with [`karpathy/principles.md`](../karpathy/principles.md) **

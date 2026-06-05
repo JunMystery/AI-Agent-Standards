@@ -1,7 +1,7 @@
 # Multi-Agent Framework
 
-**Status:** ✅ Implemented (v2.5.0)
-**Framework:** AI-Coding-Standards v2.5.0 with 6 Core Principles
+**Status:** [OK] Implemented (v2.6.0)
+**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
 
 ---
 
@@ -10,8 +10,8 @@
 4 specialized agents with strict role isolation. Human engineer retains final authority.
 
 ```
-Coder Agent → Test Agent → Reviewer Agent → Human Engineer
-                                                   ↓
+Coder Agent -> Test Agent -> Reviewer Agent -> Human Engineer
+                                                   v
                                          Documentation Agent
 ```
 
@@ -39,10 +39,10 @@ There is no shared cross-agent skill layer in this framework; each agent uses it
 Assign the appropriate file as system instructions for each agent in your orchestration tool:
 
 ```
-Agent A → load coder-agent.md as system prompt
-Agent B → load test-agent.md as system prompt
-Agent C → load reviewer-agent.md as system prompt
-Agent D → load documentation-agent.md as system prompt
+Agent A -> load coder-agent.md as system prompt
+Agent B -> load test-agent.md as system prompt
+Agent C -> load reviewer-agent.md as system prompt
+Agent D -> load documentation-agent.md as system prompt
 ```
 
 Works with: Claude API, OpenAI API, LangChain, CrewAI, or any tool that accepts custom system prompts.
@@ -51,15 +51,15 @@ Works with: Claude API, OpenAI API, LangChain, CrewAI, or any tool that accepts 
 
 ## Key Rules (All Agents)
 
-1. **Human engineer has final authority** — no agent can override
-2. **Karpathy Principles enforced** — Think, Simplicity, Surgical, Goal-Driven
-3. **12 security constraints active** — see [security-constraints.md](../risk-management/security-constraints.md)
-4. **Self-Check report required** — every agent output includes verification
+1. **Human engineer has final authority** - no agent can override
+2. **Karpathy Principles enforced** - Think, Simplicity, Surgical, Goal-Driven
+3. **12 security constraints active** - see [security-constraints.md](../risk-management/security-constraints.md)
+4. **Self-Check report required** - every agent output includes verification
 
 ---
 
 ## Reference
 
-- [SKILL-REFERENCE.md](../../SKILL-REFERENCE.md) — Quick lookup for all skills
-- [security-constraints.md](../risk-management/security-constraints.md) — 12 non-negotiable security rules
-- [karpathy/principles.md](../../karpathy/principles.md) — The 4 principles
+- [SKILL-REFERENCE.md](../../SKILL-REFERENCE.md) - Quick lookup for all skills
+- [security-constraints.md](../risk-management/security-constraints.md) - 12 non-negotiable security rules
+- [karpathy/principles.md](../../karpathy/principles.md) - The 4 principles

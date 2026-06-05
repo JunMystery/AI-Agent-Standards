@@ -20,7 +20,7 @@ Use this skill to capture important technical decisions without turning every sm
 
 - [ai-agent-standards/onboarding/think-before-coding-worksheet.md](../../ai-agent-standards/onboarding/think-before-coding-worksheet.md)
 - [ai-agent-standards/quality-control/code-review-checklist.md](../../ai-agent-standards/quality-control/code-review-checklist.md)
-- [PROJECT-STANDARDS-EXAMPLE.md](../../PROJECT-STANDARDS-EXAMPLE.md)
+- [PROJECT-STANDARDS.md](../../PROJECT-STANDARDS.md)
 
 ## Output Expectation
 

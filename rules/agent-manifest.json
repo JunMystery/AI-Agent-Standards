@@ -1,0 +1,50 @@
+{
+  "agents": [
+    {
+      "key": "codex",
+      "label": "OpenAI Codex / Codex VS Code",
+      "output": "AGENTS.md",
+      "template": "codex.md"
+    },
+    {
+      "key": "claude",
+      "label": "Claude Code",
+      "output": "CLAUDE.md",
+      "template": "full-agent.md"
+    },
+    {
+      "key": "gemini",
+      "label": "Gemini Code Assist / Gemini CLI",
+      "output": "GEMINI.md",
+      "template": "full-agent.md"
+    },
+    {
+      "key": "copilot",
+      "label": "GitHub Copilot Chat",
+      "output": "COPILOT.md",
+      "template": "compact-agent.md"
+    },
+    {
+      "key": "vscode-copilot",
+      "label": "VS Code Copilot",
+      "output": ".instructions.md",
+      "template": "full-agent.md"
+    },
+    {
+      "key": "cursor",
+      "label": "Cursor",
+      "output": ".cursor/rules/karpathy-guidelines.mdc",
+      "template": "cursor-mdc.md",
+      "frontmatter": {
+        "description": "Behavioral guidelines to reduce common LLM coding mistakes. Use when writing, reviewing, or refactoring code to avoid overcomplication, make surgical changes, surface assumptions, and define verifiable success criteria. ALWAYS check PROJECT-STANDARDS.md for project specific rules.",
+        "alwaysApply": true
+      }
+    },
+    {
+      "key": "windsurf",
+      "label": "Windsurf / Cursor legacy fallback",
+      "output": ".cursorrules",
+      "template": "compact-agent.md"
+    }
+  ]
+}

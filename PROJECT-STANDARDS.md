@@ -1,15 +1,15 @@
-# 🛠️ Project-Specific AI Agent Standards
+#  Project-Specific AI Agent Standards
 
 This file contains standards, conventions, and rules specific to this project. AI Agents MUST adhere to the rules herein, in parallel with the core standards (like `GEMINI.md`, `CLAUDE.md`).
 
-> **💡 Instructions:**
+> ** Instructions:**
 > - **Independent operation:** Simply create/edit this file, and the AI Agent will automatically detect it.
 > - **Fully customizable:** You can add new fields (e.g., "Reviewer", "Effective Date") if necessary. Just keep it in a bulleted list format.
 > - Use this file to define: project architecture, preferred libraries, naming conventions, error handling flows, etc.
 
 ---
 
-## 🏗️ Template
+##  Template
 
 *(Copy the block below to add a new standard. You can add/remove any fields according to your needs)*
 
@@ -26,8 +26,8 @@ This file contains standards, conventions, and rules specific to this project. A
 
 ---
 
-## 📋 Project Standards List (Customize below)
+##  Project Standards List (Customize below)
 
-*(You can check the `PROJECT-STANDARDS-EXAMPLE.md` file in the same directory for available template examples and copy/paste them here to enforce them as hard rules for your project)*
+*(Copy the template above and customize it here to enforce project-specific rules.)*
 
 <!-- ADD YOUR STANDARDS BELOW -->

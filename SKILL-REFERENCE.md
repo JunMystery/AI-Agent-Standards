@@ -1,4 +1,4 @@
-# Skill Reference — Quick Lookup
+# Skill Reference - Quick Lookup
 
 **Which files to reference for each type of task.**
 
@@ -15,7 +15,7 @@ Your AI agent **already loaded** the 6 Core Principles from the root instruction
 
 ---
 
-## 🤖 Dynamic Skill Auto-Discovery (New in v2.5.0)
+##  Dynamic Skill Auto-Discovery (New in v2.6.0)
 
 Modern AI agents (Cursor, Windsurf, Claude Code, Gemini with tools) are now equipped with **Auto-Discovery**. If your prompt mentions keywords like "Write tests", "Fix accessibility", or "Check security", the AI will *autonomously* read the relevant standard files below without you needing to manually `@reference` them.
 
@@ -38,6 +38,7 @@ The following on-demand skill capsules are available in [skills/](./skills/):
 - [prompt-optimizer](./skills/prompt-optimizer/SKILL.md)
 - [skill-scout](./skills/skill-scout/SKILL.md)
 - [codex-vscode](./skills/codex-vscode/SKILL.md)
+- [large-file-refactor](./skills/large-file-refactor/SKILL.md)
 - [accessibility](./skills/accessibility/SKILL.md)
 - [api-design](./skills/api-design/SKILL.md)
 - [architecture-decision-records](./skills/architecture-decision-records/SKILL.md)
@@ -80,6 +81,13 @@ The following on-demand skill capsules are available in [skills/](./skills/):
 ```
 @ai-agent-standards/quality-control/audit-ai-code-full.md
 @ai-agent-standards/quality-control/code-review-checklist.md
+```
+
+### Large File Refactor
+> Splitting large files, reducing monolithic modules, extracting React hooks/components, or bringing files closer to the 300 LOC guideline
+
+```
+@skills/large-file-refactor/SKILL.md
 ```
 
 ### Detecting Hallucinations
@@ -125,7 +133,7 @@ The following on-demand skill capsules are available in [skills/](./skills/):
 ```
 
 ### Mobile Development
-> Android, iOS, Flutter, React Native — lifecycle, permissions, offline
+> Android, iOS, Flutter, React Native - lifecycle, permissions, offline
 
 ```
 @ai-agent-standards/prompts/sample-use-cases/mobile-development-cookbook.md
@@ -213,4 +221,4 @@ At any time, ask your agent:
 > **"What coding standards are you following?"** or type **`/standards`**
 
 Expected:
-> ✅ AI-Coding-Standards v2.5.0 with 6 Core Principles active.
+> [OK] AI-Coding-Standards v2.6.0 with 6 Core Principles active.

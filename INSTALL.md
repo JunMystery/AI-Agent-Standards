@@ -1,6 +1,6 @@
 # Install Guide
 
-## Quick Start — Automated Setup (Recommended)
+## Quick Start - Automated Setup (Recommended)
 
 Run the setup script from **your project directory**. It will:
 1. Ask which AI agent you use and copy only that instruction file to your project root
@@ -10,9 +10,9 @@ Run the setup script from **your project directory**. It will:
 
 ```
 your-project/
-├── AI-Agent-Standards/    ← clone or copy the repo here
-├── src/
-└── ...
++-- AI-Agent-Standards/    <- clone or copy the repo here
++-- src/
++-- ...
 ```
 
 ```bash
@@ -81,7 +81,7 @@ cp AI-Agent-Standards/{AGENTS.md,CLAUDE.md,GEMINI.md,COPILOT.md,.instructions.md
 cp -r AI-Agent-Standards/.cursor .
 ```
 
-> ⚠️ **Note:** With manual setup, internal links default to `AI-Agent-Standards/` as the folder prefix. If your standards folder has a different name, you must search-and-replace `AI-Agent-Standards/` with the correct path in the copied files.
+> WARNING **Note:** With manual setup, internal links default to `AI-Agent-Standards/` as the folder prefix. If your standards folder has a different name, you must search-and-replace `AI-Agent-Standards/` with the correct path in the copied files.
 
 ---
 
@@ -89,13 +89,13 @@ cp -r AI-Agent-Standards/.cursor .
 
 | File | Tool | Auto-detected? |
 |------|------|----------------|
-| `AGENTS.md` | OpenAI Codex / Codex VS Code | ✅ Yes |
-| `CLAUDE.md` | Claude Code | ✅ Yes |
-| `GEMINI.md` | Gemini Code Assist / Gemini CLI | ✅ Yes |
-| `COPILOT.md` | GitHub Copilot Chat | ✅ Yes (custom instructions) |
-| `.instructions.md` | VS Code Copilot | ✅ Yes |
-| `.cursor/rules/karpathy-guidelines.mdc` | Cursor | ✅ Yes (alwaysApply) |
-| `.cursorrules` | Cursor / Windsurf (legacy) | ✅ Yes |
+| `AGENTS.md` | OpenAI Codex / Codex VS Code | [OK] Yes |
+| `CLAUDE.md` | Claude Code | [OK] Yes |
+| `GEMINI.md` | Gemini Code Assist / Gemini CLI | [OK] Yes |
+| `COPILOT.md` | GitHub Copilot Chat | [OK] Yes (custom instructions) |
+| `.instructions.md` | VS Code Copilot | [OK] Yes |
+| `.cursor/rules/karpathy-guidelines.mdc` | Cursor | [OK] Yes (alwaysApply) |
+| `.cursorrules` | Cursor / Windsurf (legacy) | [OK] Yes |
 
 ---
 
@@ -111,8 +111,8 @@ or type:
 
 Expected response:
 
-> ✅ **AI-Coding-Standards v2.5.0** with 6 Core Principles active.
-> Framework: Controlled AI-Assisted Development  
+> [OK] **AI-Coding-Standards v2.6.0** with 6 Core Principles active.
+> Framework: Controlled AI-Assisted Development
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization
 
 If the AI doesn't respond with this format, the instruction file wasn't loaded. Check that the files are in the project root.
@@ -123,8 +123,8 @@ If the AI doesn't respond with this format, the instruction file wasn't loaded. 
 
 After installing, you may want to customize:
 
-1. **`PROJECT-STANDARDS.md`** — Add your project-specific rules (naming conventions, architecture, preferred libraries). The setup script will not overwrite this file once you've customized it.
-2. **`AGENTS.md` / `CLAUDE.md` / `GEMINI.md`** — Add project-specific rules under a `## Project-Specific Guidelines` section.
+1. **`PROJECT-STANDARDS.md`** - Add your project-specific rules (naming conventions, architecture, preferred libraries). The setup script will not overwrite this file once you've customized it.
+2. **`AGENTS.md` / `CLAUDE.md` / `GEMINI.md`** - Add project-specific rules under a `## Project-Specific Guidelines` section.
 
 ---
 

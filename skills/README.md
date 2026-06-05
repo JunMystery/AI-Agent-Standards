@@ -17,6 +17,7 @@ Each skill is a standalone Markdown file that should be loaded only when the tas
 - `prompt-optimizer`
 - `skill-scout`
 - `codex-vscode`
+- `large-file-refactor`
 - `accessibility`
 - `api-design`
 - `architecture-decision-records`
