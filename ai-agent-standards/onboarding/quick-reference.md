@@ -6,7 +6,7 @@
 
 ## 🚀 Karpathy Principles (Core Philosophy)
 
-**Apply these 4 principles to EVERY AI task — they prevent 80% of common mistakes.**
+**Apply these 6 principles to EVERY AI task — they prevent the most common AI coding mistakes.**
 
 ### 1️⃣ **Think Before Coding**
 - State assumptions explicitly before coding starts
@@ -32,6 +32,16 @@
 - Verify success before submitting
 - Iterate until criteria met
 
+### 5️⃣ **DRY & Reusability**
+- Do not duplicate UI, logic, configs, or types
+- Reuse existing helpers and patterns before adding new ones
+- Extract shared code only when reuse is real
+
+### 6️⃣ **Code Organization**
+- Keep code in the right module/layer
+- Avoid monolithic files and vague dumping grounds
+- Use clear, general names that match existing structure
+
 💡 **Detailed guide:** See [karpathy-framework.md](../principles/karpathy-framework.md)
 
 ---
@@ -39,23 +49,27 @@
 ## 🎯 7-Step Pipeline
 
 ```
-1. Write Prompt (from PROMPT-TEMPLATE.md)
+1. Analyze & Decompose
+   └─ Apply: Think Before Coding
    ↓
-2. Paste to AI (Claude/Copilot/ChatGPT)
+2. Data Design (Engineer decides)
    ↓
-3. AI Generates Code + Self-Check Report
+3. Enforce Architecture Constraints
+   └─ Apply: 12 security constraints
    ↓
-4. Review Code + Self-Check Report ← YOU ARE HERE
-   ├─ Use: code-review-checklist.md
-   └─ Check: Security, tests, errors
+4. Bottom-Up Development (Core -> Services -> UI)
+   └─ Apply: Simplicity, Surgical, DRY, Code Organization
    ↓
-5. Approve OR Request Changes
-   ├─ [✓ OK] → Merge
-   └─ [✗ Wrong] → Back to step 2
+5. Quality Control & Multi-Agent Collaboration
+   ├─ Run: ai-code-audit.yml / scripts/security-audit.sh
+   └─ Optional: Test Agent -> Reviewer Agent -> Documentation Agent
    ↓
-6. Merge to Git
+6. Human Gate - Engineer Review
+   ├─ Use: code-review-checklist.md + pull_request_template.md
+   └─ Approve OR request changes
    ↓
-7. Done! Log metrics in tracking-template.csv
+7. Auto-Document & Finalize
+   └─ Update API specs, README, CHANGELOG, and metrics when applicable
 ```
 
 ---
@@ -91,6 +105,8 @@
 - [ ] Error handling (try-catch)?
 - [ ] Tests >= 80%?
 - [ ] Security OK (no SQL injection)?
+- [ ] No duplicated UI, logic, configs, or types?
+- [ ] Code is organized in the right module/layer?
 - [ ] Backward compatible?
 - [ ] Comments clear?
 

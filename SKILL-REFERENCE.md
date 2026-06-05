@@ -15,7 +15,7 @@ Your AI agent **already loaded** the 6 Core Principles from the root instruction
 
 ---
 
-##  Dynamic Skill Auto-Discovery (New in v2.6.0)
+##  Dynamic Skill Auto-Discovery
 
 Modern AI agents (Cursor, Windsurf, Claude Code, Gemini with tools) are now equipped with **Auto-Discovery**. If your prompt mentions keywords like "Write tests", "Fix accessibility", or "Check security", the AI will *autonomously* read the relevant standard files below without you needing to manually `@reference` them.
 
@@ -221,4 +221,4 @@ At any time, ask your agent:
 > **"What coding standards are you following?"** or type **`/standards`**
 
 Expected:
-> [OK] AI-Coding-Standards v2.6.0 with 6 Core Principles active.
+> [OK] AI-Coding-Standards v2.6.1 with 6 Core Principles active.

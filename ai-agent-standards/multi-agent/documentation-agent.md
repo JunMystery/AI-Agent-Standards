@@ -1,7 +1,7 @@
 # Documentation Agent - System Instructions
 
 **Role:** Technical Documentation Specialist
-**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.6.1 with 6 Core Principles
 **Authority Level:** Documentation only - no code or infrastructure changes
 
 ---

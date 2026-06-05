@@ -1,6 +1,6 @@
 # AI Agent Coding Standards
 
-**Version:** 2.6.0 | **Release:** 2026-06-05 | **Language:** English
+**Version:** 2.6.1 | **Release:** 2026-06-05 | **Language:** English
 
 A **zero-config, drop-in framework** that makes AI coding agents (Codex, Claude, Gemini, Copilot, Cursor, Windsurf) follow disciplined coding practices based on the **6 Core Principles**. Includes 12 zero-trust security constraints, CI/CD quality gates, PR audit checklists, and multi-agent orchestration support.
 
@@ -27,7 +27,7 @@ Ask your AI agent:
 
 Expected response:
 
-> [OK] **AI-Coding-Standards v2.6.0** with 6 Core Principles active.
+> [OK] **AI-Coding-Standards v2.6.1** with 6 Core Principles active.
 
 ### 3. Use Skills
 
@@ -224,20 +224,27 @@ AI-Coding-Standards/
 2. DATA DESIGN (Engineer decides)
    v
 3. ENFORCE ARCHITECTURE CONSTRAINTS
+   [OK] Apply 12 security constraints
    v
 4. BOTTOM-UP DEVELOPMENT (Core -> Services -> UI)
    [OK] Apply Principle #2 (Simplicity), #3 (Surgical)
+   [OK] Apply Principle #5 (DRY & Reusability), #6 (Code Organization)
    v
-5. QUALITY CONTROL PIPELINE
+5. QUALITY CONTROL & MULTI-AGENT COLLABORATION
+   - Automated gates: .github/workflows/ai-code-audit.yml + scripts/security-audit.sh
    - AI Generate -> Self-Check -> Self-Fix -> Output
-   [OK] All 5 Principles verified in Self-Check Report
+   - Optional multi-agent: Test Agent -> Reviewer Agent -> Documentation Agent
+   [OK] All 6 Principles verified in Self-Check Report
    v
 6. HUMAN GATE - Engineer Review
    [OK] Apply Principle #4 (Goal-Driven Execution)
+   [OK] Use code-review-checklist.md + pull_request_template.md
+   [OK] Zero-Trust and Two-Pair Eyes checks complete when required
    [APPROVE] -> Merge + Checkpoint Backup
    [REJECT] -> Iterate
    v
-7. AUTO-DOCUMENT (API specs, README updates)
+7. AUTO-DOCUMENT & FINALIZE
+   - Update API specs, README, and CHANGELOG when applicable
 ```
 
 

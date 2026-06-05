@@ -6,7 +6,7 @@
 
 ## 🎯 Karpathy Principles Validation (Check First!)
 
-**These 4 principles prevent 80% of AI coding mistakes. Validate all before approving.**
+**These 6 principles prevent the most common AI coding mistakes. Validate all before approving.**
 
 ### Principle 1: Think Before Coding ✓
 - [ ] Were assumptions stated explicitly in the prompt?
@@ -37,7 +37,19 @@
 - [ ] Tests pass? Metrics improved? Observable outcome verified?
 - [ ] **→ If criteria not met, ask AI to iterate**
 
-**⚠️ Decision:** If ANY principle fails → **Request changes**. All 4 must pass.
+### Principle 5: DRY & Reusability ✓
+- [ ] No duplicated UI, logic, configs, schemas, types, or test setup?
+- [ ] Existing helpers, components, and patterns were reused where appropriate?
+- [ ] Any new abstraction is justified by real reuse, not speculation?
+- [ ] **→ If duplication exists, request consolidation**
+
+### Principle 6: Code Organization ✓
+- [ ] Code lives in the correct layer/module for the existing architecture?
+- [ ] No monolithic files or unrelated logic added to catch-all modules?
+- [ ] Names are clear, general, and consistent with nearby project structure?
+- [ ] **→ If organization is weak, request module/layer cleanup**
+
+**⚠️ Decision:** If ANY principle fails → **Request changes**. All 6 must pass.
 
 ---
 

@@ -2,6 +2,16 @@
 
 Track versions and updates for the AI Agent Coding Standards framework.
 
+## [2.6.1] - 2026-06-05
+
+### Fixed
+- **Large-file refactor audit scope** - Updated `skills/large-file-refactor/SKILL.md` to use tracked project files as the candidate source and exclude `.venv`, `.vscode`, cache, build, vendor, generated, and binary/media files from broad audits.
+
+### Changed
+- **7-step pipeline documentation** - Updated README and onboarding/review docs so the pipeline reflects all 6 Core Principles, 12 security constraints, quality gates, Human Gate checklists, and optional multi-agent collaboration.
+- **Review checklist parity** - Added DRY & Reusability and Code Organization checks to reviewer-facing documentation and the PR checklist.
+- **Version bump** - Updated framework versioning to v2.6.1 across current project metadata, generated instruction sources, install docs, skill references, index, and multi-agent files.
+
 ## [2.6.0] - 2026-06-05
 
 ### Added
@@ -218,6 +228,7 @@ Track versions and updates for the AI Agent Coding Standards framework.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
+| 2.6.1 | 2026-06-05 | Pipeline documentation parity, review checklist parity, large-file audit scope filtering | Released |
 | 2.6.0 | 2026-06-05 | Generated rule files, manifest-based setup, large-file refactor skill, repo map docs | Released |
 | 2.3.0 | 2026-05-25 | Expanded ECC-derived general on-demand skill set, agent discovery wiring, version synchronization | Released |
 | 2.2.0 | 2026-05-24 | On-demand ECC skill capsules, skill-loading docs, release metadata synchronization | Released |

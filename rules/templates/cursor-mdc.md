@@ -6,7 +6,7 @@ Behavioral guidelines to reduce common LLM coding mistakes. Derived from Andrej 
 
 {{generated_notice}}
 
-**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.6.1 with 6 Core Principles
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
 {{core_principles}}

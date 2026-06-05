@@ -111,7 +111,7 @@ or type:
 
 Expected response:
 
-> [OK] **AI-Coding-Standards v2.6.0** with 6 Core Principles active.
+> [OK] **AI-Coding-Standards v2.6.1** with 6 Core Principles active.
 > Framework: Controlled AI-Assisted Development
 > Principles: (1) Think Before Coding, (2) Simplicity First, (3) Surgical Changes, (4) Goal-Driven Execution, (5) DRY & Reusability, (6) Code Organization
 

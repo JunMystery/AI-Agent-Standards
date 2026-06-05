@@ -31,6 +31,8 @@
 - [ ] **Simplicity First** — No over-engineering? No unnecessary abstractions or speculative features?
 - [ ] **Surgical Changes** — Every changed line traces to the request? No drive-by refactors?
 - [ ] **Goal-Driven Execution** — Success criteria defined and verified? Tests pass?
+- [ ] **DRY & Reusability** — No duplicated UI, logic, configs, schemas, or types?
+- [ ] **Code Organization** — Code is in the right layer/module with clear names?
 
 ### 2. Zero-Trust Security Review
 

@@ -4,7 +4,7 @@ Behavioral guidelines for {{label}} in this project. These reduce common LLM cod
 
 {{generated_notice}}
 
-**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.6.1 with 6 Core Principles
 **Governance:** Controlled AI-Assisted Development (vibe-proof approach)
 
 ---

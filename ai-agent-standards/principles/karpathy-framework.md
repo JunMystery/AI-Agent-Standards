@@ -17,12 +17,14 @@ LLM coding mistakes fall into predictable patterns:
 - **Overcomplication** → unnecessary abstractions, speculative features  
 - **Scope creep** → changing unrelated code
 - **Vague success criteria** → unclear when the task is done
+- **Duplication** → copied logic, schemas, configs, and UI drift
+- **Disorganization** → monolithic files and misplaced responsibilities
 
-The Karpathy principles directly address these by promoting **careful analysis, simplicity, precision, and verifiable outcomes**.
+The Karpathy principles directly address these by promoting **careful analysis, simplicity, precision, verifiable outcomes, reuse, and clear organization**.
 
 ---
 
-## 🎯 The 4 Core Principles
+## 🎯 The 6 Core Principles
 
 ### 1. Think Before Coding
 
@@ -205,6 +207,50 @@ Verification: Run cache_benchmark.test.js, include results in Self-Check Report"
 
 ---
 
+### 5. DRY & Reusability
+
+**Do not duplicate UI, logic, configs, schemas, types, or test setup.**
+
+**When:** During implementation and review (steps 4-6 of pipeline)
+
+**Apply it:**
+
+| What AI Should Do | Red Flag | Green Flag |
+|---|---|---|
+| Reuse existing helpers and components | Copies similar logic into a new file | Imports the existing helper or extends it narrowly |
+| Keep configs and schemas single-source | Same enum or constant repeated in two places | Shared config/type used by both callers |
+| Extract only real reuse | Creates a generic abstraction for one call site | Extracts after 2+ concrete uses or clear local pattern |
+
+**Success Criteria:**
+- ✓ No duplicated business logic, UI structure, configs, schemas, or types
+- ✓ Existing project helpers are used before adding new ones
+- ✓ New abstractions are justified by real reuse
+- ✓ Self-Check Report notes any intentional duplication and why it remains
+
+---
+
+### 6. Code Organization
+
+**Put code in the right layer with clear names. Avoid monolithic files.**
+
+**When:** During architecture alignment, implementation, and review (steps 3-6 of pipeline)
+
+**Apply it:**
+
+| What AI Should Do | Red Flag | Green Flag |
+|---|---|---|
+| Respect existing module boundaries | Controller talks directly to persistence when services exist | Logic stays in the established service/model layer |
+| Keep files focused | Adds unrelated functions to a catch-all file | Creates or updates the smallest appropriate module |
+| Use clear, general names | Names tied to one prompt or temporary workflow | Names match existing domain vocabulary |
+
+**Success Criteria:**
+- ✓ Code lives in the correct layer/module
+- ✓ No monolithic files or dumping-ground modules are created
+- ✓ Names are clear, general, and consistent with nearby code
+- ✓ Architecture constraints and 12 security constraints remain intact
+
+---
+
 ## 🔄 Principles in the 7-Step Pipeline
 
 ### Where Each Principle Applies
@@ -218,21 +264,23 @@ STEP 2: Paste to AI
 ├─ Apply: All principles (prompt quality determines output quality)
 │
 STEP 3: AI Generates Code + Self-Check Report
-├─ AI applies: #2 (Simplicity), #3 (Surgical), #4 (Goal-Driven)
-│  └─ Simple code, focused changes, verifies own success criteria
+├─ AI applies: #2 (Simplicity), #3 (Surgical), #4 (Goal-Driven), #5 (DRY), #6 (Organization)
+│  └─ Simple, focused, reusable, well-organized code that verifies success criteria
 │
 STEP 4: Review Code + Self-Check Report ← CRITICAL
-├─ YOU verify: All 5 principles
+├─ YOU verify: All 6 principles
 │  ├─ #1: Were assumptions clear? Success criteria defined?
 │  ├─ #2: Code simple or overengineered?
 │  ├─ #3: Changes surgical or scope-creeping?
-│  └─ #4: Success criteria met? Verified?
+│  ├─ #4: Success criteria met? Verified?
+│  ├─ #5: Duplication avoided? Existing helpers reused?
+│  └─ #6: Code in the correct layer/module?
 │
 STEP 5: Approve OR Request Changes
 ├─ If FAIL on any principle → Back to Step 2 with feedback
 │
 STEP 6: Merge to Git
-│  └─ Merged code adheres to all 5 principles
+│  └─ Merged code adheres to all 6 principles
 │
 STEP 7: Done! Log metrics
 ```
@@ -270,6 +318,18 @@ STEP 7: Done! Log metrics
 - [ ] Tests pass? Metrics improved? Observable outcome verified?
 - [ ] AI iterated until criteria satisfied (not "hope it works")?
 
+### Principle 5: DRY & Reusability
+- [ ] No duplicated UI, logic, configs, schemas, types, or test setup?
+- [ ] Existing helpers/components/patterns reused where appropriate?
+- [ ] New abstractions justified by real reuse?
+- [ ] Any intentional duplication documented?
+
+### Principle 6: Code Organization
+- [ ] Code lives in the correct layer/module?
+- [ ] No monolithic file or catch-all module created?
+- [ ] Names are clear, general, and consistent with nearby code?
+- [ ] Architecture and security constraints respected?
+
 **Decision:**
 - ✓ **All pass** → Approve & merge
 - ✗ **1+ fail** → Request changes, explain which principle violated
@@ -281,12 +341,12 @@ STEP 7: Done! Log metrics
 | Framework Component | Karpathy Principle | How They Work Together |
 |---|---|---|
 | **HEADER-TEMPLATE.yaml** | #1, #4 | Template now requires "Assumptions" and "Success Criteria" fields |
-| **code-review-checklist.md** | All 4 | Checklist updated to validate each principle |
+| **code-review-checklist.md** | All 6 | Checklist updated to validate each principle |
 | **self-check-report-template.md** | #2, #4 | AI now reports simplicity verification and success criteria met |
-| **7-Step Pipeline** | All 4 | Each step references which principles to apply |
+| **7-Step Pipeline** | All 6 | Each step references which principles to apply |
 | **prompt library** | #1 | Existing prompts reviewed for clarity & assumption-stating |
-| **quality-control gates** | All 4 | Automated checks validate principle compliance |
-| **onboarding materials** | All 4 | Training now emphasizes principles-first thinking |
+| **quality-control gates** | All 6 | Automated checks validate principle compliance |
+| **onboarding materials** | All 6 | Training now emphasizes principles-first thinking |
 
 ---
 
@@ -294,13 +354,15 @@ STEP 7: Done! Log metrics
 
 | Anti-Pattern | Why It Fails | Principle(s) Violated |
 |---|---|---|
-| **Copy-paste AI code without reading it** | Hidden assumptions, scope creep, overcomplicated | All 4 |
+| **Copy-paste AI code without reading it** | Hidden assumptions, scope creep, overcomplicated | All 6 |
 | **"Make the AI implement my entire idea at once"** | Vague criteria, multiple interpretations | #1, #4 |
 | **"Let AI refactor while fixing the bug"** | Scope creep, unverified changes | #3, #4 |
 | **"Add error handling for every edge case"** | Over-defensive, not simple | #2 |
 | **"Implement first, ask questions later"** | Wrong problem solved, wasted effort | #1 |
 | **"Accept code that 'looks good' but isn't tested"** | Unverified success criteria | #4 |
-| **"Use an AI agent in autonomous mode"** | No surgical control, wrong assumptions | All 4 |
+| **"Copy-paste similar code because it is faster"** | Duplicated behavior drifts and becomes hard to test | #5 |
+| **"Put the new feature in the nearest large file"** | Module boundaries erode; review and maintenance get harder | #6 |
+| **"Use an AI agent in autonomous mode"** | No surgical control, wrong assumptions | All 6 |
 
 ---
 
@@ -330,7 +392,7 @@ A: Yes—but they're specific to LLM assistance. Human programmers often rely on
 **Q: What if the request IS vague?**  
 A: That's the point! Principle #1 says: surfacing vagueness IS the right move. Don't code around it.
 
-**Q: Do I apply all 5 principles to every task?**  
+**Q: Do I apply all 6 principles to every task?**
 A: Yes. For trivial tasks, they're lightweight. For complex tasks, they prevent major rework.
 
 **Q: What if AI refuses to simplify?**  
@@ -345,7 +407,7 @@ A: Partially—see CI/CD gates in quality-control/. Code complexity metrics, tes
 
 | Version | Date | Changes |
 |---|---|---|
-| 1.0 | May 13, 2026 | Initial framework—5 principles, pipeline integration, reviewer checklist |
+| 1.0 | May 13, 2026 | Initial framework—6 principles, pipeline integration, reviewer checklist |
 
 ---
 

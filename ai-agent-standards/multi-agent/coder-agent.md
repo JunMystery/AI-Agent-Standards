@@ -1,7 +1,7 @@
 # Coder Agent - System Instructions
 
 **Role:** Implementation Specialist
-**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
+**Framework:** AI-Coding-Standards v2.6.1 with 6 Core Principles
 **Authority Level:** Implementation only - no architecture or infrastructure decisions
 
 ---

@@ -1,7 +1,7 @@
 # Multi-Agent Framework
 
-**Status:** [OK] Implemented (v2.6.0)
-**Framework:** AI-Coding-Standards v2.6.0 with 6 Core Principles
+**Status:** [OK] Implemented (v2.6.1)
+**Framework:** AI-Coding-Standards v2.6.1 with 6 Core Principles
 
 ---
 
@@ -52,7 +52,7 @@ Works with: Claude API, OpenAI API, LangChain, CrewAI, or any tool that accepts 
 ## Key Rules (All Agents)
 
 1. **Human engineer has final authority** - no agent can override
-2. **Karpathy Principles enforced** - Think, Simplicity, Surgical, Goal-Driven
+2. **6 Core Principles enforced** - Think, Simplicity, Surgical, Goal-Driven, DRY, Code Organization
 3. **12 security constraints active** - see [security-constraints.md](../risk-management/security-constraints.md)
 4. **Self-Check report required** - every agent output includes verification
 
@@ -62,4 +62,4 @@ Works with: Claude API, OpenAI API, LangChain, CrewAI, or any tool that accepts 
 
 - [SKILL-REFERENCE.md](../../SKILL-REFERENCE.md) - Quick lookup for all skills
 - [security-constraints.md](../risk-management/security-constraints.md) - 12 non-negotiable security rules
-- [karpathy/principles.md](../../karpathy/principles.md) - The 4 principles
+- [karpathy/principles.md](../../karpathy/principles.md) - The 6 principles

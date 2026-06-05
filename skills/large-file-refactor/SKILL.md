@@ -14,6 +14,23 @@ Split by responsibility, not by line count alone.
 
 Do not cut a file into arbitrary chunks just to satisfy a numeric target. A 320-line cohesive algorithm may be better left intact, while a 260-line file with unrelated validation, persistence, and notification logic may deserve extraction.
 
+## Audit Scope
+
+Audit only project-owned source files and project documentation, or a specific file path the user explicitly provided.
+
+When discovering candidate files yourself, use `git ls-files` or an equivalent tracked-file list as the source of truth. Do not use a raw filesystem walk as the primary source unless repository ignore rules and the exclusions below have already been applied.
+
+Always exclude:
+
+- `.git/`, `.venv/`, `venv/`, `env/`, `.vscode/`, `.idea/`
+- `node_modules/`, `__pycache__/`, `.pytest_cache/`, `.cache/`
+- `build/`, `dist/`, `htmlcov/`, coverage reports, and test artifacts
+- generated files, vendored files, externally synchronized files, and binary/media files
+
+If the user provides a specific path, audit that path only. If the path is ignored, vendored, generated, or outside normal project scope, warn about that status and continue only when the user clearly requested that exact file.
+
+For broad requests such as "AI Audit large-file-refactor violations", report only in-scope project candidates. Do not list excluded environment, editor, cache, build, vendor, generated, or binary/media files as violations.
+
 ## Decision Thresholds
 
 - `<300 LOC`: keep the file unless it clearly mixes unrelated responsibilities.
@@ -24,25 +41,31 @@ Count meaningful code first. Ignore blank lines and comments when judging whethe
 
 ## Workflow
 
-1. Analyze responsibilities.
+1. Select candidate files.
+   - Prefer `git ls-files` or an equivalent tracked-file list.
+   - Keep only in-scope source/project documentation files.
+   - Exclude ignored, environment, editor, cache, build, vendor, generated, external, and binary/media files before counting LOC.
+   - If the user gave an exact path, keep the audit limited to that path and apply the warning rule from Audit Scope when needed.
+
+2. Analyze responsibilities.
    - List the functional blocks: classes, functions, handlers, JSX sections, data access, validation, transformation, side effects.
    - Name what each block owns and what can change independently.
 
-2. Cluster cohesive code.
+3. Cluster cohesive code.
    - Keep code together when it is called together most of the time or shares one domain responsibility.
    - Prefer domain/package-local extraction over distant shared folders.
 
-3. Map dependencies before extracting.
+4. Map dependencies before extracting.
    - Identify imports, globals, shared types, callbacks, side effects, and public API callers.
    - Check for circular import risk before creating new files.
    - If splitting creates a cycle, choose a different boundary, introduce dependency inversion, or keep the code together.
 
-4. Extract with compatibility.
+5. Extract with compatibility.
    - Preserve behavior and public API unless the user explicitly approved an API change.
    - Keep orchestration in the original file when that makes migration safer.
    - Use existing project naming, file layout, test helpers, and module style.
 
-5. Verify after refactor.
+6. Verify after refactor.
    - Run existing tests without changing their intent.
    - Check imports and circular dependency warnings when tooling exists.
    - Confirm new files remain focused and generally under 300 meaningful LOC.
@@ -68,6 +91,8 @@ Do not split by default when:
 
 When this skill is active, provide:
 
+- Scope source used, such as `git ls-files`, a tracked-file list, or the exact user-provided path.
+- Excluded categories when relevant, such as `.venv`, `.vscode`, cache, build, vendor, generated, or binary/media files.
 - Responsibility analysis for the large file.
 - Split/keep decision with the threshold applied.
 - Proposed module boundaries and dependency direction.
