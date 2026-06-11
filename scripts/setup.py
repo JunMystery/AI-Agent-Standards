@@ -87,16 +87,18 @@ def add_prefix(content: str, prefix: str) -> str:
     return content
 
 
-def select_rule_files(agent_choices: list[dict], agent_key: str = None) -> list[str]:
-    """Return rule files to install, prompting when no agent is provided."""
+def select_rule_files(agent_choices: list[dict], agent_key: str = None) -> list[str] | None:
+    """Return rule files to install, or None to remove them, prompting when no agent is provided."""
     choices_by_key = {choice["key"]: choice for choice in agent_choices}
     if agent_key:
         normalized = agent_key.lower()
+        if normalized == "remove":
+            return None
         if normalized == "all":
             return all_choice_files(agent_choices)
         if normalized in choices_by_key:
             return choices_by_key[normalized]["files"] + [PROJECT_STANDARDS_FILE]
-        valid = ", ".join([choice["key"] for choice in agent_choices] + ["all"])
+        valid = ", ".join([choice["key"] for choice in agent_choices] + ["all", "remove"])
         print(f"Error: Unknown agent '{agent_key}'. Valid choices: {valid}")
         sys.exit(1)
 
@@ -107,20 +109,23 @@ def select_rule_files(agent_choices: list[dict], agent_key: str = None) -> list[
         print(f"  {number}. {choice['label']} ({files})")
     all_number = len(agent_choices) + 1
     print(f"  {all_number}. Choose all (install every supported instruction file)")
+    print(f"  9. Remove all installed instruction files from project root")
     print()
 
     while True:
-        selected = input(f"Select 0-{all_number}: ").strip()
+        selected = input(f"Select 0-9: ").strip()
         if selected == "0":
             print("Setup cancelled.")
             sys.exit(0)
+        if selected == "9":
+            return None
         if selected.isdigit():
             selected_number = int(selected)
             if 1 <= selected_number <= len(agent_choices):
                 return agent_choices[selected_number - 1]["files"] + [PROJECT_STANDARDS_FILE]
             if selected_number == all_number:
                 return all_choice_files(agent_choices)
-        print(f"Please enter a number from 0 to {all_number}.")
+        print(f"Please enter a number from 0 to 9.")
 
 
 def copy_and_link(standards_dir: str, project_root: str, rule_files: list[str]) -> None:
@@ -225,6 +230,44 @@ def update_gitignore(project_root: str, standards_dir: str = None, installed_fil
                 print(f"     Ignored: {item}")
 
 
+def remove_installed_files(project_root: str, files_to_remove: list[str]) -> None:
+    """Remove installed rule files from the project root and clean up empty directories."""
+    print()
+    print("Removing installed instruction files from project root...")
+    removed = 0
+    for rel_path in files_to_remove:
+        dst = os.path.join(project_root, rel_path)
+        if os.path.exists(dst):
+            try:
+                if os.path.isdir(dst):
+                    shutil.rmtree(dst)
+                else:
+                    os.remove(dst)
+                print(f"  Removed: {rel_path}")
+                removed += 1
+            except Exception as e:
+                print(f"  Error removing {rel_path}: {e}")
+
+    # Clean up empty .cursor/rules directories if they were created and are now empty
+    cursor_rules_dir = os.path.join(project_root, ".cursor", "rules")
+    if os.path.exists(cursor_rules_dir) and not os.listdir(cursor_rules_dir):
+        try:
+            os.rmdir(cursor_rules_dir)
+            print("  Removed empty directory: .cursor/rules")
+        except Exception:
+            pass
+    cursor_dir = os.path.join(project_root, ".cursor")
+    if os.path.exists(cursor_dir) and not os.listdir(cursor_dir):
+        try:
+            os.rmdir(cursor_dir)
+            print("  Removed empty directory: .cursor")
+        except Exception:
+            pass
+
+    print()
+    print(f"Done: {removed} files removed.")
+
+
 def main():
     scripts_dir = os.path.dirname(os.path.abspath(__file__))
     standards_dir = os.path.dirname(scripts_dir)
@@ -241,9 +284,9 @@ def main():
     )
     parser.add_argument(
         "--agent",
-        choices=[choice["key"] for choice in agent_choices] + ["all"],
+        choices=[choice["key"] for choice in agent_choices] + ["all", "remove"],
         default=None,
-        help="Install one agent instruction file without prompting. Use 'all' to install every supported file.",
+        help="Install one agent instruction file without prompting. Use 'all' to install every supported file, or 'remove' to remove all installed files.",
     )
     args = parser.parse_args()
 
@@ -261,7 +304,10 @@ def main():
     print("AI Agent Coding Standards - Setup")
     print("=" * 42)
     rule_files = select_rule_files(agent_choices, args.agent)
-    copy_and_link(standards_dir, project_root, rule_files)
+    if rule_files is None:
+        remove_installed_files(project_root, all_choice_files(agent_choices))
+    else:
+        copy_and_link(standards_dir, project_root, rule_files)
 
 
 if __name__ == "__main__":
