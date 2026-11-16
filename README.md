@@ -1,3 +1,18 @@
+# ⚠️ ARCHIVED & DEPRECATED: REPLACED BY AGENT GUIDANCE (v2.0.0)
+
+> [!WARNING]
+> **This standalone repository is officially deprecated and archived.**
+> All 279+ software engineering skills, architectural patterns, checklists, and security constraints have been merged, optimized, and directly embedded into **[Agent Guidance](https://github.com/JunMystery/Agent-Guidance)** ().
+>
+> **What changed in Agent Guidance?**
+> - **Không cần copy file thủ công**: Skills được nạp tự động qua MCP stdio (, , ).
+> - **Surgical Section-Level Slicing**: Trích xuất section theo vector tương đồng (~350–800 tokens), tiết kiệm 80% context window.
+> - **300 LOC Cap & Modularity Enforcement**: Giám sát kiến trúc và cấu trúc file tự động.
+>
+> 👉 **Active Repository**: **https://github.com/JunMystery/Agent-Guidance**
+
+---
+
 # AI Agent Coding Standards
 
 **Version:** 2.6.1 | **Release:** 2026-06-05 | **Language:** English
